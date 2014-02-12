@@ -1,0 +1,7 @@
+<div class="projectlist">
+    {% for project in site.projects %}
+    <ul class="listprojects list-unstyled">
+        <li><span>{{ project.date | date_to_string }} &raquo;</span> <a href="{{ project.url }}">{{ project.title }}</a></li>
+    </ul>
+    {% endfor %}
+</div>
