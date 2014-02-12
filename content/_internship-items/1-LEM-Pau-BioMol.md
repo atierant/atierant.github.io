@@ -18,7 +18,7 @@ role:
     description: |
         « Recherche d’ORF associées aux intégrons à partir d’environnements pollués. » (Directeur de projet : Dr Christine CAGNON)
 
-tags: [professional]
+tags: [Professional]
 ---
 
 

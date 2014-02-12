@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Find the MySQL my.cnf location"
-date: 2019-11-05
-subtitle: Not so simply to Find the MySQL my.cnf location....
-tags: [professional, mysql]
+date: 2019-11-20
+subtitle: One does not simply find the MySQL my.cnf location...
+tags: [Professional, MySQL]
 share-img: "/assets/img/logo/mysql.png"
 ---
 

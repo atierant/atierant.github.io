@@ -44,7 +44,7 @@ role:
         <br />Phylogénie-Evolution
         <br />Algorithmique pour la biologie
         <br />Juridique et Ethique
-tags: [professional]
+tags: [Professional]
 ---
 
 

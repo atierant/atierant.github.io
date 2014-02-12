@@ -1,0 +1,12 @@
+<div class="work-item">
+    <div class="brand-logo-container">
+        <img class="brand-logo" src="{{page.organization.logo}}" title="{{page.organization.name}}" alt="{{page.organization.short_description}}">
+    </div>
+    <h3>{{ page.role.role_name }}・<a href="{{ page.organization.url }}">{{page.organization.name}}</a>・{{ page.organization.place }}</h3>
+    <p class="date">{{ page.role.start_date }} – {{ page.role.end_date }}</p>
+    <p class="description">{{ page.organization.short_description }}</p>
+    <hr />
+    <h3>Mon rôle :</h3>
+    <p class="description">{{ page.role.description }}</p>
+</div>
+<a href="javascript:history.back()">Go Back</a>

@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [professional]
+tags: [Professional]
 ---
 
 

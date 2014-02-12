@@ -15,5 +15,5 @@ role:
     end_date: 2007-07
     description: |
         « Reconstruction d’une base de données palynologique, analyse, conception, implémentation du logiciel PollenNextGen adapté à la manipulation de la base de données » (Directeur de projet : Pr Rachid CHEDDADI)
-tags: [professional]
+tags: [Professional]
 ---

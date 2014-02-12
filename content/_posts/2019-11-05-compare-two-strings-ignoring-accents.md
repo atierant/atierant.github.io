@@ -2,12 +2,12 @@
 layout: post
 title: "Compare two string and ignore (but not replace) accents. PHP"
 date: 2019-11-05
-subtitle: Not so simply to compare two strings....
-tags: [personal, professional, php, popular]
+subtitle: One does not simply compare two strings...
+tags: [Personal, Professional, PHP, Popular]
 share-img: "/assets/img/logo/symfony_black_03.png"
 ---
 
-## convert accents to their non-accented counterpart and then compare strings.
+## Convert accents to their non-accented counterpart and then compare strings.
 
 {% highlight php %}
 $removeAccents = function (string $string) {
