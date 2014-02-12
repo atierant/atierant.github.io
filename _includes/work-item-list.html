@@ -1,0 +1,13 @@
+<div class="work-item-list">
+    {% assign sorted = (site.work-items | sort: 'role.start_date') | reverse %} <!-- retourne les éléments -->
+    {% for work-item in sorted %}
+    <div class="work-item">
+        <div class="brand-logo-container">
+            <img class="brand-logo" src="{{work-item.organization.logo}}" alt="{{work-item.organization.name}}">
+        </div>
+        <h3>{{ work-item.role.role_name }}・<a href="{{ work-item.organization.url }}">{{work-item.organization.name}}</a>・{{ work-item.organization.place }}</h3>
+        <p class="date">{{ work-item.role.start_date }} – {{ work-item.role.end_date }}</p>
+        <p class="description">{{ work-item.role.description }}</p>
+    </div>
+    {% endfor %}
+</div>

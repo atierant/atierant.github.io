@@ -1,0 +1,6 @@
+site:
+    og:
+        title: Arnaud Tiérant Website
+        image: "/img/atierant-200px.jpg"
+        description: Arnaud Tiérant Website will amaze you!
+        locale: en_US

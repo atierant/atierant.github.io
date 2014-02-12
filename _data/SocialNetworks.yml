@@ -1,0 +1,146 @@
+# You can define your custom social network links here.
+# Use the same key you added in _config.yml -> social-network-links.
+# In addition to that you need to specify the following properties:
+#   name: Specify a user-friendly name that will be used as a link title
+#   baseURL: Define a base URL which will be combined with the value of
+#            site.social-network-links.<key>
+#   icon: Specify a valid fontawesome icon class
+
+# GENERAL
+
+email:
+  name: "Email me"
+  category: "general"
+  baseURL: "mailto:{{ site.author.email }}?subject=Hello from {{ site.url-pretty }}"
+  icon: "fa-envelope"
+  type: "solid"
+telephone:
+  name: "Phone"
+  category: "general"
+  baseURL: "tel:"
+  icon: "fa-phone"
+  type: "solid"
+rss:
+  name: "RSS"
+  category: "general"
+  baseURL: "{{ '/feed.xml' | relative_url }}"
+  icon: "fa-rss"
+  type: "solid"
+
+# PROFESSIONAL NETWORK
+linkedin:
+  name: "LinkedIn"
+  category: "professional_network"
+  baseURL: "https://linkedin.com/in/"
+  icon: "fa-linkedin"
+  type: "brand"
+twitter:
+  name: "Twitter"
+  category: "professional_network"
+  baseURL: "https://twitter.com/"
+  icon: "fa-twitter"
+  type: "brand"
+#viadeo:
+#  name: "Facebook"
+#  category: "social"
+#  baseURL: "https://www.facebook.com/"
+#  icon: "fa-facebook"
+#  type: "brand"
+# kickstarter:
+
+# SOCIAL
+facebook:
+  name: "Facebook"
+  category: "social"
+  baseURL: "https://www.facebook.com/"
+  icon: "fa-facebook"
+  type: "brand"
+
+reddit:
+  name: "Reddit"
+  category: "social"
+  baseURL: "https://reddit.com/u/"
+  icon: "fa-reddit"
+  type: "brand"
+
+xing:
+  name: "Xing"
+  category: "social"
+  baseURL: "https://www.xing.com/profile/"
+  icon: "fa-xing"
+  type: "brand"
+snapchat:
+  name: "Snapchat"
+  category: "social"
+  baseURL: "https://www.snapchat.com/add/"
+  icon: "fa-snapchat-ghost"
+  type: "brand"
+instagram:
+  name: "Instagram"
+  category: "social"
+  baseURL: "https://www.instagram.com/"
+  icon: "fa-instagram"
+  type: "brand"
+
+#TECH
+github:
+  name: "GitHub"
+  category: "tech"
+  baseURL: "https://github.com/"
+  icon: "fa-github"
+  type: "brand"
+stackoverflow:
+  name: "StackOverflow"
+  category: "tech"
+  baseURL: "https://stackoverflow.com/users/"
+  icon: "fa-stack-overflow"
+  type: "brand"
+# docker:
+# gitlab:
+# bitbucket:
+# ubuntu:
+# wikimedia:
+# travis-ci:
+# jsfiddle:
+# codepen:
+
+# SPECIFIC
+# symfony:
+# patreon
+# afup
+# april
+# jdn
+# stackoverflow
+
+# MEDIA
+# shazam:
+# misicbrainz
+# discogs
+# mixcloud
+# soundcloud
+youtube:
+  name: "YouTube"
+  category: "media"
+  baseURL: "https://www.youtube.com/"
+  icon: "fa-youtube"
+  type: "brand"
+spotify:
+  name: "Spotify"
+  category: "media"
+  baseURL: "https://open.spotify.com/user/"
+  icon: "fa-spotify"
+  type: "brand"
+
+# GAMING
+steam:
+  name: "Steam"
+  category: "gaming"
+  baseURL: "https://steamcommunity.com/id/"
+  icon: "fa-steam"
+  type: "brand"
+twitch:
+  name: "Twitch"
+  category: "gaming"
+  baseURL: "https://www.twitch.tv/"
+  icon: "fa-twitch"
+  type: "brand"

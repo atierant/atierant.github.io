@@ -1,0 +1,13 @@
+<div class="internship-item-list">
+    {% assign sorted = (site.internship-items | sort: 'role.start_date') | reverse %} <!-- retourne les éléments -->
+    {% for internship-item in sorted %}
+    <div class="internship-item">
+        <div class="brand-logo-container">
+            <img class="brand-logo" src="{{internship-item.organization.logo}}" alt="{{internship-item.organization.name}}">
+        </div>
+        <h3>{{ internship-item.role.role_name }}・<a href="{{ internship-item.organization.url }}">{{internship-item.organization.name}}</a>・{{ internship-item.organization.place }}</h3>
+        <p class="date">{{ internship-item.role.start_date }} – {{ internship-item.role.end_date }}</p>
+        <p class="description">{{ internship-item.role.description }}</p>
+    </div>
+    {% endfor %}
+</div>
