@@ -1,2 +1,8 @@
 name: Arnaud Tiérant, Software Engineer @Sogeti
 permalink: /notes/:year/:month/:day/:title
+
+title: Atierant.github.io
+description: My GitHub Website
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-hacker
