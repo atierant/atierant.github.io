@@ -1,8 +1,19 @@
 name: Arnaud Tiérant, Software Engineer @Sogeti
-permalink: /notes/:year/:month/:day/:title
-
-title: Atierant.github.io
-description: My GitHub Website
-google_analytics: 
+title: Arnaud Tiérant Website
+email: arnaud@tierant.fr
+description: > # this means to ignore newlines until "baseurl:"
+    Awesome new site here.
+baseurl: "/" # the subpath of your site, e.g. /blog/
+url: "http://atierant.github.io" # the base hostname & protocol for your site
+twitter_username: atierant
+github_username:  atierant
+google_analytics:
 show_downloads: true
-theme: jekyll-theme-hacker
+collections_dir: my_collections
+author:
+    name: Arnaud Tiérant
+    email: arnaud@tierant.fr
+
+# Build settings
+markdown: kramdown
+permalink: /notes/:year/:month/:day/:title

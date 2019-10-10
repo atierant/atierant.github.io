@@ -2,27 +2,27 @@
 layout: default
 about: passive
 cv: passive
-projects: passive
-notes: active
+projects: active
+notes: passive
 contact: passive
 ---
 
-<div class="notes">
-    <div class="note single">
+<div class="projects">
+    <div class="project single">
         <h1 class="title">{{ page.title }}</h1>
 
         <h2 class="date"><info datetime="{{ page.date }}">
             {{ page.date | date_to_string }} {% if page.author %} by {{ page.author }} {% endif %}
         </info></h2>
         <!-- Post content -->
-        <div class="notebody">
+        <div class="projectbody">
             {{ content }}
         </div>
         <!-- Post info -->
-        <div class="noteinfo">
+        <div class="projectinfo">
             <!-- include some categories and tags maybe? -->
         </div>
 
         <hr>
-    </div><!-- / .note .single -->
-</div><!-- /.notes -->
+    </div><!-- / .project .single -->
+</div><!-- /.projects -->
