@@ -15,5 +15,5 @@ author:
     email: arnaud@tierant.fr
 
 # Build settings
-markdown: kramdown
+#markdown: kramdown
 permalink: /notes/:year/:month/:day/:title
