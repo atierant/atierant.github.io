@@ -12,10 +12,9 @@ layout: null
         <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
         <updated>{{ site.time | date_to_xmlschema }}</updated>
-        <id>http://atierant.github.io/blog</id>
         <author>
-            <name>{{  author.name | xml_escape }}</name>
-            <email>{{ author.email | xml_escape }}</email>
+            <name>{{  site.author.name | xml_escape }}</name>
+            <email>{{ site.author.email | xml_escape }}</email>
         </author>
 
         {% for post in site.posts limit:10 %}
