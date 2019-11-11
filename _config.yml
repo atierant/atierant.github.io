@@ -1,19 +1,193 @@
+# --- General options --- #
+
 name: Arnaud Tiérant, Software Engineer @Sogeti
+
+# Short description of your site
 title: Arnaud Tiérant Website
-email: arnaud@tierant.fr
 description: > # this means to ignore newlines until "baseurl:"
-    Awesome new site here.
-baseurl: "" # the subpath of your site, e.g. /blog/
+    Here's a tiny little website about me, my realizations and my thoughts...
+
+# url is the the website domain URL without a trailing slash
 url: "http://atierant.github.io" # the base hostname & protocol for your site
-twitter_username: atierant
-github_username:  atierant
-google_analytics:
-show_downloads: true
-collections_dir: my_collections
+
+# baseurl should be an empty string
+baseurl: "" # the subpath of your site, e.g. /blog/
+
+
+# --- Navigation bar options --- #
+
+# List of links in the navigation bar
+navbar-links:
+  About Me: "about"
+  CV: "cv"
+  Projects: "projects"
+  Notes: "notes"
+  Contact: "contact"
+
+# Image to show in the navigation bar - image must be a square (width = height)
+# Remove this parameter if you don't want an image in the navbar
+#avatar: "assets/img/atierant-200px.jpg"
+
+# If you want to have an image logo in the top-left corner instead of the title text,
+# then specify the following parameter
+# title-img: /path/to/image
+
+# --- Background colour/image options --- #
+
+# Personalize the colors in your website. Colour values can be any valid CSS colour
+
+navbar-col: "#F5F5F5"
+navbar-text-col: "#404040"
+navbar-children-col: "#F5F5F5"
+page-col: "#FFFFFF"
+link-col: "#008AFF"
+hover-col: "#0085A1"
+footer-col: "#F5F5F5"
+footer-text-col: "#777777"
+footer-link-col: "#404040"
+
+# Alternatively, the navbar, footer, and page background can be set to use background images
+# instead of colour
+
+# navbar-img: "/img/bgimage.png"
+# footer-img: "/img/bgimage.png"
+# page-img: "/img/bgimage.png"
+
+# --- Footer options --- #
+
+# Change all these values or delete the ones you don't want.
+# Important: you must keep the "name" parameter, everything else you can remove
 author:
     name: Arnaud Tiérant
-    email: arnaud@tierant.fr
+    email: "arnaud@tierant.fr"
+    facebook: atierant
+    github: atierant
+    twitter: atierant
+    reddit: atierant
+    linkedin: atierant
+    #  xing: atierant
+    stackoverflow: "3943160/atierant"
+    #  snapchat: atierant
+    instagram: atierant
+    youtube: user/atierant
+    #  spotify: atierant
+    telephone: +33621161793
+#  steam: atierant
+#  twitch: atierant
+#  yelp: atierant
 
-# Build settings
-#markdown: kramdown
+# Select your active Social Network Links.
+# Uncomment the links you want to show in the footer and add your information to each link.
+# You can reorder the items to define the link order.
+# If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
+social-network-links:
+  rss: true
+  email: "arnaud@tierant.fr"
+  facebook: atierant
+  github: atierant
+  twitter: atierant
+  reddit: atierant
+  linkedin: arnaudtierant
+#  xing: atierant
+  stackoverflow: "3943160/atierant"
+#  snapchat: atierant
+  instagram: atierant
+  youtube: user/atierant
+#  spotify: atierant
+  telephone: +33621161793
+#  steam: atierant
+#  twitch: atierant
+#  yelp: atierant
+
+# Select which links to show in the footer
+footer-links-active:
+  rss: false
+  facebook: true
+  email: true
+  twitter: true
+  github: true
+  linkedin: false
+  stackoverflow: true
+  calendly: true
+  telephone: false
+
+# Select which share links to show in posts
+share-links-active:
+  twitter: true
+  facebook: true
+  linkedin: true
+
+# How to display the link to the website in the footer
+# Remove this if you don't want a link in the footer
+url-pretty: "arnaud.tierant.me"
+
+# --- Misc --- #
+
+
+# Excerpt Word Length
+# Truncates the excerpt to the specified number of words on the index page
+excerpt_length: 50
+
+# Character used to separate site title and description in HTML document title
+# and RSS feed title
+title-separator: "-"
+# --- Don't need to touch anything below here (but you can if you want) --- #
+
+# Output options (more information on Jekyll's site)
+markdown: kramdown
+highlighter: rouge
 permalink: /notes/:year/:month/:day/:title
+paginate: 5
+
+collections:
+  pages:
+    output: true
+  projects:
+    output: true
+  posts:
+    output: true
+
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  # - scope:
+  #     type: "posts"
+  #     path: "content/posts"
+  #   values:
+  #     layout: "post"
+  - scope:
+      type: "pages"
+      path: "pages"
+    values:
+      layout: "page"
+      show-avatar: true
+  - scope:
+      type: "projects"
+      path: "pages/projects.html"
+    values:
+      layout: "project"
+  - scope:
+      type: "posts"
+      path: "pages/posts.html"
+    values:
+      layout: "posts"
+
+
+# Use tags index page and make tags on each post clickable
+link-tags: true
+
+show_downloads: true
+collections_dir: content
+
+defaultPostDir: _drafts
+postDirs:
+    - content/_posts
+
+# Exclude these files from production site
+exclude:
+  - CNAME
+  - LICENSE
+  - README.md
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap

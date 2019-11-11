@@ -1,13 +1,8 @@
 ---
 layout: default
 title: CV of Arnaud Tiérant
-about: passive
-cv: active
-projects: passive
-notes: passive
-contact: passive
+permalink: cv
 ---
-
 <div class="cv">
     <a href="#" class="download" title="Download CV as PDF">Download CV</a>
     <h1>Arnaud Tiérant</h1>
