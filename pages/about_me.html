@@ -1,46 +1,71 @@
 ---
-layout: default
+layout: page
 title: About Me
+subtitle: "Or: why you'd want to go on a date with me"
 description: Credits and information about the website atierant.github.io, the personal website for Arnaud Tiérant living and working in Montpellier, France.
 permalink: about
+css: "/assets/css/aboutme.css"
 ---
 
 <div class="about_me">
     <section class="bio">
         <h1>Hi! I'm Arnaud <span class="wave">👋</span></h1>
 
-        <p>Currently, I am a <span class="rainbow">developer</span> <code>/dɪˈvɛləpɚ/</code>, currently based in
-            Montpellier, France, working on Sogeti, a wholly-owned subsidiary of Cap Gemini S.A., leader in IT services
-            and
-            local engineering, specializing in application and infrastructure management.</p>
-        <p>Following my studies (DUT Biological Engineering, Bachelor and Master in Computer Science, specialization in
+        <p class="about-text">
+            <span class="fa fa-graduation-cap about-icon"></span>
+            Following my studies (DUT Biological Engineering, Bachelor and Master in Computer Science, specialization in
             Bioinformatics), I decided to enter the world of work by creating my bioinformatics services company BILMS
             (Bioinformatics, Computer Science, Software, Maintenance, Services), in order to provide biology research
             laboratories with an external service, putting at my disposal my know-how and my expertise acquired
             throughout
             my studies.</p>
-        <p>Sometimes the perspectives of each changes, that's why I considered a less administrative job,
+        <p class="about-text">
+            <span class="fa fa-code about-icon"></span>
+            Sometimes the perspectives of each changes, that's why I considered a less administrative job,
             more focused on my technical skills. With this in mind, I gladly put my skills at Synap System, an open
             source solutions consulting company, for nearly a year and a half. Then came a mission to Acretion to
             participate in the development of an intelligent social network dedicated to sharing values, via an
             innovative
             strategy.</p>
+
+        <p class="about-text">
+            <span class="fa fa-globe about-icon"></span>
+            Currently, I am a <span class="rainbow">developer</span> <code>/dɪˈvɛləpɚ/</code>, based in
+            Montpellier, France, working on Sogeti, a wholly-owned subsidiary of Cap Gemini S.A., leader in IT services
+            and local engineering, specializing in application and infrastructure management.</p>
+
+        <p class="about-text">
+            <span class="fa fa-heart about-icon"></span>
+            I'm addicted to music, travelling and at any given (and non-given) moment, meeting new people :)
+        </p>
+
+        <p class="about-text">
+            <span class="fa fa-file-text-o about-icon"></span>
+            The <strong><a href="/projects">projects</a></strong> page is a nice place to see some of my work, but you
+            can also view my (somewhat outdated) <a href="/cv">resume</a>.
+        </p>
     </section>
     <section class="work-experience">
         <h2>Work Experience</h2>
-        <!--
             <div class="work-item">
-              <div class="brand-logo-container" id="upmc">
-                <img class="brand-logo" src="/img/upmc-logo.svg" alt="GE & UPMC Logo">
+              <div class="brand-logo-container" id="sogeti">
+                <img class="brand-logo" src="/assets/img/sogeti-logo.svg" alt="Sogeti Logo">
               </div>
-              <h3>Senior Product Designer・UPMC Enterprises</h3>
-              <p class="date">July 2018・Present</p>
-              <p class="description">Working with GE Healthcare on their enterpirse imaging products</p>
+              <h3>Consultant Application・Sogeti</h3>
+              <p class="date">July 2014・Present</p>
+              <p class="description">Description bientôt disponible...</p>
             </div>
-        -->
     </section>
     <section class="education">
         <h2>Education</h2>
+        <div class="education-item">
+            <div class="education-logo-container" id="UM2">
+                <img class="education-logo" src="/assets/img/logo-universite-montpellier.png" alt="UM2 Logo">
+            </div>
+            <h3>Master in Computer Science</h3>
+            <p class="date">2016・2018</p>
+            <p class="description">Description bientôt disponible...</p>
+        </div>
     </section>
     <section class="skills">
         <h2>Skills</h2>
@@ -68,7 +93,7 @@ permalink: about
         <h2>Tools</h2>
         <h3>Some of the toolsets I am quite familiar with</h3>
         <div class="skills-container">
-            <div class="skills-item">Sketch</div>
+            <div class="skills-item">Rector</div>
         </div>
     </section>
 
@@ -101,4 +126,50 @@ permalink: about
             <li>A work in progress</li>
         </ul>
     </section>
+
+    <section id="contactme-section">
+        <h1 id="contact">Contact</h1>
+
+        <!--
+        <div class="alert alert-danger" role="alert">
+        I will be away until Feb 6, with very limited time to work. My responses will be slow during this period.
+        </div>
+        -->
+
+
+        <p>You can <a href="mailto:arnaud@tierant.fr?subject=Hello from arnaud@tierant.me">email me</a> or find me <a href="https://twitter.com/atierant">on Twitter</a> if you want to get in touch. As I said, I love meeting new people so don't hesitate to send a message!</p>
+
+        <form action="https://formspree.io/xwkkrdak" method="POST" class="form" id="contact-form">
+            <p>You can also send me a quick message using the form below:</p>
+            <div class="row">
+                <div class="col-xs-6">
+                    <input type="email" name="_replyto" class="form-control input-lg" placeholder="Email" title="Email">
+                </div>
+                <div class="col-xs-6">
+                    <input type="text" name="name" class="form-control input-lg" placeholder="Name" title="Name">
+                </div>
+            </div>
+            <input type="hidden" name="_subject" value="New submission from arnaud.tierant.me">
+            <textarea type="text" name="content" class="form-control input-lg" placeholder="Message" title="Message" required="required" rows="3"></textarea>
+            <input type="text" name="_gotcha" style="display:none">
+            <input type="hidden" name="_next" value="?message=Your message was sent successfully, thanks!" />
+
+            <div style="font-size: 12px; margin: -10px 0 10px;">Please do not use this form to send me full code samples or ask me to fix an app for free.</div>
+
+            <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+        </form>
+
+        <p id="address">If you'd like to get in touch and are very old-school, you can send a letter to:<br/>3 Allée des Missions, 34080 Montpellier, France.</p>
+
+    </section>
+
+    <br/>
+
+    <div id="feed-meeee">
+        <br/>
+        <h1>Help feed me & my coding obsession</h1>
+        <p>If you want to show your support for any of the <a href="/projects">open source projects</a> I devote my time to, here's a PayPal Donate button that you may click :)</p>
+            <a href="https://paypal.me/atierant"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Donate with PayPal">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></a>
+    </div>
 </div>

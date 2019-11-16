@@ -2,6 +2,9 @@
 layout: post
 title: "Compare two string and ignore (but not replace) accents. PHP"
 date: 2019-11-05
+subtitle: Not so simply to compare two strings....
+tags: [personal, professional, php, popular]
+share-img: "/assets/img/symfony_black_03.png"
 ---
 
     $removeAccents = function ($string) {

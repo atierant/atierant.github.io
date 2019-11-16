@@ -162,7 +162,7 @@ defaults:
       show-avatar: true
   - scope:
       type: "projects"
-      path: "pages/projects.html"
+      path: "pages/projects.md"
     values:
       layout: "project"
   - scope:

@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Search deanattali.com"
-css: "/css/search.css"
+title: "Search arnaud.tierant.me"
+css: "/assets/css/search.css"
 ---
 
-# Search deanattali.com
+# Search arnaud.tierant.me
 
 ### Using the Amazing Google
 
