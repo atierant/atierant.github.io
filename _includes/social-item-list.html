@@ -1,18 +1,9 @@
-<ul class="list-inline text-center footer-links">
-    {% assign filtered_links = site.data.SocialNetworks | where: 'category', include.category %}
-    {%- for element in filtered_links -%}
-    <li>
-        {%- if element[0] == 'rss' -%}
-        <a href="{{ '/feed.xml' | relative_url }}" title="{{ element.name }}">
-        {%- else -%}
-        <a href="{{element.baseURL}}{{ site.social-network-links[element[0]] }}" title="{{ element.name }}">
-        {%- endif -%}
-            <span class="fa-stack fa-lg" aria-hidden="true">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa {{ element.icon }} fa-stack-1x fa-inverse"></i>
-            </span>
-            <span class="sr-only">{{ element.name }}</span>
-        </a>
-    </li>
-    {%- endfor -%}
-</ul>
+<!--{site.data.Links | inspect }-->
+<!--{ assign filtered-links = site.data.Links | where_exp:"item", "item.category == include.category" }-->
+{% assign filtered-links = site.data.Links %}
+<h1>ICI</h1>
+    {% for link in filtered-links %}
+    {% for item in link %}
+    {{item[0]}} - {{item[1].baseURL}}
+    {% endfor %}
+    {% endfor %}

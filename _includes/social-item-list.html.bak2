@@ -1,0 +1,21 @@
+<!--{site.data.Links | inspect }-->
+{% assign filtered-links = site.data.Links | where_exp:"item", "item.category == include.category" %}
+<ul class="list-inline">
+<!--    {% assign filtered_links = site.data.Links | where: 'category', include.category %}-->
+    {%- for link in filtered-links -%}
+    <li>
+        {{ link[0] }}
+<!--        {%- if link[0] == 'rss' -%}-->
+<!--        <a href="{{ '/feed.xml' | relative_url }}" title="{{ link.name }}">-->
+<!--        {%- else -%}-->
+<!--        <a href="{{link.baseURL}}{{ site.social-network-links[link[0]] }}" title="{{ link.name }}">-->
+<!--        {%- endif -%}-->
+<!--            <span class="fa-stack fa-lg" aria-hidden="true">-->
+<!--              <i class="fa fa-circle fa-stack-2x"></i>-->
+<!--              <i class="fa {{ link.icon }} fa-stack-1x fa-inverse"></i>-->
+<!--            </span>-->
+<!--            <span class="sr-only">{{ link.name }}</span>-->
+<!--        </a>-->
+    </li>
+    {%- endfor -%}
+</ul>

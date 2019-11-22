@@ -1,0 +1,18 @@
+- email:
+    name: "Email me"
+    category: "general"
+    baseURL: "mailto:{{ site.author.email }}?subject=Hello from {{ site.url-pretty }}"
+    icon: "fa-envelope"
+    type: "solid"
+- rss:
+    name: "RSS"
+    category: "general"
+    baseURL: "{{ '/feed.xml' | relative_url }}"
+    icon: "fa-rss"
+    type: "solid"
+- linkedin:
+    name: "LinkedIn"
+    category: "professional_network"
+    baseURL: "https://linkedin.com/in/"
+    icon: "fa-linkedin"
+    type: "brand"
