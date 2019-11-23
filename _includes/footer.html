@@ -1,13 +1,125 @@
 <footer>
-    <div class="row">
-        <div class="col-sm-4">
-            <p><small>&copy; Arnaud Tiérant 2019</small></p>
-        </div>
-        <div class="col-sm-4">
-            <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-        </div>
-        <div class="col-sm-4">
-            <p class="pull-right"><small><a href="/about" title="About this site">About this site</a></small></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center footer-links">
+
+                    {% if site.author.email and site.footer-links-active.email %}
+                    <li>
+                        <a href="mailto:{{ site.author.email }}?subject=Hello from {{ site.url-pretty }}"
+                           title="Email me">
+                          <span class="fa-stack fa-lg">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                          </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.author.calendly and site.footer-links-active.calendly %}
+                    <li>
+                        <a href="https://calendly.com/{{ site.author.calendly }}" target="_blank"
+                           title="Schedule a meeting with me">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-calendar-check-o fa-stack-1x fa-inverse"></i>
+              </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.author.twitter and site.footer-links-active.twitter %}
+                    <li>
+                        <a href="https://twitter.com/{{ site.author.twitter }}" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.author.github and site.footer-links-active.github %}
+                    <li>
+                        <a href="https://github.com/{{ site.author.github }}" title="GitHub">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.author.facebook and site.footer-links-active.facebook %}
+                    <li>
+                        <a href="https://www.facebook.com/{{ site.author.facebook }}" title="Facebook">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.author.stackoverflow and site.footer-links-active.stackoverflow %}
+                    <li>
+                        <a href="https://stackoverflow.com/{{ site.author.stackoverflow }}" title="StackOverflow">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+              </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.author.linkedin and site.footer-links-active.linkedin %}
+                    <li>
+                        <a href="https://linkedin.com/{{ site.author.linkedin }}" title="LinkedIn">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.author.telephone and site.footer-links-active.telephone %}
+                    <li>
+                        <a href="tel:{{ site.author.telephone }}" title="Phone">
+              <span class="fa-stack fa-lg" aria-hidden="true">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-phone fa-stack-1x fa-inverse"></i>
+              </span>
+                            <span class="sr-only">Phone</span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.footer-links-active.rss %}
+                    <li>
+                        <a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="Subscribe to my blog">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+
+                <p class="copyright text-muted">
+                    &copy; {{ site.author.name }}
+                    &nbsp;&bull;&nbsp;
+                    {{ site.time | date: '%Y' }}
+
+                    {% if site.author.email %}
+                    &nbsp;&bull;&nbsp;
+                    <a href="mailto:{{ site.author.email }}?subject=Hello from {{ site.url-pretty }}">{{
+                        site.author.email }}</a>
+                    {% endif %}
+                </p>
+            </div>
         </div>
     </div>
-</footer> <!-- /footer -->
+</footer>
