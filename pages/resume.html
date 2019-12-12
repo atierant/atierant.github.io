@@ -1,0 +1,100 @@
+---
+layout: page
+title: My Resume
+permalink: resume
+css: "/assets/css/aboutme.css"
+ext-css:
+- "//www.w3schools.com/w3css/4/w3.css"
+ext-js:
+- "//unpkg.com/isotope-layout@2/dist/isotope.pkgd.min.js"
+js:
+- "/assets/js/isotope.js"
+---
+<!--<div class="cv w3-container w3-light-gray grid js-isotope"-->
+<!--     data-isotope-options='{ "itemSelector": ".element-item", "layoutMode": "fitRows" }'>-->
+    <div class="cv w3-container w3-light-gray">
+    <!--section class="pdf">
+        <a href="#" class="download" title="Download CV as PDF">Download CV</a>
+    </section-->
+
+<!--    <section class="menu">-->
+<!--        <div class="button-group filter-button-group">-->
+<!--            <button data-filter="*">show all</button>-->
+<!--            <button data-filter=".work-experience">work-experience</button>-->
+<!--            <button data-filter=".internship-experience">internship-experience</button>-->
+<!--            <button data-filter=".education">education</button>-->
+<!--            <button data-filter=".skills">skills</button>-->
+<!--            <button data-filter=".specializations">specializations</button>-->
+<!--            <button data-filter=".tools">tools</button>-->
+<!--            <button data-filter=".address">address</button>-->
+<!--        </div>-->
+<!--    </section>-->
+
+    <!-- WORK EXPERIENCE -->
+    <section class="work-experience">
+        <h1>Work Experience</h1>
+        <div class="work-item-list">
+            {% include work-item-list.html %}
+        </div>
+    </section>
+
+    <section class="internship-experience">
+        <h1>Internship Experience</h1>
+        <div class="internship-item-list">
+            {% include internship-item-list.html %}
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education">
+        <h1>Education</h1>
+        <div class="education-item-list">
+            {% include education-item-list.html %}
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills">
+        <h1>Skills</h1>
+        <h2>Some of the things I do well</h2>
+        <div class="skills-container">
+        </div>
+    </section>
+
+    <!-- SPECIALIZATIONS -->
+    <section class="specializations">
+        <h1>Specializations</h1>
+
+        <h2>Disciplines of computing</h2>
+        <ul>
+            <li>NTI Development, Semantic Web, Agility, technological watch, interoperability, testing & reporting.</li>
+        </ul>
+
+        <h2>Disciplines of bioinformatics</h2>
+        <ul>
+            <li>Microarray Management, Datamining, Sequence Analysis</li>
+            <li>Virology and viral genetics</li>
+            <li>Food and Industrial Microbiology, Food Industry Physics.</li>
+        </ul>
+    </section>
+
+    <!-- TOOLS -->
+    <section class="tools">
+        <h1>Tools</h1>
+        <h2>Some of the toolsets I am quite familiar with</h2>
+        <div class="skills-container">
+            <div class="skills-item"><a href="https://getrector.org">Rector</a></div>
+        </div>
+    </section>
+
+    <section class="address">
+        <address>
+            <strong></strong><br>
+            3 Allée des Missions<br>
+            34080 Montpellier, France<br>
+            <abbr title="phone">P:</abbr> (+33) 0621161793<br>
+<!--            <span class="obfuscate">rf.tnareit@duanra</span>-->
+            <span class="">arnaud@tierant.fr</span>
+        </address>
+    </section>
+</div>

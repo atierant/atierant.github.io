@@ -1,0 +1,11 @@
+{% assign sorted = (site.education-items | sort: 'role.start_date') | reverse %} <!-- retourne les éléments -->
+{% for education-item in sorted %}
+<div class="element-item education-item">
+    <div class="brand-logo-container">
+        <img class="brand-logo" src="{{education-item.organization.logo}}" alt="{{education-item.organization.name}}">
+    </div>
+    <h3>{{ education-item.role.role_name }}・<a href="{{ education-item.organization.url }}">{{education-item.organization.name}}</a>・{{ education-item.organization.place }}</h3>
+    <p class="date">{{ education-item.role.start_date }} – {{ education-item.role.end_date }}</p>
+    <p class="description">{{ education-item.role.description }}</p>
+</div>
+{% endfor %}
