@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "Compare two string and ignore (but not replace) accents. PHP"
+title: "Compare two string and ignore (but not replace) accents"
+baseline: One does not simply compare two strings...
+subtitle: Convert accents to their non-accented counterpart and then compare strings.
 date: 2019-11-05
-subtitle: One does not simply compare two strings...
 tags: [Personal, Professional, PHP, Popular]
 share-img: "/assets/img/logo/symfony_black_03.png"
 ---
 
-## Convert accents to their non-accented counterpart and then compare strings.
+<h2>{{page.subtitle}}</h2>
 
 {% highlight php %}
 $removeAccents = function (string $string) {
@@ -45,9 +46,9 @@ var_dump(array_map(
 ));
 {% endhighlight %}
 
-### Outputs
+<h3>Outputs</h3>
 
-~~~
+{% highlight shell %}
 array(9) {
   [0] =>
   string(5) "depot"
@@ -68,4 +69,4 @@ array(9) {
   [8] =>
   string(15) "depot-et-credit"
 }
-~~~
+{% endhighlight %}

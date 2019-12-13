@@ -1,22 +1,23 @@
 ---
 layout: post
 title: "Find the MySQL my.cnf location"
+baseline: One does not simply find the MySQL my.cnf location...
+subtitle: Locate the my.cnf configuration file.
 date: 2019-11-20
-subtitle: One does not simply find the MySQL my.cnf location...
 tags: [Professional, MySQL]
 share-img: "/assets/img/logo/mysql.png"
 ---
 
-## Locate the my.cnf configuration file.
+<h2>{{page.subtitle}}</h2>
 
 {% highlight bash %}
 $ mysqladmin --help
 {% endhighlight %}
 
-~~~
 Default options are read from the following files in the given order:
+{% highlight bash %}
 /etc/my.cnf
 /etc/mysql/my.cnf
 /usr/etc/my.cnf
 ~/.my.cnf
-~~~
+{% endhighlight %}

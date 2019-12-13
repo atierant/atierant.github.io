@@ -1,58 +1,60 @@
 ---
 layout: post
 title: "Manage Many Keys with SSH Config"
+baseline: One does not simply manage multiple SSH Keys...
+subtitle: Manage Many Keys with SSH Config
 date: 2019-11-25
-subtitle: One does not simply manage multiple SSH Keys...
 tags: [Professional, Git, SSH]
 share-img: "/assets/img/logo/ssh.png"
 ---
 
-## Manage Many Keys with SSH Config
+<h2>{{page.subtitle}}</h2>
 
-### ED25519 SSH keys
-Following best practices, you should always favor ED25519 SSH keys, since they are more secure and have better performance over the other types.  
-ED25519 SSH keys were introduced in OpenSSH 6.5, so any modern OS should include the option to create them.  
+<h3>ED25519 SSH keys</h3>
+<p>Following best practices, you should always favor ED25519 SSH keys, since they are more secure and have better
+  performance over the other types.
+  ED25519 SSH keys were introduced in OpenSSH 6.5, so any modern OS should include the option to create them. </p>
 
-### Manage a new SSH key pair
+<h3>Manage a new SSH key pair</h3>
 
-#### Generate a new ED25519 SSH key pair
-[source](https://gitlab.com/help/ssh/README.md)
+<h4>Generate a new ED25519 SSH key pair</h4>
+<a href="https://gitlab.com/help/ssh/README.md">source</a>
 {% highlight bash %}
 $ ssh-keygen -t ed25519 -C "email@example.com"
 {% endhighlight %}
 
-#### Adding an SSH key to your account
+<h4>Adding an SSH key to your account</h4>
 
-##### WSL / GNU/Linux (requires the xclip package)
+<h5>WSL / GNU/Linux (requires the xclip package)</h5>
 {% highlight bash %}
 $ xclip -sel clip < ~/.ssh/id_ed25519.pub
 {% endhighlight %}
 
-##### Git Bash on Windows
+<h5>Git Bash on Windows</h5>
 {% highlight bash %}
 $ cat ~/.ssh/id_ed25519.pub | clip
 {% endhighlight %}
 
-##### Paste it on SSH Keys in VCS Manager
+<h5>Paste it on SSH Keys in VCS Manager</h5>
 
-#### Manage config file for multiple keys
+<h4>Manage config file for multiple keys</h4>
 
-Open a terminal and use the following commands
-(replacing other_id_rsa with your private SSH key):
+<p>Open a terminal and use the following commands
+  (replacing other_id_rsa with your private SSH key):</p>
 
 {% highlight bash %}
 $ eval $(ssh-agent -s)
 $ ssh-add ~/.ssh/other_id_rsa
 {% endhighlight %}
 
-To retain these settings, you'll need to save them to a configuration file.
-For OpenSSH clients this is configured in the ~/.ssh/config file. In this
-file you can set up configurations for multiple hosts, like GitLab.com, your
-own GitLab instance, GitHub, Bitbucket, etc.
+<p>To retain these settings, you'll need to save them to a configuration file.
+  For OpenSSH clients this is configured in the ~/.ssh/config file. In this
+  file you can set up configurations for multiple hosts, like GitLab.com, your
+  own GitLab instance, GitHub, Bitbucket, etc.</p>
 
-Below are two example host configurations using their own SSH key:
+<p>Below are two example host configurations using their own SSH key:</p>
 
-~~~
+{% highlight bash %}
 # GitLab.com
 Host gitlab.com
   Preferredauthentications publickey
@@ -63,9 +65,9 @@ Host gitlab.company.com
   User git
   Preferredauthentications publickey
   IdentityFile ~/.ssh/id_ed25519
-~~~
+{% endhighlight %}
 
-## @see
+<h2>@see</h2>
 
 - [ssh Fichier de configuration du client (/etc/ssh/ssh_config et ~/.ssh/config)](http://www.octetmalin.net/linux/tutoriels/ssh-fichier-etc-ssh_config-configuration-machine-client.php)
 - [Manage Many Keys with SSH Config and KeePass](https://blog.wizardsoftheweb.pro/ssh-config-with-keeagent/)
