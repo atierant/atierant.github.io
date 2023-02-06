@@ -2,3 +2,6 @@ _site/
 .idea/
 .jekyll-cache
 *.bak
+.sass-cache
+.jekyll-metadata
+Gemfile.lock
