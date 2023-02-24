@@ -37,6 +37,6 @@ yarn-error.log
 .phpunit.result.cache
 ###< phpunit/phpunit ###
 
-/composer.lock
+
 /symfony.lock
-/package-lock.json
+
