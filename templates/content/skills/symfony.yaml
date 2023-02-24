@@ -1,0 +1,5 @@
+name: "Symfony"
+level: 80
+since: "2009-10-18"
+priority: 100
+versions: ["1.x", "2.x", "3.x", "4.x", "5.x", "6.x"]

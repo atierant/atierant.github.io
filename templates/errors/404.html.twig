@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block meta_title "Page not found" ~ ' | ' ~ parent() %}
+
+{% block meta %}
+    {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('404') }}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('404') }}
+{% endblock %}
+
+
+{% block content %}
+    <div class="404 text-center">
+        <div class="bg-outter"></div>
+        <div class="bg"></div>
+        <div class="bg-lines"></div>
+        <div class="flex">
+            <div class="heading top">
+                <h1>I'm really sorry but<br/>The page you need doesn't exist...</h1>
+            </div>
+            <div class="raditation">
+                <div class="outside">
+                    <div class="outter">
+                        <div class="middle"></div>
+                        <div class="triangle top"></div>
+                        <div class="triangle left"></div>
+                        <div class="triangle right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="heading">
+                <div class="box">
+                    <h1>HTTP Code</h1>
+                    <h2>404</h2>
+                </div>
+            </div>
+        </div>
+
+        <audio loop id="myAudio" src="{{ asset('/build/audio/fallout.mp3') }}"></audio>
+
+        <span class="button play" type="button"><i class="fa fa-play"></i></span>
+        <span class="button pause" type="button"><i class="fa fa-pause"></i></span>
+    </div>
+{% endblock %}

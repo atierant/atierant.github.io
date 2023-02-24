@@ -1,0 +1,40 @@
+{% set organization = content_get('App\\Model\\Resume\\Organization', item.organization) %}
+<article class="card w-100 mb-3 text-bg-light">
+    <div class="row g-0 h-100">
+        <div class="col-md-4 border-end">
+            <div class="d-flex flex-column h-100">
+{#                {% if organization.logo is defined and organization.logo is not empty and file_exists(organization.logo) %}#}
+{#                    {% set imgSrc = organization.logo %}#}
+{#                {% else %}#}
+{#                    {% set imgSrc = '/build/images/default_image.jpg' %}#}
+{#                {% endif %}#}
+{#                <img class="align-middle px-3" src="{{ imgSrc | glide_image_preset('article_thumbnail') }}"#}
+{#                     title="{{ article.title }}" alt="{{ article.title }}"/>#}
+{#                #}
+                <img class="img-fluid my-auto mx-4" src="{{ organization.logo }}"
+                     title="{{ organization.name }}" alt="{{ organization.shortDescription }}">
+            </div>
+        </div>
+        <div class="col-md-8 content">
+            <div class="card-body d-flex flex-column h-100">
+                <h2 class="article_header">{{ item.role }}・<a
+                        href="{{ organization.url }}">{{ organization.name }}</a>・{{ organization.place }}
+                </h2>
+                <p class="card-text date">{{ item.startDate | date(site.date_format) }}
+                    – {{ item.endDate | date(site.date_format) }}</p>
+                <p class="card-text description">{{ organization.shortDescription }}</p>
+                <p class="card-text role">{{ item.description }}</p>
+                <p class="card-text skills">
+                    {% for skill in item.skills %}
+                        <span class="badge rounded-pill bg-secondary">{{ skill }}</span>
+                    {% endfor %}
+                </p>
+                <p class="card-text text-end mt-auto">
+                    <a class="btn btn-outline-dark" href="{{ path('app_work_show', {
+                        'work': item.slug
+                    }) }}">See more...</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</article>

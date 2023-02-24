@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block meta_title article.title ~ ' | ' ~ parent() %}
+{% block meta_description article.description %}
+
+{% block og_image asset(article.image|glide_image_preset('opengraph_image')) %}
+{% block twitter_image absolute_url(asset(article.image|glide_image_preset('twitter_card'))) %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('article') }}
+{% endblock %}
+
+{% block breadcrumb %}
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <nav>
+                    <a class="btn btn-sm btn-outline-dark" href="{{ path('app_article_list') }}">← Back to
+                        the list</a>
+                </nav>
+                <ol>
+                    <li><a href="{{ path('home') }}">Home</a></li>
+                    <li>{{ article.title }}</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+{% endblock %}
+
+{% block content %}
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="article" class="article section-bg">
+
+        <article>
+            <div class="article_meta_wrapper">
+                <div class="container" style="position: relative; text-align: center;">
+                    <img
+                        src="{{ article.image|glide_image_preset('article_banner') }}"
+                        alt="{{ article.title }}"
+                        style="width: 100%; height: auto; max-height: 150px;opacity: 0.3"
+                    />
+                    <h1 class="justify-content-center"
+                        style="position: absolute; color: #000000; top: 50%; left: 50%; transform: translate(-50%, -50%);"
+                    >{{ article.title }}</h1>
+                </div>
+
+                <p class="post-meta">
+                    {% if article.authors is not empty %}
+                        by
+                        {% for author in article.authors %}
+                            {% set author = content_get('App\\Model\\Author', author) %}
+                            <span class="author vcard">
+                        <a href=" {{ author.website }}" title="Articles de {{ author.name }}" rel="author">
+                            {{ author.name }}
+                        </a>
+                    </span> |
+                        {% endfor %}
+                    {% endif %}
+
+                    <span
+                        class="published">{{ article.publishedAt | date(site.date_format) }}</span> | <a
+                        href="{{ path('app_category', {category: article.category}) }}"
+                        rel="category tag">{{ article.category }}</a>
+                </p>
+
+            </div>
+        </article>
+
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-2 text-center">
+
+                </div>
+            </div>
+
+            <div class="row gy-4 mt-2">
+                <div class="article-content">
+                    {% include 'pages/articles/toc.html.twig' with { toc: article.tableOfContent } only %}
+                    {{ article.content|raw }}
+                    <nav class="row">
+                        <div class="col align-self-end">
+                            {% if article.nextArticle %}
+                                {% set nextArticle = content_get('App\\Model\\Article\\Article', article.nextArticle) %}
+                                <a href="{{ path('app_article_show', { article: nextArticle.slug }) }}">
+                                    ➜ Next: « {{ nextArticle.title }} »
+                                </a>
+                            {% endif %}
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+{% endblock %}

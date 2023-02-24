@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% set page = content_get('App\\Model\\Page', 'projects') %}
+
+{% block meta_title page.title ~ ' | ' ~ parent() %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('projects') }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="page-title">Projects</h1>
+
+    <section class="projects">
+        <div class="row row-cols-1 row-cols-md-1 g-4">
+            {% set projects = content_list('App\\Model\\Project\\Project') %}
+
+            {% for item in projects|sort((a, b) => a.startDate <=> b.startDate)|reverse %}
+                <div class="col">
+                    {% include 'layout/card/project-card.html.twig' with {'project': item} %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

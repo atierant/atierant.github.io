@@ -1,208 +1,115 @@
 // Arnaud Tiérant 2019
 
-var main = {
+const main = {
+  scrollBoxCheck: false,
 
-    bigImgEl: null,
-    numImgs: null,
-    scrollBoxCheck: false,
+  init: function () {
+    // Réduction de la navbar au scroll
+    $(window).scroll(function () {
+      // Shorten the navbar after scrolling a little bit down
+      const $navbar = $('.navbar');
+      if ($navbar.offset().top > 50) {
+        $navbar.addClass('top-nav-short');
+      } else {
+        $navbar.removeClass('top-nav-short');
+      }
 
-    init: function () {
-
-        // Check if there is a scrollbox to initialize
-        if ($("#scroll-box").length > 0 && Cookies.get('daScrollboxSubscribe3') === undefined) {
-            if ($("article").length > 0) {
-                main.scrollBoxCheck = $("article").offset().top + $("article").height() * 0.4;
-                $("#scroll-box-close").click(function () {
-                    $("#scroll-box").fadeOut(500);
-                    $("body").removeClass("scroll-box-on");
-                    Cookies.set('daScrollboxSubscribe3', '1', {expires: 1});
-                });
-            }
+      // Check if the scrollbox should be made visible
+      if (main.scrollBoxCheck) {
+        if ($(window).scrollTop() > main.scrollBoxCheck) {
+          setTimeout(function () {
+            $('#scroll-box').fadeIn(500);
+          }, 500);
+          main.scrollBoxCheck = false;
+          $('body').addClass('scroll-box-on');
         }
+      }
+    });
 
-        $(window).scroll(function () {
-            // Shorten the navbar after scrolling a little bit down
-            if ($(".navbar").offset().top > 50) {
-                $(".navbar").addClass("top-nav-short");
-            } else {
-                $(".navbar").removeClass("top-nav-short");
-            }
+    // On mobile, hide the avatar when expanding the navbar menu
+    const $mainNavbar = $('#main-navbar');
+    $mainNavbar.on('show.bs.collapse', function () {
+      $('.navbar').addClass('top-nav-expanded');
+    });
+    $mainNavbar.on('hidden.bs.collapse', function () {
+      $('.navbar').removeClass('top-nav-expanded');
+    });
 
-            // Check if the scrollbox should be made visible
-            if (main.scrollBoxCheck) {
-                if ($(window).scrollTop() > main.scrollBoxCheck) {
-                    setTimeout(function () {
-                        $("#scroll-box").fadeIn(500);
-                    }, 500);
-                    main.scrollBoxCheck = false;
-                    $("body").addClass("scroll-box-on");
-                }
-            }
-
-        });
-
-        // On mobile, hide the avatar when expanding the navbar menu
-        $('#main-navbar').on('show.bs.collapse', function () {
-            $(".navbar").addClass("top-nav-expanded");
-        });
-        $('#main-navbar').on('hidden.bs.collapse', function () {
-            $(".navbar").removeClass("top-nav-expanded");
-        });
-
-        // On mobile, when clicking on a multi-level navbar menu, show the child links
-        $('#main-navbar').on("click", ".navlinks-parent", function (e) {
-            var target = e.target;
-            $.each($(".navlinks-parent"), function (key, value) {
-                if (value == target) {
-                    $(value).parent().toggleClass("show-children");
-                } else {
-                    $(value).parent().removeClass("show-children");
-                }
-            });
-        });
-
-        // Ensure nested navbar menus are not longer than the menu header
-        var menus = $(".navlinks-container");
-        if (menus.length > 0) {
-            var navbar = $("#main-navbar ul");
-            var fakeMenuHtml = "<li class='fake-menu' style='display:none;'><a></a></li>";
-            navbar.append(fakeMenuHtml);
-            var fakeMenu = $(".fake-menu");
-
-            $.each(menus, function (i) {
-                var parent = $(menus[i]).find(".navlinks-parent");
-                var children = $(menus[i]).find(".navlinks-children a");
-                var words = [];
-                $.each(children, function (idx, el) {
-                    words = words.concat($(el).text().trim().split(/\s+/));
-                });
-                var maxwidth = 0;
-                $.each(words, function (id, word) {
-                    fakeMenu.html("<a>" + word + "</a>");
-                    var width = fakeMenu.width();
-                    if (width > maxwidth) {
-                        maxwidth = width;
-                    }
-                });
-                $(menus[i]).css('min-width', maxwidth + 'px')
-            });
-
-            fakeMenu.remove();
-        }
-
-        // show the big header image
-        main.initImgs();
-
-        // set up Google Analytics event tracking
-        if (typeof ga === "function") {
-            $("a[data-ga-event]").click(function () {
-                ga('send', 'event', $(this).data("ga-category"), $(this).data("ga-action"), $(this).data("ga-label"));
-            });
-        }
-    },
-
-    initImgs: function () {
-        // If the page was large images to randomly select from, choose an image
-        if ($("#header-big-imgs").length > 0) {
-            main.bigImgEl = $("#header-big-imgs");
-            main.numImgs = main.bigImgEl.attr("data-num-img");
-
-            // 2fc73a3a967e97599c9763d05e564189
-            // set an initial image
-            var imgInfo = main.getImgInfo();
-            var src = imgInfo.src;
-            var desc = imgInfo.desc;
-            main.setImg(src, desc);
-
-            // For better UX, prefetch the next image so that it will already be loaded when we want to show it
-            var getNextImg = function () {
-                var imgInfo = main.getImgInfo();
-                var src = imgInfo.src;
-                var desc = imgInfo.desc;
-
-                var prefetchImg = new Image();
-                prefetchImg.src = src;
-                // if I want to do something once the image is ready: `prefetchImg.onload = function(){}`
-
-                setTimeout(function () {
-                    var img = $("<div></div>").addClass("big-img-transition").css("background-image", 'url(' + src + ')');
-                    $(".intro-header.big-img").prepend(img);
-                    setTimeout(function () {
-                        img.css("opacity", "1");
-                    }, 50);
-
-                    // after the animation of fading in the new image is done, prefetch the next one
-                    //img.one("transitioned webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-                    setTimeout(function () {
-                        main.setImg(src, desc);
-                        img.remove();
-                        getNextImg();
-                    }, 1000);
-                    //});
-                }, 6000);
-            };
-
-            // If there are multiple images, cycle through them
-            if (main.numImgs > 1) {
-                getNextImg();
-            }
-        }
-    },
-
-    getImgInfo: function () {
-        var randNum = Math.floor((Math.random() * main.numImgs) + 1);
-        var src = main.bigImgEl.attr("data-img-src-" + randNum);
-        var desc = main.bigImgEl.attr("data-img-desc-" + randNum);
-
-        return {
-            src: src,
-            desc: desc
-        }
-    },
-
-    setImg: function (src, desc) {
-        $(".intro-header.big-img").css("background-image", 'url(' + src + ')');
-        if (typeof desc !== typeof undefined && desc !== false) {
-            $(".img-desc").text(desc).show();
+    // On mobile, when clicking on a multi-level navbar menu, show the child links
+    $mainNavbar.on('click', '.navlinks-parent', function (e) {
+      const target = e.target;
+      $.each($('.navlinks-parent'), function (key, value) {
+        if (value == target) {
+          $(value).parent().toggleClass('show-children');
         } else {
-            $(".img-desc").hide();
+          $(value).parent().removeClass('show-children');
         }
-    },
+      });
+    });
 
-    // get the GET parameters in the URL
-    getQueryParams: function () {
-        var qs = document.location.search.replace(/\?/g, "&").split("+").join(" ");
+    // Ensure nested navbar menus are not longer than the menu header
+    const menus = $('.navlinks-container');
+    if (menus.length > 0) {
+      const navbar = $('#main-navbar ul');
+      const fakeMenuHtml = '<li class=\'fake-menu\' style=\'display:none;\'><a></a></li>';
+      navbar.append(fakeMenuHtml);
+      const fakeMenu = $('.fake-menu');
 
-        var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+      $.each(menus, function (i) {
+        const parent = $(menus[i]).find('.navlinks-parent');
+        const children = $(menus[i]).find('.navlinks-children a');
+        let words = [];
+        $.each(children, function (idx, el) {
+          words = words.concat($(el).text().trim().split(/\s+/));
+        });
+        let maxwidth = 0;
+        $.each(words, function (id, word) {
+          fakeMenu.html('<a>' + word + '</a>');
+          const width = fakeMenu.width();
+          if (width > maxwidth) {
+            maxwidth = width;
+          }
+        });
+        $(menus[i]).css('min-width', maxwidth + 'px');
+      });
 
-        while (tokens = re.exec(qs)) {
-            params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
-        }
-
-        return params;
-    },
-
-    // Add Twitter info to AddThis buttons
-    initAddThis: function () {
-        if (typeof addthis !== "undefined") {
-            var trim = function (s, n) {
-                return (s.length > n) ? s.substr(0, n - 3) + '...' : s;
-            };
-            addthis.addEventListener('addthis.ready', function () {
-                if ($("meta[name='twitter:title'").length > 0) {
-                    var addthis_share = window.addthis_share || {};
-                    $.extend(addthis_share, {
-                        passthrough: {
-                            twitter: {
-                                via: "daattali",
-                                text: trim($("meta[name='twitter:title'").attr("content"), 93) + " #rstats"
-                            }
-                        }
-                    });
-                }
-            });
-        }
+      fakeMenu.remove();
     }
+
+    // set up Google Analytics event tracking
+    if (typeof ga === 'function') {
+      $('a[data-ga-event]').click(function () {
+        ga('send', 'event', $(this).data('ga-category'), $(this).data('ga-action'), $(this).data('ga-label'));
+      });
+    }
+  },
+
+  // get the GET parameters in the URL
+  getQueryParams: function () {
+    const qs = document.location.search.replace(/\?/g, '&').split('+').join(' ');
+
+    const params = {};
+    let tokens;
+    const re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs)) {
+      params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+  }
 };
 
 document.addEventListener('DOMContentLoaded', main.init);
+
+window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
+
+(function () {
+  /**
+   * Animation on scroll
+   */
+  window.addEventListener('load', () => {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+  });
+})();

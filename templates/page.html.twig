@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% set page = content_get('App\\Model\\Page', 'page') %}
+
+{% block meta_title page.title ~ ' | ' ~ parent() %}
+
+{% block meta %}
+    {{ parent() }}
+{% endblock %}
+
+
+{% block meta_general %}
+    {% if page is defined and page.metaDescription is defined and page.metaDescription is not empty %}
+        {{ page.metaDescription }}
+    {% elseif page is defined and page.subtitle is defined and page.subtitle is not empty %}
+        {{ page.subtitle }}
+    {% elseif page is defined %}
+        {{ page.content | e | u.truncate(50, '...', false) }}
+    {% else %}
+        parent()
+    {% endif %}
+{% endblock %}
+
+{% block meta_og_title %}
+    {% if page is defined and page.metatitle is defined and page.metatitle is not empty %}
+        {{ page.metatitle }}
+    {% elseif page is defined and page.title is defined and page.title is not empty %}
+        {{ page.title }}
+    {% else %}
+        parent()
+    {% endif %}
+{% endblock %}
+
+{% block meta_og_description %}
+    {% if page is defined and page.metaDescription is defined and page.metaDescription is not empty %}
+        {{ page.metaDescription }}
+    {% elseif page is defined and page.subtitle is defined and page.subtitle is not empty %}
+        {{ page.subtitle }}
+    {% elseif page is defined %}
+        {{ page.content | u.truncate(50, '...', false) }}
+    {% else %}
+        parent()
+    {% endif %}
+{% endblock %}
+
+{% block twitter_title %}
+    {% if page is defined and page.metatitle is defined and page.metatitle is not empty %}
+        {{ page.metatitle }}
+    {% elseif page.title is defined and page.title is not empty %}
+        {{ page.title }}
+    {% else %}
+        parent()
+    {% endif %}
+{% endblock %}
+
+{% block twitter_description %}
+    {% if page is defined and page.metaDescription is defined and page.metaDescription is not empty %}
+        {{ page.metaDescription }}
+    {% elseif page.subtitle is defined and page.subtitle is not empty %}
+        {{ page.subtitle }}
+    {% elseif page is defined %}
+        {{ page.content | e | u.truncate(50, '...', false) }}
+    {% else %}
+        parent()
+    {% endif %}
+{% endblock %}
+
+
+        {#    {% if page.share-img %} #}
+        {#        <meta name="twitter:image" content="{{ page.share-img }}"/> #}
+        {#        {% elseif site.avatar %} #}
+        {#        <meta name="twitter:image" content="{{ path(site.avatar, {}, true) }}"/> #}
+        {#    {% endif %} #}
+
+
+{% block content %}
+
+    {{ page.content }}
+
+    <nav>
+        <a href="{{ path('home') }}">< Back to home</a>
+    </nav>
+{% endblock %}

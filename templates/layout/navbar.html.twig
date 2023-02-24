@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            {%- if site.title_img is defined -%}
+                <a class="navbar-brand navbar-brand-logo" href="{{ path('home') }}">
+                    <img src="{{ site.title_img }}" alt="Title image"/>
+                </a>
+            {%- else -%}
+                <a class="navbar-brand" href="{{ path('home') }}">{{ site.title }}</a>
+            {%- endif -%}
+            <button type="button" class="navbar-toggler"
+                    data-bs-toggle="collapse" data-bs-target="#main-navbar"
+                    aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="navbar-nav ms-auto">
+                {%- for key, link in site.navbar_links -%}
+                    {%- if link.first is defined %}
+                        <li class="navlinks-container">
+                            <a class="navlinks-parent" href="javascript:void(0)">{{ key }}</a>
+                            <div class="navlinks-children">
+                                {%- for childlink in link -%}
+                                    {%- for linkparts in childlink %}
+                                        <a href="{{ linkparts[1] }}">{{ linkparts[0] }}</a>
+                                    {%- endfor -%}
+                                {%- endfor %}
+                            </div>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            {% set url = path(app.request.attributes.get('_route'),
+                                app.request.attributes.get('_route_params')) %}
+                            {% if link in url %}
+                                <a class="nav-link active" href="{{ path(link) }}">{{ key }}</a>
+                            {%- else -%}
+                                <a class="nav-link passive" href="{{ path(link) }}">{{ key }}</a>
+                            {%- endif -%}
+                        </li>
+                    {%- endif -%}
+                {%- endfor -%}
+
+                {% if site.nav_search is defined %}
+                    <li class="nav-item">
+                        <a href="{{ path('page', {'slug': site.nav_search}) }}" class="nav-link nav-search-link" title="Search">
+                            <span class="fa fa-search nav-search-icon"></span>
+                            <span class="nav-search-text">Search</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

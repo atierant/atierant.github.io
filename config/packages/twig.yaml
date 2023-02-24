@@ -1,0 +1,68 @@
+twig:
+    strict_variables: true
+    default_path: '%kernel.project_dir%/templates'
+    globals:
+        site:
+            title: "Arnaud Tiérant"
+            subtitle: "Tech Lead @Sogeti, living and working in Montpellier, France."
+            description: "Here's a tiny little website about me, my realizations and my thoughts..."
+            date_format_full: "Y-m-d H:i"
+            date_format: "Y-m-d"
+            twitter:
+                name: "atierant"
+                creator: "atierant"
+
+            # --- General options --- #
+
+            name: Arnaud Tiérant, Software Engineer @Sogeti
+
+            # --- Navigation bar options --- #
+
+            # List of links in the navigation bar
+            # Nom de la route Symfony
+            navbar_links:
+                Articles: "app_article_list"
+                My resume: "resume"
+                My Projects: "projects"
+#                Notes: "notes"
+                Find me: "contact"
+            nav_search: "search"
+
+            # --- Background colour/image options --- #
+
+            # Personalize the colors in your website. Colour values can be any valid CSS colour
+
+            navbar_col: "#F5F5F5"
+            navbar_text_col: "#404040"
+            navbar_children_col: "#F5F5F5"
+            page_col: "#FFFFFF"
+            link_col: "#008AFF"
+            hover_col: "#0085A1"
+            footer_col: "#F5F5F5"
+            footer_text_col: "#777777"
+            footer_link_col: "#404040"
+
+            # --- Footer options --- #
+
+            # Change all these values or delete the ones you don't want.
+            # Important: you must keep the "name" parameter, everything else you can remove
+            author:
+                name: Arnaud Tiérant
+                email: "arnaud@tierant.fr"
+                facebook: arnaud.tierant
+                github: atierant
+                twitter: atierant
+                linkedin: arnaudtierant
+                instagram: _tipunk
+                stackoverflow: "users/1879003/arnaud-tiérant"
+
+            # --- Misc --- #
+
+            permalink: /notes/:year/:month/:day/:title
+
+            # Use tags index page and make tags on each post clickable
+            link_tags: true
+
+when@test:
+    twig:
+        strict_variables: true

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function() {
 
     init_document_ready();
 
@@ -44,6 +44,3 @@ function create_colorSwatch() {
     });
 
 }
-
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-

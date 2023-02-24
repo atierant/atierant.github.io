@@ -1,0 +1,236 @@
+/*--------------------------------------------------------------
+# Main SCSS
+--------------------------------------------------------------*/
+
+@import 'highlight.js/styles/dark.css';
+@import './skeleton-theme/base/variables';
+
+/* --- Variables --- */
+$navbar_col: #F5F5F5;
+$navbar_text_col: #404040;
+$navbar_children_col: #F5F5F5;
+$page_col: #f2fafd;
+$page_img: "'~scssRootDir/../images/hero_background.jpg";
+$link_col: #008AFF;
+$hover_col: #0085A1;
+$footer_col: #F5F5F5;
+$footer_text_col: #777777;
+$footer_link_col: #404040;
+$bs-pagination-active-bg: #173b6c;
+$bs-pagination-active-border-color: #149ddd;
+
+/* --- General --- */
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Merriweather', 'Times New Roman', serif;
+  font-size: 18px;
+  color: #404040;
+  position: relative;
+  //background-image: url($page_img);
+  //background-attachment: fixed;
+  margin: 0;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background: radial-gradient(circle, rgba(23,59,108,0.9) 0%, rgba(126,31,134,0.9) 100%), url("../images/main_background.jpg") no-repeat fixed top center;
+}
+
+p {
+  line-height: 1.5;
+  margin: 5px 0;
+
+  a {
+    text-decoration: underline;
+    color: $link_col;
+  }
+}
+
+code {
+  word-break: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none;
+  color: $link_col;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: #0085a1;
+}
+
+blockquote {
+  color: #808080;
+  font-style: italic;
+}
+
+hr.small {
+  max-width: 100px;
+  margin: 15px auto;
+  border-width: 4px;
+  border-color: inherit;
+  border-radius: 3px;
+}
+
+::-moz-selection {
+  color: white;
+  text-shadow: none;
+  background: #0085a1;
+}
+
+::selection {
+  color: white;
+  text-shadow: none;
+  background: #0085a1;
+}
+
+img::selection {
+  color: white;
+  background: transparent;
+}
+
+img::-moz-selection {
+  color: white;
+  background: transparent;
+}
+
+@import "fragments/back-to-top";
+@import "fragments/header";
+
+#main {
+  margin-left: 300px;
+  padding-top: 89px;
+  height: 100%;
+}
+
+@media (max-width: 1199px) {
+  #header {
+    left: -300px;
+  }
+
+  #main {
+    margin-left: 0;
+    padding-top: 56px;
+  }
+}
+
+@import "fragments/sidebar";
+@import "fragments/navbar";
+@import "fragments/section";
+@import "fragments/hero";
+@import "fragments/about";
+@import "fragments/skills";
+@import "fragments/resume";
+@import "fragments/portfolio";
+@import "fragments/portfolio-details";
+@import "fragments/services";
+@import "fragments/unused/testimonials";
+@import "fragments/contact";
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@import "fragments/breadcrumbs";
+@import "fragments/sidebar-footer";
+@import "fragments/footer";
+@import "fragments/share";
+
+#header-gh-btns {
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 500px) {
+  #header-gh-btns > iframe {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+@import "fragments/code";
+@import "fragments/tags";
+
+.linked-section {
+  padding-top: 60px;
+  margin-top: -25px;
+}
+
+/* Obfuscation de l'e-mail */
+.obfuscate {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+.fa-sm {
+  font-size: 0.63em;
+}
+
+.bg-color {
+  background-color: #8CA0D7;
+  width: fit-content;
+  padding: 5px;
+}
+
+.svg-inline--fa.fa-stack-2x {
+  width: 100% !important;
+}
+
+p.role::before {
+  //content: 'Rôle : ';
+}
+
+h1.page-title {
+  color: $color-text-light;
+  &:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: $color-quaternary;
+    transform: translateY(200%);
+  }
+}
+
+iframe[name="acclaim-badge"] {
+  background-color: #FFFFFF;
+}
+
+#background {
+  position: fixed;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+.pink-glow {
+  animation: glow 1s ease-in-out infinite alternate;
+  box-shadow: 0 0 60px 30px #fff, 0 0 100px 60px #f0f, 0 0 100px 60px #f0f, 0 0 140px 90px #0ff; /* outer cyan */
+}

@@ -1,0 +1,78 @@
+$flipCardFrontImage: '/assets/images/arnaud/mariage_mairie.jpg';
+$flipCardBackImage: '/assets/images/arnaud/lampy_jpo_arboretum.jpg';
+
+.flip-card {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  text-align: center;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+// Retournement de la carte au survol
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  .flip-card-image {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    border: solid 5px #cecece;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+  }
+}
+
+.flip-card-front .flip-card-image {
+  background-image: url($flipCardFrontImage);
+}
+
+.flip-card-back .flip-card-image {
+  background-image: url($flipCardBackImage);
+}
+
+.flip-card-front:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: transparent;
+}
+
+.flip-card-front .flip-card-content {
+  z-index: 1;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front {
+  transition: opacity 2s;
+}
+
+.flip-card:hover .flip-card-front {
+  opacity: 0;
+}

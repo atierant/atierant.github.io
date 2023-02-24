@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+{% set title = "My Resume" %}
+{% block meta_title 'My Resume' ~ ' | ' ~ parent() %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('resume') }}
+    {{ encore_entry_link_tags('articles') }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="page-title">Resume</h1>
+
+    <!--<div class="cv w3-container w3-light-gray grid js-isotope"-->
+    <!--     data-isotope-options='{ "itemSelector": ".element-item", "layoutMode": "fitRows" }'>-->
+    <div class="cv container">
+        <!--section class="pdf">
+            <a href="#" class="download" title="Download CV as PDF">Download CV</a>
+        </section-->
+
+        <!-- WORK EXPERIENCE -->
+        <section class="work-experience articles">
+            <div class="section-title">
+                <h2>Work Experience</h2>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-1 g-4">
+                {% set workItems = content_list('App\\Model\\Resume\\Work') %}
+
+                {% for item in workItems|sort((a, b) => a.startDate <=> b.startDate)|reverse %}
+                    <div class="col">
+                        {% include 'layout/card/work-card.html.twig' with {'item': item} %}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="internship-experience articles">
+            <div class="section-title">
+                <h2>Internship Experience</h2>
+            </div>
+            <div class="row row-cols-1 row-cols-md-1 g-4">
+                {% set internshipItems = content_list('App\\Model\\Resume\\Internship') %}
+
+                {% for item in internshipItems|sort((a, b) => a.startDate <=> b.startDate)|reverse %}
+                    <div class="col">
+                        {% include 'layout/card/internship-card.html.twig' with {'item': item} %}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="education-experience articles">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="row row-cols-1 row-cols-md-1 g-4">
+                {% set educationItems = content_list('App\\Model\\Resume\\Education') %}
+
+                {% for item in educationItems|sort((a, b) => a.startDate <=> b.startDate)|reverse %}
+                    <div class="col">
+                        {% include 'layout/card/education-card.html.twig' with {'item': item} %}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- SPECIALIZATIONS -->
+        <section class="specializations">
+            <div class="section-title">
+                <h2>Specializations</h2>
+            </div>
+            <div class="row row-cols-1 row-cols-md-1 g-4">
+                <div class="col section-bg">
+                    <div class="section-subtitle">
+                        <h3>Disciplines of computing</h3>
+                    </div>
+                    <p>NTI Development, Semantic Web, Agility, technological watch, interoperability, testing &
+                        reporting.
+                    </p>
+                </div>
+                <div class="col section-bg">
+                    <div class="section-subtitle">
+                        <h3>Disciplines of bioinformatics</h3>
+                    </div>
+                    <ul>
+                        <li>Microarray Management, Datamining, Sequence Analysis</li>
+                        <li>Virology and viral genetics</li>
+                        <li>Food and Industrial Microbiology, Food Industry Physics.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOLS -->
+        <section class="tools">
+            <div class="section-title">
+                <h2>Tools</h2>
+            </div>
+            <div class="row row-cols-1 row-cols-md-1 g-4">
+                {% set tools = content_list('App\\Model\\Resume\\Tool') %}
+
+                {% for item in tools|sort((a, b) => a.startDate <=> b.startDate)|reverse %}
+                    <div class="col">
+                        {% include 'layout/card/tool-card.html.twig' with {'tool': item} %}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

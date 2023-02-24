@@ -1,0 +1,41 @@
+{% set page = {show_share: true, title: 'Mon titre'} %}
+{% if page.show_share or true %}
+    <div class="share-section">
+        <h1 class="share-title">Liked what you read?</h1>
+
+        {% if page.show_share %}
+            <div class="share-buttons">
+                {% set urlMessage = app.request.baseUrl ~ '/contact' %}
+                {% set myBaseUrl = app.request.schemeAndHttpHost ~ app.request.getBaseUrl %}
+                {% set currentUrl = myBaseUrl ~ app.request.getPathInfo %}
+
+{#                {% set urlfb = 'https://www.facebook.com/dialog/feed?app_id='~site.fb_app_id~'&link='~currentUrl ~'&name='~ page.title~'&caption='~myBaseUrl~'&redirect_uri='~currentUrl~'?message=Thanks for sharing!' %}#}
+{#                {% if page.image %}#}
+{#                    {% set urlfb = urlfb ~'&picture='~ page.image %}#}
+{#                {% endif %}#}
+
+                {% set urltwitter  = 'https://twitter.com/intent/tweet?url='~ currentUrl ~'&via=atierant' %}
+                {% set maxlength = 102 %}
+                {% set urltwitter = urltwitter ~ '&text=' ~ page.title|u.truncate(maxlength) %}
+
+                <a href="{{ urlMessage }}" data-ga-event=1 data-ga-category="share" data-ga-action="message"
+                   data-ga-label="{{ myBaseUrl }}">
+                    Let me know
+                </a>
+
+                {#        <a href="{{ urlfb }}" data-ga-event=1 data-ga-category="share" data-ga-action="facebook" data-ga-label="{{ myBaseUrl }}"> #}
+                {#          Share on Facebook #}
+                {#        </a> #}
+
+                <a href="https://www.paypal.me/atierant/10" data-ga-event=1 data-ga-category="share"
+                   data-ga-action="donate" data-ga-label="{{ myBaseUrl }}">
+                    Support me
+                </a>
+                <a href="{{ urltwitter }}" data-ga-event=1 data-ga-category="share" data-ga-action="twitter"
+                   data-ga-label="{{ myBaseUrl }}">
+                    Tweet it
+                </a>
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="{% block meta_locale app.request.locale %}" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="Olw-Lz5_ZloeTZAzOsFQlJpEfJ5HhLRBgXhc8WWr8mA"/>
+    <title>{% block meta_title site.title %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+
+    {% block meta %}
+        <meta name="description" content="{% block meta_description site.description %}"/>
+        <link rel="canonical" href="{{ app.request.uri }}"/>
+
+        <meta name="author" content="{% block meta_site_author site.author.name %}"/>
+        <meta name="keywords" content="{% block meta_keywords '' %}">
+
+        <!-- Flux RSS -->
+        <link rel="alternate" type="application/rss+xml"
+              title="{{ site.title }} | {{ site.description }}"
+              href="#"
+        />
+        {# href="{{ path('/feed.xml', {}, true) }}" #}
+
+        <!-- Facebook OpenGraph tags -->
+        <meta property="og:title" content="{% block og_title block('meta_title') %}"/>
+        <meta property="og:locale" content="{% block og_locale block('meta_locale') %}"/>
+        <meta property="og:description" content="{% block og_description block('meta_description') %}"/>
+        <meta property="og:url" content="{{ app.request.uri }}"/>
+        <meta property="og:site_name" content="{{ site.title }}"/>
+        <meta property="og:type" content="{% block meta_og_type 'website' %}"/>
+        {% set og_image %}{% block og_image %}{{ asset("/build/images/arnaud/mariage_mairie.jpg") }}{% endblock %}{% endset %}
+        {% if og_image|default(false) %}
+            <meta property="og:image" content="{{ og_image }}">
+        {% endif %}
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="{% block twitter_card_type 'summary_large_image' %}">
+        <meta property="twitter:title" content="{% block twitter_title block('meta_title') %}">
+        <meta property="twitter:description" content="{% block twitter_description block('meta_description') %}">
+        <meta property="twitter:site" content="@{{ site.twitter.name }}">
+        <meta property="twitter:creator" content="@{{ site.twitter.creator }}">
+        {% set twitter_image %}{% block twitter_image %}{% endblock %}{% endset %}
+        {% if twitter_image|default(false) %}
+            <meta property="twitter:image" content="{{ twitter_image }}">
+        {% endif %}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('fonts') }}
+        {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_link_tags('flip-card') }}
+        {{ encore_entry_link_tags('portfolio') }}
+    {% endblock %}
+</head>
+<body
+{#    {{ stimulus_controller('swup_plugins')#}
+{#    | stimulus_controller('symfony/ux-swup/swup', {#}
+{#        cache: true,#}
+{#        animateHistoryBrowsing: true,#}
+{#        debug: app.debug,#}
+{#        linkSelector: [#}
+{#            'a[href^="' ~ app.request.schemeAndHttpHost ~ app.request.basePath ~ '"]',#}
+{#            'a[href^="/"]',#}
+{#        ]|map(s => s ~ ':not([data-no-swup]):not([target="_blank"])')|join(',')#}
+{#    }) }}#}
+>
+<canvas id="background"></canvas>
+
+<!-- ======= Mobile nav toggle button ======= -->
+<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+<div class="main-container" id="swup">
+
+    {% block nav %}
+        {% include 'layout/navbar.html.twig' %}
+    {% endblock %}
+
+    <!-- ======= Header ======= -->
+    {% block sidebar %}
+        {% include 'layout/sidebar.html.twig' %}
+    {% endblock %}
+
+    <main id="main" class="pink-glow">
+        {% block main_content %}
+            {% block breadcrumb %}{% endblock %}
+            <section class="inner-page">
+                <div class="container">
+                    {% block content %}{% endblock %}
+                </div>
+            </section>
+        {% endblock %}
+    </main>
+
+    <!-- ======= Sidebar Footer ======= -->
+    {% block sidebar_footer %}
+        {% include 'layout/sidebar-footer.html.twig' %}
+    {% endblock %}
+
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+</div>
+<!-- ======= Footer ======= -->
+{% block footer %}
+    {% include 'layout/footer.html.twig' %}
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('portfolio') }}
+{% endblock %}
+</body>
+</html>
