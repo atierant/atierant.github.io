@@ -1,0 +1,6 @@
+name: "PHP"
+level: 80
+since: "1999-10-01"
+versions: [ "5.x", "7.x", "8.x"]
+priority: 100
+description: "10 expériences chez Sogeti et dans 1 autre entreprise"

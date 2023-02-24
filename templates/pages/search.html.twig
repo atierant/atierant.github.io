@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% set page = content_get('App\\Model\\Page', 'search') %}
+
+{% block meta_title page.title ~ ' | ' ~ parent() %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('search') }}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('search') }}
+{% endblock %}
+
+{% block content %}
+    {{ page.content|raw }}
+{% endblock %}

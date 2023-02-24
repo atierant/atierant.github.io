@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('homepage') }}
+{% endblock %}
+
+{% block main_content %}
+    <!-- ======= Hero Section ======= -->
+    {% include 'pages/home/section/hero.html.twig' %}
+
+    <!-- ======= About Section ======= -->
+    {% include 'pages/home/section/about.html.twig' %}
+
+    <!-- BIO -->
+    {% include 'pages/home/section/bio.html.twig' %}
+
+    <!-- ======= Facts Section ======= -->
+    {#    {% include 'pages/home/section/facts.html.twig' %} #}
+
+    <!-- ======= Skills Section ======= -->
+    {% include 'pages/home/section/skills.html.twig' %}
+
+    <!-- ======= Resume Section ======= -->
+    {% include 'pages/home/section/resume.html.twig' %}
+
+    <!-- ======= Portfolio Section ======= -->
+    {#    {% include 'pages/home/section/portfolio.html.twig' %} #}
+
+    <!-- ======= Services Section ======= -->
+    {#    {% include 'pages/home/section/services.html.twig' %} #}
+
+    <!-- ======= Testimonials Section ======= -->
+    {#    {% include 'pages/home/section/testimonials.html.twig' %} #}
+
+    <!-- ======= Contact Section ======= -->
+    {% include 'pages/home/section/contact.html.twig' %}
+
+    <!-- WEBSITE TECH -->
+    {% include 'pages/home/section/tech.html.twig' %}
+{% endblock %}

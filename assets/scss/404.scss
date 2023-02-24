@@ -1,0 +1,294 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700,300);
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+$black: #262626;
+$green: #C7DAC7;
+$yellow: $green;
+
+$animation: 5s;
+$offset: 1.5rem;
+$bdrs: #{50%} / #{20%};
+
+
+@mixin blink($css,$name){
+  @keyframes #{$name} {
+    0% {
+      #{$css}: $green;
+    }
+    10% {
+      #{$css}: darken($green, 7.5%);
+    }
+
+    20% {
+      #{$css}: $green;
+    }
+    30% {
+      #{$css}: darken($green, 15%);
+    }
+
+    40% {
+      #{$css}: $green;
+    }
+    50% {
+      #{$css}: darken($green, 5%);
+    }
+
+    60% {
+      #{$css}: $green;
+    }
+    70% {
+      #{$css}: darken($green, 10%);
+    }
+
+    80% {
+      #{$css}: $green;
+    }
+    90% {
+      #{$css}: darken($green, 7.5%);
+    }
+
+    100% {
+      #{$css}: $green;
+    }
+
+  }
+}
+
+html,body {
+  width: 100%;
+  height: 100%;
+}
+body {;
+
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: $bdrs;
+  z-index: 10;
+  min-height: 100%
+}
+
+.bg-outter {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  &:before {
+    content: '';
+    border-radius: $bdrs;
+    width: calc(100% - #{$offset * 2});
+    height: calc(100% - #{$offset * 2});
+    position: fixed;
+    top: $offset;
+    left: $offset;
+    box-shadow: 0 100px 0 300px, 0 -100px 0 -300px;
+  }
+}
+
+.bg {
+  width: calc(100% - #{$offset * 2});
+  height: calc(100% - #{$offset * 2});
+  background-color: $green;
+  animation: pulse-bg $animation linear infinite;
+  position: fixed;
+  top: $offset;
+  left: $offset;
+  z-index: 10;
+  border-radius: $bdrs;
+}
+
+.bg-lines {
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(#555, .25),
+      rgba(#555, .25) 4px,
+      rgba(#eee, 0) 4px,
+      rgba(#eee, 0) 5px
+  );
+  width: calc(100% - #{$offset * 2});
+  height: calc(100% - #{$offset * 2});
+  position: fixed;
+  top: $offset;
+  left: $offset;
+  z-index: 50;
+  border-radius: $bdrs;
+  //overflow: auto;
+
+  &:after {
+    content: '';
+    box-shadow: inset 0 0 100px 30px $black;
+    width: calc(100% - #{$offset * 2});
+    height: calc(100% - #{$offset * 2});
+    display: block;
+    position: fixed;
+    z-index: 50;
+    top: $offset;
+    left: $offset;
+    border-radius: $bdrs;
+    //border: 10px solid $black;
+    overflow: hidden;
+  }
+}
+
+.outside {
+  background: $yellow;
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+  border: 10px solid $black;
+  animation: pulse-bg $animation linear infinite;
+}
+
+.outter {
+  background: $yellow;
+  height: 260px;
+  width: 260px;
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  animation: rotate 5s linear infinite, pulse-bg $animation linear infinite;
+  //transform: rotate(120deg);
+}
+
+
+.middle {
+  position: absolute;
+  top: 105px;
+  right: 105px;
+  background: $black;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: 10px solid $yellow;
+  z-index: 500;
+  animation: pulse-bd $animation linear infinite;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: (calc(260 / 3) * 1px) solid transparent;
+  border-right: (calc(260 / 3) * 1px) solid transparent;
+  border-top: 150px solid $black;
+  position: absolute;
+  //display: none;
+
+  &.top {
+    top: 0px;
+    right: 45px;
+  }
+
+  &.left {
+    top: 88px;
+    left: -10px;
+    transform: rotate(240deg);
+    //border-top-color: red;
+  }
+
+  &.right {
+    top: 88px;
+    right: -10px;
+    //border-top-color: green;
+    transform: rotate(120deg);
+  }
+
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@include blink(background-color, pulse-bg);
+@include blink(border-color, pulse-bd);
+@include blink(color, pulse-c);
+
+.raditation {
+  flex: 0 0 auto;
+  margin: 0 auto;
+  z-index: 15;
+}
+
+////////////////
+
+.heading {
+  flex: 0 0 auto;
+  clear: both;
+  width: 100%;
+  text-align: center;
+  margin: 3rem 0 3rem;
+  flex-direction: row;
+  z-index: 15;
+
+  &.top {
+    margin: 1rem 0 2rem;
+  }
+}
+
+.box {
+  border: 5px solid $black;
+  width: auto;
+  display: inline-block;
+  border-radius: 10px;
+  transform: skew(-15deg);
+}
+h1,h2 {
+  font-family: 'Oswald';
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  padding: .5rem 1rem;
+  font-weight: 700;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+h2 {
+  background: $black;
+  color: $green;
+  animation: pulse-c $animation linear infinite;
+}
+
+.button {
+  position: fixed;
+  bottom: .5rem;
+  left: .5rem;
+  z-index: 500;
+  cursor: pointer;
+  color: $green;
+  -webkit-appearance: none !important;
+
+  &.pause {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1, h2 {
+    width: auto;
+  }
+}

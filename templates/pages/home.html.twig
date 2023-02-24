@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% set page = content_get('App\\Model\\Page', 'home') %}
+
+{% block meta_title page.title %}
+
+{% block meta %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    {{ page.content|raw }}
+{% endblock %}

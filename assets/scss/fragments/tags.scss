@@ -1,0 +1,30 @@
+/* Tags page */
+
+.tag-btn {
+  margin: 5px;
+  text-decoration: none;
+}
+
+#full-tags-list {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  .tag-entry {
+    margin: 0 0 15px 25px;
+
+    a {
+      font-size: 20px;
+      color: #008AFF;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: #0085a1;
+      }
+    }
+    .entry-date {
+       color: #808080;
+       font-style: italic;
+       font-size: 16px;
+     }
+  }
+}

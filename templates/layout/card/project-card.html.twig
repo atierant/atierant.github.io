@@ -1,0 +1,32 @@
+<article class="card w-100 mb-3 text-bg-light">
+    <div class="row g-0 h-100">
+        <div class="col-md-4 thumbnail">
+            <div class="d-flex flex-column h-100">
+                {% if project.image is defined and project.image is not empty and file_exists(project.image) %}
+                    {% set imgSrc = project.image %}
+                {% else %}
+                    {% set imgSrc = '/build/images/default_image.jpg' %}
+                {% endif %}
+
+                <img class="shadow-sm" src="{{ imgSrc | glide_image_preset('article_thumbnail') }}"
+                     title="{{ project.title }}" alt="{{ project.description }}">
+            </div>
+        </div>
+        <div class="col-md-8 content">
+            <div class="card-body d-flex flex-column h-100">
+                <h2 class="project_header">
+                    <a href="https://arnaud.tierant.me/{{ project.githubRepository }}">{{ project.title }}</a>
+                </h2>
+                <p class="project_meta">
+                    Published on {{ project.publishedAt | date(site.date_format) }}
+                </p>
+                <p class="card-text">{{ project.description }}</p>
+
+                <p class="card-text text-end mt-auto">
+                    <a class="btn btn-outline-dark" href="https://arnaud.tierant.me/{{ project.githubRepository }}">View
+                        project...</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</article>

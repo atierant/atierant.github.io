@@ -1,0 +1,161 @@
+/* --- Navbar --- */
+
+/*nav ul, footer ul {*/
+/*    font-size: 1em;*/
+/*    font-family: 'Helvetica', 'Arial', 'Sans-Serif';*/
+/*    padding: 0px;*/
+/*    list-style: none;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*nav ul li, footer ul li {*/
+/*    display: inline;*/
+/*    margin-right: 20px;*/
+/*}*/
+
+.navbar-custom {
+  background: #040b14;
+
+  .navbar-nav li a {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .navbar-brand, .navbar-nav li a {
+    font-weight: 800;
+    color: #a8a9b4;
+    text-decoration: none;
+    &:hover {
+      color: #ffffff;
+    }
+    &.active {
+      font-weight: bolder;
+      color: #149ddd;
+    }
+  }
+
+  min-height: 50px;
+  margin-bottom: 20px;
+}
+
+.navbar-custom {
+  .navbar-brand:hover,
+  .navbar-brand:focus,
+  .navbar-nav li a:hover,
+  .navbar-nav li a:focus {
+    color: #a8a9b4;
+  }
+  background: #040b14 url('../../images/checker.png') top center;
+  background-size: contain;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar-custom {
+    padding: 20px 0;
+    -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+    transition: background .5s ease-in-out, padding .5s ease-in-out;
+
+    &.top-nav-short-permanent,
+    &.top-nav-short {
+      padding: 0;
+    }
+  }
+}
+
+.nav-search-link {
+  .nav-search-icon {
+    display: none;
+  }
+
+  .nav-search-text {
+    display: inline;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-search-link .nav-search-icon {
+    display: inline;
+  }
+  .nav-search-link .nav-search-text {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-custom .navbar-nav li a {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+  }
+}
+
+/* fix in-page anchors to not be behind fixed header */
+:target:before {
+  content: "";
+  display: block;
+  height: 50px; /* navbar height */
+  margin: -50px 0 0;
+}
+
+/* Multi-level navigation links */
+.navbar-custom {
+  .navbar-nav {
+    .navlinks-container {
+      position: relative;
+    }
+
+    .navlinks-parent:after {
+      content: " \25BC";
+    }
+
+    .navlinks-children {
+      width: 100%;
+      display: none;
+      word-break: break-word;
+    }
+
+    .navlinks-container .navlinks-children a {
+      display: block;
+      padding: 10px 10px 10px 30px;
+      background: #f5f5f5;
+      text-decoration: none !important;
+      border-width: 0 1px 1px 1px;
+      font-weight: normal;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-custom .navbar-nav .navlinks-container.show-children {
+    background: #eee;
+  }
+  .navbar-custom .navbar-nav .navlinks-container.show-children .navlinks-children {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar-custom .navbar-nav .navlinks-container:hover {
+    background: #eee;
+  }
+  .navbar-custom .navbar-nav .navlinks-container:hover .navlinks-children {
+    display: block;
+  }
+  .navbar-custom .navbar-nav .navlinks-children {
+    position: absolute;
+    text-align: center;
+  }
+  .navbar-custom .navbar-nav .navlinks-container .navlinks-children a {
+    padding-left: 10px;
+    border: 1px solid #eaeaea;
+  }
+}

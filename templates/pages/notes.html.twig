@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% set page = content_get('App\\Model\\Page', 'notes') %}
+
+{% block meta_title page.title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('sticky-note') }}
+{% endblock %}
+
+{% block meta %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container wrapper">
+        <div class="row">
+            {% set notes = content_list('App\\Model\\Note\\Note') %}
+
+            {% for item in notes|sort((a, b) => a.publishedAt <=> b.publishedAt)|reverse %}
+                {% include 'layout/card/note-card.html.twig' with {'note': item} %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

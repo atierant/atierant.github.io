@@ -1,0 +1,6 @@
+name: "HTML5"
+level: 70
+since: "2008-03-01"
+versions: ['4', '5']
+priority: 80
+description: "9 expériences chez Sogeti et dans 1 autre entreprise"

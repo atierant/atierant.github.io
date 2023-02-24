@@ -1,0 +1,32 @@
+<!--{site.data.Links | inspect }-->
+<!--{ set filtered-links = site.data.Links | where_exp:"item", "item.category == include.category" }-->
+{% set filtered-links = site.data.Links %}
+<h1>ICI</h1>
+{% for link in filtered-links  | where_exp:"link", "link.category == include.category"  %}
+    {% for item in link %}
+        {% set background-color = item[1].background-color %}
+        {% set front-color = item[1].front-color %}
+        {% set fa-type = item[1].type %}
+        {% case fa-type %}
+            {% when "solid" %}
+                {% set fa-type-class = 'fa-solid' %}
+            {% when "brand" %}
+                {% set fa-type-class = 'fab' %}
+            {% else %}
+                {% set fa-type-class = 'fa' %}
+        {% endcase %}
+        <li>
+            {%- if item[0] == 'rss' -%}
+            <a href="{{ '/feed.xml' }}" title="{{ item[1].name }}">
+            {%- else -%}
+            <a href="{{item[1].baseURL}}{{ site.social-network-links[item[0]] }}" title="{{ item[1].name }}">
+            {%- endif -%}
+            <span class="fa-stack fa-2x" aria-hidden="true">
+              <i class="fa fa-circle fa-stack-2x" {% if background-color %}style="color:{{background-color}}"{% endif %}></i>
+              <i class="{{fa-type-class}} {{ item[1].icon }} fa-stack-1x fa-inverse" {% if front-color %}style="color:{{front-color}}"{% endif %}></i>
+            </span>
+                    <span class="sr-only">{{ item[1].name }}</span>
+                </a>
+        </li>
+    {% endfor %}
+{% endfor %}

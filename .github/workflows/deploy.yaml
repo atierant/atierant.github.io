@@ -1,0 +1,118 @@
+name: Deploy to GH Pages
+
+on:
+  workflow_dispatch: ~
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: 🚧  Build & deploy 🚀
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    strategy:
+      fail-fast: true
+      matrix:
+        php-versions: [ '8.1' ]
+
+    steps:
+      # Setup Github actions
+      # https://github.com/actions/checkout (official)
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: 'Setup node 🔧'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      - name: 'Setup PHP 🔧'
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: "none"
+          ini-values: "memory_limit=-1"
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, iconv, json, mbstring, pdo
+        env:
+          update: true
+
+#      - name: 'Determine composer cache directory'
+#        id: composer-cache
+#        #run: echo "::set-output name=directory::$(composer config cache-dir)"
+#        run: echo "{directory}={$(composer config cache-dir)}" >> $GITHUB_OUTPUT
+
+#      - name: 'Cache composer dependencies'
+#        uses: actions/cache@v2
+#        with:
+#          path: ${{ steps.composer-cache.outputs.directory }}
+#          key: composer-${{ hashFiles('composer.lock') }}
+
+      - name: 'Validate composer.json and composer.lock'
+        run: composer validate --strict
+
+      # https://github.com/marketplace/actions/cache
+      - name: 'Cache Composer packages'
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      # https://github.com/marketplace/actions/cache
+      - name: 'Cache resized images'
+        uses: actions/cache@v3
+        with:
+          path: public/resized
+          key: resized-images-${{ secrets.CACHE_VERSION }}
+
+#      - name: 'Cache NPM dependencies'
+#        uses: actions/cache@v3
+#        with:
+#          path: ~/.npm
+#          key: node-${{ hashFiles('package-lock.json') }}
+
+      - name: 'Install composer dependencies 🔧'
+        run: composer install --prefer-dist --no-progress --ansi
+
+      - name: 'Install npm dependencies 🔧'
+        run: npm install --color=always --no-progress --no-audit
+
+      # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
+      # Docs: https://getcomposer.org/doc/articles/scripts.md
+      # - name: Run test suite
+      #   run: composer run-script test
+
+      - name: 'Warmup'
+        run: |
+          echo "::group::warmup production env"
+            npx encore production --color
+            php bin/console cache:clear --ansi
+            php bin/console cache:warmup --ansi
+          echo "::endgroup::"
+        env:
+          NODE_ENV: production
+          APP_ENV: prod
+          WEBPACK_PUBLIC_PATH: /${{ github.event.repository.name }}/build
+
+      - name: 'Build static site 🔧 🔧 🔧'
+        run: php bin/console stenope:build --no-interaction -vvv --ansi
+        env:
+          APP_ENV: prod
+          # Replace with your GH Pages URL:
+          ROUTER_DEFAULT_URI: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+
+      # https://github.com/marketplace/actions/deploy-to-github-pages
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          COMMIT_MESSAGE: "[AUTO] Static site update for ${{ github.sha }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: build # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
+          CLEAN_EXCLUDE: '["CNAME", ".nojekyll"]' # Don't clean CNAME file for custom domain nor .nojekyll file to disable Jekyll on Github Pages

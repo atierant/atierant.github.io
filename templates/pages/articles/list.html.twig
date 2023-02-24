@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block meta_title "Articles" ~ ' | ' ~ parent() %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('articles') }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="page-title">Articles</h1>
+
+    <section class="articles">
+        <div class="row row-cols-1 row-cols-md-1 g-4">
+            {% for article in pagination.items|sort((a, b) => a.publishedAt <=> b.publishedAt)|reverse %}
+                <div class="col">
+                    {% include 'layout/card/article-card.html.twig' with {'article': article} %}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </section>
+{% endblock %}

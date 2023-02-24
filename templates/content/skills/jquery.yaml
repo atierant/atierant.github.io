@@ -1,0 +1,5 @@
+name: "JQuery"
+level: 70
+since: "2009-10-18"
+versions: ["1.x", "2.x", "3.x", "4.x", "5.x", "6.x"]
+description: "9 expériences chez Sogeti et dans 1 autre entreprise"

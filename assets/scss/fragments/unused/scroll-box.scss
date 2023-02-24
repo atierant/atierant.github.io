@@ -1,0 +1,96 @@
+/* --- Scroll box --- */
+
+#scroll-box {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: fixed;
+  display: none;
+  right: 8px;
+  bottom: 8px;
+  z-index: 999999;
+  text-align: center;
+  color: #fff;
+  background: #94cb70;
+  padding: 15px 20px;
+  box-shadow: 0 0 8px #777;
+}
+
+#scroll-box input {
+  outline-color: #75b57d;
+}
+
+@media only screen and (max-width: 979px) {
+  body.scroll-box-on footer {
+    padding-bottom: 210px;
+  }
+}
+
+#scroll-box-close {
+  position: absolute;
+  font-size: 30px;
+  right: 4px;
+  color: #f5f5f5;
+  line-height: 0;
+  top: 11px;
+  cursor: pointer;
+}
+
+#scroll-box-close:hover {
+  color: #fff;
+}
+
+#scroll-box-title {
+  font-size: 24px;
+  letter-spacing: 1px;
+  display: none;
+}
+
+#scroll-box-contact {
+  font-family: arial, serif;
+  font-size: 15px;
+  text-align: right;
+  margin-top: 10px;
+  display: none;
+}
+
+#scroll-box-hire {
+  font-size: 24px;
+}
+
+#scroll-box-contact a,
+#scroll-box-hire a {
+  color: #fff;
+  font-weight: 600;
+}
+
+#scroll-box-contact a:hover,
+#scroll-box-hire a:hover {
+  color: #f0f0f0;
+}
+
+@media only screen and (max-width: 979px) {
+  #scroll-box {
+    bottom: 32px;
+    right: 0;
+    border-width: 3px 3px 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #scroll-box {
+    padding: 10px 10px 5px;
+  }
+  #scroll-box-title {
+    font-size: 20px;
+  }
+  #scroll-box-hire {
+    font-size: 18px;
+  }
+  #scroll-box-close {
+    right: 3px;
+    top: 12px;
+  }
+  #mailchimp-subscribe-section {
+    margin-bottom: 7px;
+  }
+}
