@@ -1,0 +1,7 @@
+name: "Ubuntu"
+level: 80
+since: "2006-01-01"
+priority: 83
+versions: []
+icon: 'fa-brands fa-ubuntu'
+categories: ['OS']

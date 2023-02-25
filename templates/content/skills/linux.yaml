@@ -1,4 +1,7 @@
 name: "Linux"
 level: 70
 since: "2005-10-18"
-versions: []
+priority: 83
+versions: ["Debian", "Ubuntu", "Red Hat"]
+icon: 'fa-brands fa-linux'
+categories: ['OS']

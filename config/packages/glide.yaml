@@ -14,7 +14,7 @@ glide:
         article_thumbnail:
             w: 400
             h: 287
-            fit: crop
+            fit: contain
         article_details:
             w: 720
             h: 280

@@ -1,0 +1,68 @@
+# GitHub Action for Symfony
+name: Testing Symfony
+on: [push, pull_request]
+jobs:
+  symfony:
+    name: Symfony (PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }})
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-latest]
+        php-versions: [8.1']
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v3
+
+      - name: 'Setup node 🔧'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+#      - name: 'Cache NPM dependencies'
+#        uses: actions/cache@v3
+#        with:
+#          path: ~/.npm
+#          key: node-${{ hashFiles('package-lock.json') }}
+
+      # Docs: https://github.com/shivammathur/setup-php
+      - name: 'Setup PHP 🔧'
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, iconv, json, mbstring, pdo
+          tools: phpunit-bridge
+          coverage: "xdebug"
+
+      - name: "📦 Get Composer Cache Directory"
+        id: composer-cache
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: 'Install npm dependencies 🔧'
+        run: npm install --color=always --no-progress --no-audit
+      - name: 'Warmup'
+        run: |
+          echo "::group::warmup production env"
+            npx encore production --color
+          echo "::endgroup::"
+        env:
+          NODE_ENV: production
+          APP_ENV: prod
+          WEBPACK_PUBLIC_PATH: /${{ github.event.repository.name }}/build
+
+      - name: 'Install PHPUnit'
+        run: simple-phpunit install
+
+      - name: 'Run tests'
+        run: simple-phpunit --coverage-text

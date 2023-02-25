@@ -18,21 +18,54 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@v3
 
-      - name: Cache Composer dependencies
-        uses: actions/cache@v3
-        with:
-          path: /tmp/composer-cache
-          key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+#      - name: Cache Composer dependencies
+#        uses: actions/cache@v3
+#        with:
+#          path: /tmp/composer-cache
+#          key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+#
+#      - name: Composer install
+#        uses: php-actions/composer@v6
+#        with:
+#          php_version: ${{ matrix.php-versions }}
+#          php_extensions: mbstring xml ctype iconv intl pdo pdo_mysql dom filter gd iconv json mbstring pdo
 
-      - name: Composer install
-        uses: php-actions/composer@v6
+      # Docs: https://github.com/shivammathur/setup-php
+      - name: Setup PHP with tools
+        uses: shivammathur/setup-php@v2
         with:
-          php_version: ${{ matrix.php-versions }}
-          php_extensions: mbstring xml ctype iconv intl pdo pdo_mysql dom filter gd iconv json mbstring pdo
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, iconv, json, mbstring
+          tools: cs2pr, phpcs, php-cs-fixer, phpunit, phpmd
 
-      - name: PHP Code Sniffer
-        uses: php-actions/phpcs@v1
+      - name: Print PHP version
+        run: echo ${{ steps.setup-php.outputs.php-version }}
+
+      - name: Run PHP CS Fixer
+        #run: php-cs-fixer fix --quiet --format=checkstyle src | cs2pr
+        run: php-cs-fixer fix --quiet src
+
+      - name: Run PHP_CodeSniffer
+        run: phpcs -q --report=checkstyle src | cs2pr
+
+      - name: Run PHPMD
+        run: phpmd src github phpmd.xml
+        continue-on-error: true
+
+      - name: Run PHPMD
+        run: phpmd src sarif codesize --reportfile phpmd-results.sarif
+        continue-on-error: true
+
+      - name: Upload analysis results to GitHub
+        uses: github/codeql-action/upload-sarif@v2
         with:
-          php_version: ${{ matrix.php-versions }}
-          path: src/
-          standard: phpcs.xml.dist
+          sarif_file: phpmd-results.sarif
+          wait-for-processing: true
+
+#      - name: PHP Code Sniffer
+#        uses: php-actions/phpcs@v1
+#        with:
+#          php_version: ${{ matrix.php-versions }}
+#          #php_extensions: mbstring xml ctype iconv intl pdo pdo_mysql dom filter gd iconv json mbstring pdo
+#          path: src/
+#          standard: phpcs.xml.dist

@@ -39,29 +39,19 @@ jobs:
         env:
           update: true
 
-#      - name: 'Determine composer cache directory'
-#        id: composer-cache
-#        #run: echo "::set-output name=directory::$(composer config cache-dir)"
-#        run: echo "{directory}={$(composer config cache-dir)}" >> $GITHUB_OUTPUT
-
-#      - name: 'Cache composer dependencies'
-#        uses: actions/cache@v2
-#        with:
-#          path: ${{ steps.composer-cache.outputs.directory }}
-#          key: composer-${{ hashFiles('composer.lock') }}
-
       - name: 'Validate composer.json and composer.lock'
         run: composer validate --strict
 
-      # https://github.com/marketplace/actions/cache
-      - name: 'Cache Composer packages'
+      - name: "📦 Get Composer Cache Directory"
         id: composer-cache
-        uses: actions/cache@v3
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v3
         with:
-          path: vendor
-          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
-            ${{ runner.os }}-php-
+            ${{ runner.os }}-composer-
 
       # https://github.com/marketplace/actions/cache
       - name: 'Cache resized images'
@@ -71,6 +61,10 @@ jobs:
           key: resized-images-${{ secrets.CACHE_VERSION }}
 
 #      - name: 'Cache NPM dependencies'
+#        uses: actions/cache@v3
+#        with:
+#          path: ~/.npm
+#          key: node-${{ hashFiles('package-lock.json') }}      - name: 'Cache NPM dependencies'
 #        uses: actions/cache@v3
 #        with:
 #          path: ~/.npm
@@ -104,7 +98,8 @@ jobs:
         env:
           APP_ENV: prod
           # Replace with your GH Pages URL:
-          ROUTER_DEFAULT_URI: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          #ROUTER_DEFAULT_URI: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          ROUTER_DEFAULT_URI: https://arnaud.tierant.me
 
       # https://github.com/marketplace/actions/deploy-to-github-pages
       - name: Deploy 🚀

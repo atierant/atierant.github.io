@@ -33,14 +33,16 @@ Encore
   .addStyleEntry('article', './assets/scss/article.scss')
   .addStyleEntry('articles', './assets/scss/articles.scss')
   .addStyleEntry('projects', './assets/scss/projects.scss')
-  .addStyleEntry('contact', './assets/scss/contact.scss')
-  .addStyleEntry('sticky-note', './assets/scss/sticky-note.scss')
+  .addEntry('contact', './assets/js/contact.js')
+  .addEntry('sticky-note', './assets/js/sticky-note.js')
+  .addStyleEntry('skills', './assets/scss/fragments/skills.scss')
 
   // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
   .enableStimulusBridge('./assets/controllers.json')
 
   // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
   .splitEntryChunks()
+  //.createSharedEntry('js/common', ['jquery', 'bootstrap', 'bootstrap-select'])
 
   // will require an extra script tag for runtime.js
   // but, you probably want this, unless you're building a single-page app

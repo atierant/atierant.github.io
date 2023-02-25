@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% set title = "My Resume" %}
-{% block meta_title 'My Resume' ~ ' | ' ~ parent() %}
+{% set title = "Resume"|trans %}
+{% block meta_title 'Resume'|trans ~ ' | ' ~ parent() %}
 
 {% block stylesheets %}
     {{ parent() }}
@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="page-title">Resume</h1>
+    <h1 class="page-title">{% trans %}Resume{% endtrans %}</h1>
 
     <!--<div class="cv w3-container w3-light-gray grid js-isotope"-->
     <!--     data-isotope-options='{ "itemSelector": ".element-item", "layoutMode": "fitRows" }'>-->
@@ -22,15 +22,13 @@
         <!-- WORK EXPERIENCE -->
         <section class="work-experience articles">
             <div class="section-title">
-                <h2>Work Experience</h2>
+                <h2>{% trans %}Work Experience{% endtrans %}</h2>
             </div>
 
             <div class="row row-cols-1 row-cols-md-1 g-4">
-                {% set workItems = content_list('App\\Model\\Resume\\Work') %}
-
-                {% for item in workItems|sort((a, b) => a.startDate <=> b.startDate)|reverse %}
+                {% for work in workItems %}
                     <div class="col">
-                        {% include 'layout/card/work-card.html.twig' with {'item': item} %}
+                        {% include 'layout/card/work-card.html.twig' with {'work': work} %}
                     </div>
                 {% endfor %}
             </div>
@@ -38,14 +36,12 @@
 
         <section class="internship-experience articles">
             <div class="section-title">
-                <h2>Internship Experience</h2>
+                <h2>{% trans %}Internship Experience{% endtrans %}</h2>
             </div>
             <div class="row row-cols-1 row-cols-md-1 g-4">
-                {% set internshipItems = content_list('App\\Model\\Resume\\Internship') %}
-
-                {% for item in internshipItems|sort((a, b) => a.startDate <=> b.startDate)|reverse %}
+                {% for internship in internshipItems %}
                     <div class="col">
-                        {% include 'layout/card/internship-card.html.twig' with {'item': item} %}
+                        {% include 'layout/card/internship-card.html.twig' with {'internship': internship} %}
                     </div>
                 {% endfor %}
             </div>
@@ -54,61 +50,44 @@
         <!-- EDUCATION -->
         <section class="education-experience articles">
             <div class="section-title">
-                <h2>Education</h2>
+                <h2>{% trans %}Education{% endtrans %}</h2>
             </div>
             <div class="row row-cols-1 row-cols-md-1 g-4">
-                {% set educationItems = content_list('App\\Model\\Resume\\Education') %}
-
-                {% for item in educationItems|sort((a, b) => a.startDate <=> b.startDate)|reverse %}
+                {% for education in educationItems %}
                     <div class="col">
-                        {% include 'layout/card/education-card.html.twig' with {'item': item} %}
+                        {% include 'layout/card/education-card.html.twig' with {'education': education} %}
                     </div>
                 {% endfor %}
             </div>
         </section>
 
-        <!-- SPECIALIZATIONS -->
-        <section class="specializations">
-            <div class="section-title">
-                <h2>Specializations</h2>
-            </div>
-            <div class="row row-cols-1 row-cols-md-1 g-4">
-                <div class="col section-bg">
-                    <div class="section-subtitle">
-                        <h3>Disciplines of computing</h3>
-                    </div>
-                    <p>NTI Development, Semantic Web, Agility, technological watch, interoperability, testing &
-                        reporting.
-                    </p>
-                </div>
-                <div class="col section-bg">
-                    <div class="section-subtitle">
-                        <h3>Disciplines of bioinformatics</h3>
-                    </div>
-                    <ul>
-                        <li>Microarray Management, Datamining, Sequence Analysis</li>
-                        <li>Virology and viral genetics</li>
-                        <li>Food and Industrial Microbiology, Food Industry Physics.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- TOOLS -->
-        <section class="tools">
-            <div class="section-title">
-                <h2>Tools</h2>
-            </div>
-            <div class="row row-cols-1 row-cols-md-1 g-4">
-                {% set tools = content_list('App\\Model\\Resume\\Tool') %}
-
-                {% for item in tools|sort((a, b) => a.startDate <=> b.startDate)|reverse %}
-                    <div class="col">
-                        {% include 'layout/card/tool-card.html.twig' with {'tool': item} %}
-                    </div>
-                {% endfor %}
-            </div>
-        </section>
+{#        <!-- SPECIALIZATIONS -->#}
+{#        <section class="specializations">#}
+{#            <div class="section-title">#}
+{#                <h2>{% trans %}Specializations{% endtrans %}</h2>#}
+{#            </div>#}
+{#            <div class="row row-cols-1 row-cols-md-1 g-4">#}
+{#                <div class="col section-bg p-5">#}
+{#                    <div class="section-subtitle">#}
+{#                        <h3>Disciplines of computing</h3>#}
+{#                    </div>#}
+{#                    <p>#}
+{#                        NTI Development, Semantic Web, Agility, technological watch, interoperability, testing &#}
+{#                        reporting.#}
+{#                    </p>#}
+{#                </div>#}
+{#                <div class="col section-bg p-5">#}
+{#                    <div class="section-subtitle">#}
+{#                        <h3>Disciplines of bioinformatics</h3>#}
+{#                    </div>#}
+{#                    <ul>#}
+{#                        <li>Microarray Management, Datamining, Sequence Analysis</li>#}
+{#                        <li>Virology and viral genetics</li>#}
+{#                        <li>Food and Industrial Microbiology, Food Industry Physics.</li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </section>#}
     </div>
 
 {% endblock %}

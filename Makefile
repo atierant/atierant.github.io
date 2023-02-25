@@ -82,8 +82,7 @@ build.static: build.assets build.content
 
 ## Serve - Serve the static version
 serve.static:
-	open http://localhost:8001
-	symfony php -S localhost:8001 -t build
+	symfony serve --port=8001 --dir=build  --document-root=build
 
 ########
 # Lint #
@@ -118,7 +117,7 @@ lint.twig@integration:
 lint.yaml: lint.yaml@integration
 
 lint.yaml@integration:
-	symfony console lint:yaml config content --parse-tags --ansi --no-interaction
+	symfony console lint:yaml config templates/content --parse-tags --ansi --no-interaction
 
 lint.phpstan: export APP_ENV = test
 lint.phpstan:

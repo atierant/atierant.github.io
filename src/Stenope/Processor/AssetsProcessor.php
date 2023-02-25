@@ -12,16 +12,23 @@ use Stenope\Bundle\Service\AssetUtils;
 /**
  * Attempt to resolve local assets URLs using the Asset component for images and links.
  *
+ * @see https://stenopephp.github.io/Stenope/cookbooks/processors/
+ *
  * These changes could be made upstream (in Stenope)
  */
 class AssetsProcessor implements ProcessorInterface
 {
     private AssetUtils $assetUtils;
+
     private HtmlCrawlerManagerInterface $crawlers;
+
     private string $property;
 
-    public function __construct(AssetUtils $assetUtils, HtmlCrawlerManagerInterface $crawlers, string $property = 'content')
-    {
+    public function __construct(
+        AssetUtils $assetUtils,
+        HtmlCrawlerManagerInterface $crawlers,
+        string $property = 'content'
+    ) {
         $this->assetUtils = $assetUtils;
         $this->crawlers = $crawlers;
         $this->property = $property;
@@ -29,13 +36,13 @@ class AssetsProcessor implements ProcessorInterface
 
     public function __invoke(array &$data, Content $content): void
     {
-        if (!isset($data[$this->property])) {
+        if (! isset($data[$this->property])) {
             return;
         }
 
         $crawler = $this->crawlers->get($content, $data, $this->property);
 
-        if (\is_null($crawler)) {
+        if ($crawler === null) {
             return;
         }
 

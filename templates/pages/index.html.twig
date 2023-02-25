@@ -19,7 +19,7 @@
     {#    {% include 'pages/home/section/facts.html.twig' %} #}
 
     <!-- ======= Skills Section ======= -->
-    {% include 'pages/home/section/skills.html.twig' %}
+    {% stopwatch 'skills_duration' %}{% include 'pages/home/section/skills.html.twig' %}{% endstopwatch %}
 
     <!-- ======= Resume Section ======= -->
     {% include 'pages/home/section/resume.html.twig' %}
@@ -38,4 +38,13 @@
 
     <!-- WEBSITE TECH -->
     {% include 'pages/home/section/tech.html.twig' %}
+{% endblock %}
+
+{% block next_section %}
+{#    <div id="arrow">#}
+{#        <a href="#" class="previous d-flex align-items-center justify-content-center"><i#}
+{#                class="bi bi-arrow-up-circle"></i></a>#}
+{#        <a href="#" class="next d-flex align-items-center justify-content-center"><i#}
+{#                class="bi bi-arrow-down-short"></i></a>#}
+{#    </div>#}
 {% endblock %}

@@ -2,11 +2,15 @@
     <div class="container">
 
         <div class="section-title">
-            <h2><i class="bi bi-envelope"></i> Contact</h2>
-            <p>You can <a href="mailto:arnaud@tierant.fr?subject=Hello_from_arnaud.tierant.me">email me</a> or
-                find me <a
-                    href="https://twitter.com/atierant">on Twitter</a> if you want to get in touch. As I said, I
-                love meeting new people so don't hesitate to send a message!</p>
+            <h2><i class="bi bi-envelope"></i> {% trans %}Contact{% endtrans %}</h2>
+
+            <p>
+                 {% trans %}
+                You can <a href="mailto:arnaud@tierant.fr?subject=Hello_from_arnaud.tierant.me">email me</a> or
+                find me <a href="https://twitter.com/atierant">on Twitter</a> if you want to get in touch. As I said, I
+                love meeting new people so don't hesitate to send a message!
+                {% endtrans %}
+            </p>
         </div>
 
         <div class="row" data-aos="fade-in">
@@ -15,19 +19,19 @@
                 <div class="info">
                     <div class="address">
                         <i class="bi bi-geo-alt"></i>
-                        <h4>Location:</h4>
+                        <h4>{% trans %}Location{% endtrans %}:</h4>
                         <p>34800 Canet, France</p>
                     </div>
 
                     <div class="email">
                         <i class="bi bi-envelope"></i>
-                        <h4>Email:</h4>
+                        <h4>{% trans %}Email{% endtrans %}:</h4>
                         <p><span class="obfuscate">rf.tnareit@duanra</span></p>
                     </div>
 
                     <div class="phone">
                         <i class="bi bi-phone"></i>
-                        <h4>Call:</h4>
+                        <h4>{% trans %}Call{% endtrans %}:</h4>
                         <p><span><abbr title="phone"> P: </abbr><span
                                     class="obfuscate"> 3971611260 (33+) </span></span></p>
                     </div>
@@ -45,11 +49,11 @@
                     <form action="https://formspree.io/xwkkrdak" method="POST" class="form" id="contact-form">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="name">Your Name</label>
+                                <label for="name">{% trans %}Your Name{% endtrans %}</label>
                                 <input type="text" name="name" class="form-control" id="name" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="_replyto">Your Email</label>
+                                <label for="_replyto">{% trans %}Your Email{% endtrans %}</label>
                                 <input type="email" class="form-control" name="_replyto" id="_replyto" required>
                             </div>
                         </div>
@@ -58,7 +62,7 @@
                         {#                        <input type="text" class="form-control" name="subject" id="subject" required> #}
                         {#                    </div> #}
                         <div class="form-group">
-                            <label for="content">Message</label>
+                            <label for="content">{% trans %}Message{% endtrans %}</label>
                             <textarea class="form-control" name="content" rows="10" id="content" required></textarea>
                         </div>
                         <label>
@@ -66,14 +70,14 @@
                         </label>
                         <input type="hidden" name="_next" value="?message=Your message was sent successfully, thanks!"/>
                         <input type="hidden" name="_subject" value="New submission from arnaud.tierant.me">
-                        <div style="font-size: 12px; margin: -10px 0 10px;">Please do not use this form to send me full
-                            code samples
-                            or ask me to fix an app for free.
-                            If you'd like to get in touch and are very old-school, you can send a letter
-                            but email me first to get address ;)
+                        <div style="font-size: 12px; margin: -10px 0 10px;">
+                            {% trans %}
+                            Please do not use this form to send me full code samples or ask me to fix an app for free.
+                            If you'd like to get in touch and are very old-school, you can send a letter but email me first to get address ;)
+                            {% endtrans %}
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-lg btn-outline-dark" type="submit">Send Message</button>
+                            <button class="btn btn-lg btn-outline-dark" type="submit">{% trans %}Send Message{% endtrans %}</button>
                         </div>
                     </form>
                 </div>

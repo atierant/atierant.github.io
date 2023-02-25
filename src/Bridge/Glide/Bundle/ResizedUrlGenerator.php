@@ -25,7 +25,7 @@ class ResizedUrlGenerator
 
     public function withPreset(string $filename, string $preset, array $options = []): string
     {
-        if (!\in_array($preset, $this->presetsNames, true)) {
+        if (! \in_array($preset, $this->presetsNames, true)) {
             throw new \InvalidArgumentException(sprintf(
                 'Preset "%s" does not exists. Known presets are %s',
                 $preset,
@@ -33,7 +33,9 @@ class ResizedUrlGenerator
             ));
         }
 
-        return $this->withOptions($filename, ['p' => $preset] + $options);
+        return $this->withOptions($filename, [
+            'p' => $preset,
+        ] + $options);
     }
 
     public function withOptions(string $filename, array $options): string
@@ -43,7 +45,7 @@ class ResizedUrlGenerator
             return $filename;
         }
 
-        if (!$this->preGenerate) {
+        if (! $this->preGenerate) {
             // In case no pre-generation is asked, do only generate a link to the resize controller:
             return $this->glideUrlBuilder->buildUrl($filename, $options);
         }

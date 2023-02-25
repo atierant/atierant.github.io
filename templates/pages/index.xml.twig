@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>{{ site.title }}</title>
+        <description>{{ site.subtitle }}</description>
+        <pubDate>{{ 'now'|date('r', timezone='GMT') }}</pubDate>
+        <lastBuildDate>{{ (pagination.items|sort((a, b) => a.publishedAt <=> b.publishedAt)|last).publishedAt|default('now')|date('r', timezone='GMT') }}</lastBuildDate>
+        <link>{{ url('home') }}</link>
+        <language>{{ app.request.locale }}</language>
+        {% for article in pagination.items|sort((a, b) => a.publishedAt <=> b.publishedAt)|reverse %}
+            <item>
+                <title>{{ article.title|raw }}</title>
+                <description>{{ article.description }}</description>
+                <link>{{ url('app_article_show', {'article': article.slug}) }}</link>
+                <guid>{{ url('app_article_show', {'article': article.slug}) }}</guid>
+                <pubDate>{{ article.publishedAt|date(format='r', timezone='GMT') }}</pubDate>
+                <category>{{ article.category }}</category>
+                {% if article.authors is not empty %}
+                    {% for author in article.authors %}
+                        {% set author = content_get('App\\Model\\Author', author) %}
+                        <author>{{ author.mail }}</author>
+                    {% endfor %}
+                {% endif %}
+            </item>
+        {% endfor %}
+    </channel>
+</rss>

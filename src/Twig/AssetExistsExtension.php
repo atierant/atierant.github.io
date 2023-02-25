@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Twig;
 
 use Twig\Extension\AbstractExtension;
@@ -9,8 +11,7 @@ class AssetExistsExtension extends AbstractExtension
 {
     public function __construct(
         private readonly ?string $projectDir
-    )
-    {
+    ) {
     }
 
     /**
@@ -21,7 +22,7 @@ class AssetExistsExtension extends AbstractExtension
     public function getFunctions()
     {
         return [
-            //new TwigFunction('file_exists', [$this, 'assetExists']),
+            // new TwigFunction('file_exists', [$this, 'assetExists']),
             new TwigFunction('file_exists', [$this, 'fileExists']),
         ];
     }
@@ -32,12 +33,12 @@ class AssetExistsExtension extends AbstractExtension
         $toCheck = realpath($webRoot . $path);
 
         // check if the file exists
-        if (!is_file($toCheck)) {
+        if (! is_file($toCheck)) {
             return false;
         }
 
         // check if file is well contained in web/ directory (prevents ../ in paths)
-        if (strncmp($webRoot, $toCheck, strlen($webRoot)) !== 0) {
+        if (strncmp($webRoot, $toCheck, \strlen($webRoot)) !== 0) {
             return false;
         }
 
@@ -50,12 +51,12 @@ class AssetExistsExtension extends AbstractExtension
         $toCheck = realpath($webRoot . $path);
 
         // check if the file exists
-        if (!is_file($toCheck)) {
+        if (! is_file($toCheck)) {
             return false;
         }
 
         // check if file is well contained in web/ directory (prevents ../ in paths)
-        if (strncmp($webRoot, $toCheck, strlen($webRoot)) !== 0) {
+        if (strncmp($webRoot, $toCheck, \strlen($webRoot)) !== 0) {
             return false;
         }
 

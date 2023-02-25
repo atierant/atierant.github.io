@@ -27,11 +27,14 @@
         "ext-intl": "*",
         "ext-json": "*",
         "composer/package-versions-deprecated": "^1.11",
+        "doctrine/collections": "^2.1",
+        "knplabs/knp-menu-bundle": "^3.2",
         "knplabs/knp-paginator-bundle": "^6.1",
         "league/glide-symfony": "^2.0",
+        "nesbot/carbon": "^2.66",
         "phpdocumentor/reflection-docblock": "^5.2",
         "scrivo/highlight.php": "^9.18",
-        "stenope/stenope": "dev-noprism",
+        "stenope/stenope": "^0.8",
         "symfony/asset": "^6.2",
         "symfony/console": "^6.2",
         "symfony/dotenv": "^6.2",
@@ -66,18 +69,21 @@
     "require-dev": {
         "ekino/phpstan-banned-code": "^1.0",
         "friendsofphp/php-cs-fixer": "^3.4",
+        "phpmd/phpmd": "^2.13",
         "phpstan/phpstan": "^1.2",
         "phpstan/phpstan-strict-rules": "^1.1",
         "phpstan/phpstan-symfony": "^1.0",
+        "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "*",
         "symfony/browser-kit": "^6.2",
         "symfony/css-selector": "^6.2",
         "symfony/debug-bundle": "^6.2",
         "symfony/maker-bundle": "^1.0",
-        "phpunit/phpunit": "^9.5",
         "symfony/phpunit-bridge": "^6.2",
         "symfony/stopwatch": "^6.2",
         "symfony/var-dumper": "^6.2",
-        "symfony/web-profiler-bundle": "^6.2"
+        "symfony/web-profiler-bundle": "^6.2",
+        "symplify/easy-coding-standard": "*"
     },
     "config": {
         "optimize-autoloader": true,
@@ -130,11 +136,5 @@
             "require": "6.2.*",
             "docker": true
         }
-    },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/atierant/Stenope"
-        }
-    ]
+    }
 }

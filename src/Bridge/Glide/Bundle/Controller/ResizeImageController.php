@@ -15,13 +15,15 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ResizeImageController
 {
-    public function __construct(private Server $server, private ?string $signKey = null)
-    {
+    public function __construct(
+        private readonly Server $server,
+        private readonly ?string $signKey = null
+    ) {
     }
 
     public function __invoke(Request $request, string $path): Response
     {
-        if (null !== $this->signKey) {
+        if ($this->signKey !== null) {
             try {
                 SignatureFactory::create($this->signKey)
                     ->validateRequest(urldecode($request->getPathInfo()), $request->query->all())

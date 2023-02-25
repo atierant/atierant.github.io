@@ -18,11 +18,13 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <nav>
-                    <a class="btn btn-sm btn-outline-dark" href="{{ path('app_article_list') }}">← Back to
-                        the list</a>
+                    <a
+                        class="btn btn-sm btn-outline-dark"
+                        href="{{ path('app_article_list') }}"
+                    >← {% trans %}Back to the list{% endtrans %}</a>
                 </nav>
                 <ol>
-                    <li><a href="{{ path('home') }}">Home</a></li>
+                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
                     <li>{{ article.title }}</li>
                 </ol>
             </div>
@@ -63,7 +65,7 @@
 
                     <span
                         class="published">{{ article.publishedAt | date(site.date_format) }}</span> | <a
-                        href="{{ path('app_category', {category: article.category}) }}"
+                       href="#{# {{ path('app_category', {category: article.category}) }}#}"
                         rel="category tag">{{ article.category }}</a>
                 </p>
 

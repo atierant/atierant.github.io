@@ -1,5 +1,6 @@
 name: "Angular"
-level: 60
+level: 65
 since: "2014-01-01"
-priority: 80
-versions: []
+priority: 85
+versions: ["1.x", "2.x → 15.x"]
+icon: 'fa-brands fa-angular'

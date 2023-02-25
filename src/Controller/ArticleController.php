@@ -16,27 +16,49 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/articles')]
 class ArticleController extends AbstractController
 {
-    public function __construct(private readonly ContentManagerInterface $manager)
-    {
-    }
+    public const LIMIT_PER_PAGE = 5;
 
-    #[Route('/', name: 'app_article_list', priority: -200)]
-    public function list(PaginatorInterface $paginator, Request $request): Response
-    {
-        $articles = $this->manager->getContents(Article::class, ['publishedAt' => false], '_.isPublished()');
+    #[Route('/{page}', name: 'app_article_list', requirements: [
+        'page' => '\d+',
+    ], defaults: [
+        'page' => '1',
+    ], priority: -200)]
+    public function list(
+        int $page,
+        PaginatorInterface $paginator,
+        ContentManagerInterface $manager,
+        Request $request
+    ): Response {
+        $locale = $request->getLocale();
+        $articles = $manager->getContents(
+            Article::class,
+            [
+                'publishedAt' => false,
+            ],
+            function (Article $article) use ($locale): bool {
+                return $article->isPublished() && $article->lang === $locale;
+            }
+        );
 
         $pagination = $paginator->paginate(
             $articles, /* query NOT result */
-            $request->query->getInt('page', 1), /*page number*/
-            5 /*limit per page*/
+            $page, /* page number */
+            self::LIMIT_PER_PAGE /* limit per page */
         );
 
-        return $this->render('pages/articles/list.html.twig', [
-            'pagination' => $pagination
-        ])->setLastModified(ContentUtils::max($articles, 'lastModifiedOrCreated'));
+        $response = $this->render('pages/articles/list.html.twig', [
+            'pagination' => $pagination,
+        ]);
+        if (! empty($articles)) {
+            $response->setLastModified(ContentUtils::max($articles, 'lastModifiedOrCreated'));
+        }
+
+        return $response;
     }
 
-    #[Route('/{article}', name: 'app_article_show', requirements: ['article' => '.+'])]
+    #[Route('/{article}', name: 'app_article_show', requirements: [
+        'article' => '.+',
+    ], priority: -201)]
     public function show(Article $article): Response
     {
         return $this->render('pages/articles/show.html.twig', [

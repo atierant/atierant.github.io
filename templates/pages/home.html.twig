@@ -4,10 +4,6 @@
 
 {% block meta_title page.title %}
 
-{% block meta %}
-    {{ parent() }}
-{% endblock %}
-
 {% block content %}
     {{ page.content|raw }}
 {% endblock %}

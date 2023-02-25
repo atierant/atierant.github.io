@@ -2,4 +2,6 @@ name: "JQuery"
 level: 70
 since: "2009-10-18"
 versions: ["1.x", "2.x", "3.x", "4.x", "5.x", "6.x"]
+priority: 85
+icon: 'fa-brands fa-square-js'
 description: "9 expériences chez Sogeti et dans 1 autre entreprise"

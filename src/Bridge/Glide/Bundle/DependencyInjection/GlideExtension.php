@@ -24,9 +24,6 @@ use Symfony\Component\Filesystem\Filesystem as Fs;
 
 class GlideExtension extends Extension
 {
-    /**
-     * {@inheritdoc}
-     */
     public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
@@ -96,6 +93,6 @@ class GlideExtension extends Extension
             'cache_with_file_extensions' => $cacheWithExtensions,
             'group_cache_in_folders' => $groupCacheInFolders,
         ])
-        ->setPublic(true);
+            ->setPublic(true);
     }
 }

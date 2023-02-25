@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block meta_title skill.name ~ ' | ' ~ parent() %}
+{% block meta_description skill.description %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('skills') }}
+{% endblock %}
+
+{% block breadcrumb %}
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <nav>
+                    <a class="btn btn-sm btn-outline-dark" href="{{ path('app_skills_list') }}">
+                        ← {% trans %}Skills list{% endtrans %}
+                    </a>
+                </nav>
+                <ol>
+                    <li><a href="{{ path('home') }}">{{ 'Home'|trans }}</a></li>
+                    <li>{{ skill.name }}</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+{% endblock %}
+
+{% block content %}
+    <!-- ======= Skill Details Section ======= -->
+    <section id="skill" class="skill section-bg">
+            <div class="skill_meta_wrapper">
+                <div class="container" style="position: relative; text-align: center;">
+                   <h1 class="justify-content-center"
+
+                    >
+                       {%- if skill.icon is not empty -%}
+                           <i class="{{ skill.icon }}"></i>
+                       {% endif %}
+                       {{ skill.name }}
+                   </h1>
+                </div>
+
+                <p>
+                    {{ skill.content|raw }}
+                </p>
+
+            </div>
+    </section>
+{% endblock %}

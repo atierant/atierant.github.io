@@ -1,5 +1,6 @@
 name: "Bash"
 level: 70
 since: "2004-01-01"
-priority: 80
+priority: 90
 versions: []
+icon: 'fa-solid fa-terminal'

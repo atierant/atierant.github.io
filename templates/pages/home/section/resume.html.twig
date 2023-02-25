@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="section-title">
-            <h2><i class="bi bi-file-earmark-person-fill"></i> Resume</h2>
+            <h2><i class="bi bi-file-earmark-person-fill"></i> {% trans %}Resume{% endtrans %}</h2>
             {#            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint #}
             {#                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia #}
             {#                fugiat sit in iste officiis commodi quidem hic quas.</p> #}
@@ -10,10 +10,10 @@
 
         <div class="row">
             <div class="col-lg-6" data-aos="fade-up">
-                <h3 class="resume-title">Sumary</h3>
+                <h3 class="resume-title">{% trans %}Summary{% endtrans %}</h3>
                 <div class="resume-item pb-0">
                     <h4>Arnaud Tiérant</h4>
-                    <p><em>Technical Leader</em></p>
+                    <p><em>{% trans %}Technical Leader{% endtrans %}</em></p>
                     <ul>
                         <li>Montpellier, France</li>
                         <li><span><abbr title="phone"> P: </abbr><span
@@ -22,45 +22,58 @@
                     </ul>
                 </div>
 
-                <h3 class="resume-title">Education</h3>
+                <h3 class="resume-title">{% trans %}Education{% endtrans %}</h3>
                 <div class="resume-item">
-                    <h4>Master of Bioinformatics</h4>
+-                    <h4>{% trans %}Master of Bioinformatics{% endtrans %}</h4>
                     <h5>2006 - 2008</h5>
                     <p><em>Montpellier, France</em></p>
-                    <p>Multidisciplinary knowledge in the domain of bioinformatics, information, knowledge extraction
-                        and modeling of living organisms.</p>
+                    <p>
+                        {% trans %}
+                            Multidisciplinary knowledge in the domain of bioinformatics, information, knowledge extraction
+                            and modeling of living organisms.
+                        {% endtrans %}
+                    </p>
                 </div>
                 <div class="resume-item">
-                    <h4>Bachelor of Bioinformatics</h4>
+                    <h4>{% trans %}Bachelor of Bioinformatics{% endtrans %}</h4>
                     <h5>2005 - 2006</h5>
                     <p><em>Aurillac, France</em></p>
-                    <p>Specialities in computing domain, analysis tools and modeling dedicated to biology.</p>
+                    <p>
+                        {% trans %}
+                            Specialities in computing domain, analysis tools and modeling dedicated to biology.
+                        {% endtrans %}
+                    </p>
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="resume-title">Professional Experience</h3>
+                <h3 class="resume-title">{% trans %}Professional Experience{% endtrans %}</h3>
                 <div class="resume-item">
-                    <h4>Technical Leader</h4>
+                    <h4>{% trans %}Technical Leader{% endtrans %}</h4>
                     <h5>2014 - Present</h5>
                     <p><em>Sogeti・Montpellier, France</em></p>
-                    <p>Delivers solutions that enable digital transformation and offer cutting-edge expertise in Cloud,
-                        Cybersecurity, Digital Manufacturing, Quality Assurance &amp; Testing, and emerging
-                        technologies.</p>
+                    <p>
+                        {% trans %}
+                            Delivers solutions that enable digital transformation and offer cutting-edge expertise in Cloud,
+                            Cybersecurity, Digital Manufacturing, Quality Assurance &amp; Testing, and emerging
+                            technologies.
+                        {% endtrans %}
+                    </p>
                 </div>
                 <div class="resume-item">
-                    <h4>Analyst Programmer</h4>
+                    <h4>{% trans %}Analyst Programmer{% endtrans %}</h4>
                     <h5>2012 - 2013</h5>
                     <p><em>Synap System・Montpellier, France</em></p>
-                    <p>Information technology consulting company, specialized in open-source solutions, interoperability
-                        and web accessibility.</p>
+                    <p>
+                        {% trans %}
+                            Information technology consulting company, specialized in open-source solutions, interoperability
+                            and web accessibility.
+                        {% endtrans %}
+                    </p>
                 </div>
                 <div data-aos="fade-up" class="text-end">
-                    <a class="btn btn-outline-dark" href="{{ path('resume') }}">See more...</a>
+                    <a class="btn btn-outline-dark" href="{{ path('resume') }}">{% trans %}See more...{% endtrans %}</a>
                 </div>
             </div>
-
         </div>
-
-
     </div>
 </section><!-- End Resume Section -->

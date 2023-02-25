@@ -1,5 +1,6 @@
 name: "Laravel"
-level: 80
+level: 60
 since: "2021-10-01"
 versions: []
-priority: 100
+priority: 85
+icon: 'fa-brands fa-laravel'

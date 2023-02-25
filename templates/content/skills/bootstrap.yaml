@@ -1,4 +1,6 @@
 name: "Bootstrap"
 level: 80
 since: "2009-10-18"
+priority: 80
 versions: ['4.x', '5.x']
+icon: 'fa-brands fa-bootstrap'

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the "StenopePHP/Stenope" bundle.
  *
@@ -8,7 +10,6 @@
 
 namespace App\Highlighter;
 
-use DomainException;
 use Highlight\Highlighter as HighlightHighlighter;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -21,7 +22,9 @@ use Symfony\Component\Stopwatch\Stopwatch;
 class Highlighter implements HighlighterInterface
 {
     private HighlightHighlighter $executable;
+
     private ?Stopwatch $stopwatch;
+
     private LoggerInterface $logger;
 
     public function __construct(?Stopwatch $stopwatch = null, ?LoggerInterface $logger = null)
@@ -46,13 +49,13 @@ class Highlighter implements HighlighterInterface
 
             $return = "<pre><code class=\"hljs {$highlighted->language}\">";
             $return .= $highlighted->value;
-            $return .= "</code></pre>";
-        } catch (DomainException $e) {
+            $return .= '</code></pre>';
+        } catch (\DomainException $e) {
             // This is thrown if the specified language does not exist
 
-            $return = "<pre><code>";
+            $return = '<pre><code>';
             $return .= htmlentities($value);
-            $return .= "</code></pre>";
+            $return .= '</code></pre>';
         }
 
         if (isset($event)) {

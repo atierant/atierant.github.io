@@ -23,6 +23,8 @@ class GlideUrlBuilder
 
     public function getPublicCachePath(string $cachePath): string
     {
-        return $this->urlGenerator->generate('glide_image_resized_url', ['path' => $cachePath]);
+        return $this->urlGenerator->generate('glide_image_resized_url', [
+            'path' => $cachePath,
+        ]);
     }
 }

@@ -1,6 +1,6 @@
-import { Controller } from '@hotwired/stimulus';
-import SwupScrollPlugin from '@swup/scroll-plugin';
-import SwupProgressPlugin from '@swup/progress-plugin';
+import {Controller} from '@hotwired/stimulus';
+// import SwupScrollPlugin from '@swup/scroll-plugin';
+// import SwupProgressPlugin from '@swup/progress-plugin';
 
 export default class extends Controller {
     connect() {
@@ -13,20 +13,20 @@ export default class extends Controller {
 
     _onPreConnect(event) {
         event.detail.options.plugins.push(
-            new SwupScrollPlugin(
-                {
-                    doScrollingRightAway: true,
-                    animateScroll: {
-                        betweenPages: true,
-                    }
-                }
-            ),
-            new SwupProgressPlugin({
-                transition: 300,
-                delay: 0,
-                initialValue: 0.25,
-                hideImmediately: true
-            }),
+            // new SwupScrollPlugin(
+            //     {
+            //         doScrollingRightAway: true,
+            //         animateScroll: {
+            //             betweenPages: true,
+            //         }
+            //     }
+            // ),
+            // new SwupProgressPlugin({
+            //     transition: 300,
+            //     delay: 0,
+            //     initialValue: 0.25,
+            //     hideImmediately: true
+            // }),
         );
     }
 }

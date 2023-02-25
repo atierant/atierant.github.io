@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Model\Article;
 
-use App\Model\MetaTrait;
+use App\Model\Traits\I18nTrait;
+use App\Model\Traits\MetaTrait;
+use App\Model\Traits\TaggableTrait;
 use Stenope\Bundle\Attribute\SuggestedDebugQuery;
 use Stenope\Bundle\Processor\TableOfContentProcessor;
 use Stenope\Bundle\TableOfContent\TableOfContent;
@@ -18,6 +20,8 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 class Article
 {
     use MetaTrait;
+    use I18nTrait;
+    use TaggableTrait;
 
     public function __construct(
         public string $slug,
@@ -29,14 +33,14 @@ class Article
         public ?string $image,
         public ?string $nextArticle,
         public ?array $authors,
-        public ?array $tags,
-        #[Context([DateTimeNormalizer::FORMAT_KEY => 'Y-m-d'])]
+        #[Context([
+            DateTimeNormalizer::FORMAT_KEY => 'Y-m-d',
+        ])]
         public \DateTimeInterface $publishedAt,
         public ?\DateTimeInterface $lastModified = null,
         /** Automatically populated by {@link TableOfContentProcessor} */
         public ?TableOfContent $tableOfContent = null,
-    )
-    {
+    ) {
     }
 
     public function getLastModifiedOrCreated(): \DateTimeInterface

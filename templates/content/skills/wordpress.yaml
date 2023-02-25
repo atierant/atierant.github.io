@@ -1,4 +1,6 @@
 name: "WordPress"
 level: 50
 since: "2021-10-01"
+priority: 40
 versions: []
+icon: 'fa-brands fa-wordpress'

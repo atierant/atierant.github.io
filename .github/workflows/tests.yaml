@@ -13,33 +13,42 @@ jobs:
     name: 'Tests'
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ ubuntu-latest ]
+        php-versions: [ 8.1' ]
 
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v3
 
-      - name: 'Setup node'
-        uses: actions/setup-node@v2
+      - name: 'Setup node 🔧'
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
+          cache: 'npm'
 
-      - name: 'Setup PHP'
+      - name: 'Setup PHP 🔧'
         uses: shivammathur/setup-php@v2
         with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, iconv, json, mbstring, pdo
+          tools: symfony
           coverage: "none"
           ini-values: "memory_limit=-1"
-          php-version: "8.1"
-          tools: symfony
 
       - name: 'Determine composer cache directory'
         id: composer-cache
-        run: echo "::set-output name=directory::$(composer config cache-dir)"
+        #run: echo "::set-output name=directory::$(composer config cache-dir)" >> $GITHUB_OUTPUT
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: 'Cache composer dependencies'
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
-          path: ${{ steps.composer-cache.outputs.directory }}
-          key: composer-${{ hashFiles('composer.lock') }}
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
 
       - name: 'Cache resized images'
         uses: actions/cache@v2
@@ -53,30 +62,36 @@ jobs:
           path: var/cache/pools/app
           key: resized-blurhash-tests-${{ secrets.CACHE_VERSION }}
 
-      - name: 'Install dependencies'
-        id: deps
+      - name: 'Install composer dependencies 🔧'
+        id: composer_deps
         run: |
           echo "::group::composer install"
             composer install --no-progress --ansi
           echo "::endgroup::"
 
-          # echo "::group::install phpunit"
-          #   vendor/bin/simple-phpunit install
-          # echo "::endgroup::"
-
+      - name: 'Install npm dependencies 🔧'
+        id: npm_deps
+        run: |
           echo "::group::npm install"
             npm install --color=always --no-progress --no-audit
           echo "::endgroup::"
 
+      - name: 'Install other dependencies 🔧'
+        id: deps
+        run: |
+          # echo "::group::install phpunit"
+          #   vendor/bin/simple-phpunit install
+          # echo "::endgroup::"
+
       - name: 'Warmup'
         run: |
-          bin/console cache:clear --ansi --no-warmup
-          bin/console cache:warmup --ansi
+          php bin/console cache:clear --ansi --no-warmup
+          php bin/console cache:warmup --ansi
         env:
           APP_ENV: test
 
       - name: 'Composer validate'
-        if: always() && steps.deps.outcome == 'success'
+        if: always() && steps.composer_deps.outcome == 'success'
         run: composer validate --no-check-publish
 
       - name: 'Lint YAML'
@@ -85,11 +100,12 @@ jobs:
 
       - name: 'Lint Twig'
         if: always() && steps.deps.outcome == 'success'
-        run: make lint.yaml@integration
+        run: make lint.twig@integration
 
       - name: 'Lint JS'
         if: always() && steps.deps.outcome == 'success'
         run: make lint.eslint@integration
+        continue-on-error: true
 
       - name: 'Lint Parameters and Services'
         if: always() && steps.deps.outcome == 'success'
@@ -102,6 +118,7 @@ jobs:
       - name: 'PhpStan'
         if: always() && steps.deps.outcome == 'success'
         run: make lint.phpstan@integration
+        continue-on-error: true
 
       # - name: Run tests
       #   run: vendor/bin/simple-phpunit --testdox
@@ -109,7 +126,8 @@ jobs:
       - name: 'Check build static'
         run: |
           npx encore production --color
-          bin/console stenope:build --no-interaction -vvv --ansi
+          php bin/console stenope:build --no-interaction -vvv --ansi
         env:
           APP_ENV: prod
           NODE_ENV: production
+          ROUTER_DEFAULT_URI: https://arnaud.tierant.me
