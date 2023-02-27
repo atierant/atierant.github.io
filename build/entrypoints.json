@@ -91,7 +91,7 @@
         "/build/runtime.b8ce5516.js"
       ],
       "css": [
-        "/build/articles.6ce45f4d.css"
+        "/build/articles.3580e202.css"
       ]
     },
     "projects": {
@@ -141,7 +141,7 @@
     "/build/fonts.411aa56e.css": "sha384-MuOupwwWtyepnVVhC0HZv0fmUG/NY2nINjIcnW7LXzVKm37Ej7lLuwh1N1mfahwB",
     "/build/resume.902bf11f.css": "sha384-5j1zvaAgiCN6jiG1Y3JLQV4k3O0/IzCMOy6NSbPYYgX/+ZKPsfd0MIw7lyE7YudM",
     "/build/article.c9202b74.css": "sha384-wrDSsCcJdjPY4AyfkGbTsobhjop8mn0mFZZhp+L+q+MugwgEHl3WE7lHm1iSrAFF",
-    "/build/articles.6ce45f4d.css": "sha384-0p6KUq5VZTAHyxyscJmds59MlTdVYLGETSwAKUc7D4Lko/I8DloGD6tBsyNRKf+Q",
+    "/build/articles.3580e202.css": "sha384-A+cZlPsfmnXZI8gvxQXhbweWnkdonkPKBhJXvSa99gMoeQK7JjIgIIzoY2b/wDiM",
     "/build/projects.73f0bdf0.css": "sha384-LHP79IjlGN+YvYPSCWaDbVs/9Dsmv9066v8axTrmS2DCOPsFTAklQaimXVrSQiKT",
     "/build/contact.bb8064ec.css": "sha384-pue0bsK46sDzBakvAe35B0yvI+3zI/gpzbdmaCgKWRdcTqUfSEn2nU/nIneOulsX",
     "/build/sticky-note.f26f082f.css": "sha384-Clqh99tUSOyfry/4JfcoFLLn9UGfHwPtv+vAu+RJHxcsPLQMNMKPBAK+3T5AjCDA"
