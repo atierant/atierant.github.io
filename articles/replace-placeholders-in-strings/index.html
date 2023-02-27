@@ -207,14 +207,14 @@
 
             <div class="row gy-4 mt-2">
                 <div class="article-content">
-                                        <h2 id="remplacement-a-l-aide-de-placeholders-en-php">Remplacement à l'aide de placeholders en php<a href="#remplacement-a-l-aide-de-placeholders-en-php" class="anchor"></a></h2>
-<pre class="code-multiline language-php"><code class="language-php" id="5688b1b3ecdd9c2f533497dad0bf1234">namespace App\Model;
+                                        <body><h2 id="remplacement-a-l-aide-de-placeholders-en-php">Remplacement à l'aide de placeholders en php<a href="#remplacement-a-l-aide-de-placeholders-en-php" class="anchor"></a></h2>
+<pre class="code-multiline language-php"><code class="language-php" id="5688b1b3ecdd9c2f533497dad0bf1234"><pre><code class="hljs php" id="5688b1b3ecdd9c2f533497dad0bf1234"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Model</span>;
 
-use Symfony\Component\Serializer\Annotation\Context;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Symfony</span>\<span class="hljs-title">Component</span>\<span class="hljs-title">Serializer</span>\<span class="hljs-title">Annotation</span>\<span class="hljs-title">Context</span>;
 
-$replaced = strtr("Hi @name. The weather is @weather.", ["@name" =&gt; "Arnaud", "@weather" =&gt; "cloudy"]);
+$replaced = strtr(<span class="hljs-string">"Hi @name. The weather is @weather."</span>, [<span class="hljs-string">"@name"</span> =&gt; <span class="hljs-string">"Arnaud"</span>, <span class="hljs-string">"@weather"</span> =&gt; <span class="hljs-string">"cloudy"</span>]);
 
-var_dump(replaced);</code></pre>
+var_dump(replaced);</code></pre></code></pre></body>
                     <nav class="row">
                         <div class="col align-self-end">
                                                     </div>

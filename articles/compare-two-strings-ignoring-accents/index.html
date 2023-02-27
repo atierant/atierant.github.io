@@ -217,29 +217,61 @@
 
                             </li>
             </ol>
-                    <h2 id="convert-accents-to-their-non-accented-counterpart-and-then-compare-strings">Convert accents to their non-accented counterpart and then compare strings.<a href="#convert-accents-to-their-non-accented-counterpart-and-then-compare-strings" class="anchor"></a></h2>
-<pre class="code-multiline language-php"><code class="language-php" id="d41d8cd98f00b204e9800998ecf8427e"></code></pre>
+                    <body><h2 id="convert-accents-to-their-non-accented-counterpart-and-then-compare-strings">Convert accents to their non-accented counterpart and then compare strings.<a href="#convert-accents-to-their-non-accented-counterpart-and-then-compare-strings" class="anchor"></a></h2>
+<pre class="code-multiline language-php"><code class="language-php" id="c58ffc0760dd144f4fbcd5129bf546f6"><pre><code class="hljs php" id="c58ffc0760dd144f4fbcd5129bf546f6">$removeAccents = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(string $string)</span> </span>{
+    <span class="hljs-keyword">return</span> strtolower(
+        trim(
+            preg_replace(
+                <span class="hljs-string">'~[^0-9a-z]+~i'</span>,
+                <span class="hljs-string">'-'</span>,
+                preg_replace(
+                    <span class="hljs-string">'~&amp;([a-z]{1,2})(acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i'</span>,
+                    <span class="hljs-string">'$1'</span>,
+                    htmlentities($string, ENT_QUOTES, <span class="hljs-string">'UTF-8'</span>)
+                )
+            ),
+            <span class="hljs-string">' '</span>
+        )
+    );
+};
+$sentences = [
+    <span class="hljs-string">'depot'</span>,
+    <span class="hljs-string">'Dépôt'</span>,
+    <span class="hljs-string">'Depôt'</span>,
+    <span class="hljs-string">'Dépot'</span>,
+    <span class="hljs-string">'Depot'</span>,
+    <span class="hljs-string">'credit'</span>,
+    <span class="hljs-string">'Dépôt et créDit'</span>,
+    <span class="hljs-string">'Depôt et credit'</span>,
+    <span class="hljs-string">'Depot et~   CRÉDIT'</span>,
+];
+var_dump(array_map(
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($sentence)</span> <span class="hljs-title">use</span> <span class="hljs-params">($removeAccents)</span> </span>{
+        <span class="hljs-keyword">return</span> $removeAccents($sentence);
+    },
+    $sentences
+));</code></pre></code></pre>
 <h2 id="outputs">Outputs<a href="#outputs" class="anchor"></a></h2>
-<pre class="code-multiline language-bash"><code class="language-bash" id="a591618e293105811318c946dcd900e9">array(9) {
+<pre class="code-multiline language-bash"><code class="language-bash" id="a591618e293105811318c946dcd900e9"><pre><code class="hljs bash" id="a591618e293105811318c946dcd900e9">array(9) {
   [0] =&gt;
-  string(5) "depot"
+  string(5) <span class="hljs-string">"depot"</span>
   [1] =&gt;
-  string(5) "depot"
+  string(5) <span class="hljs-string">"depot"</span>
   [2] =&gt;
-  string(5) "depot"
+  string(5) <span class="hljs-string">"depot"</span>
   [3] =&gt;
-  string(5) "depot"
+  string(5) <span class="hljs-string">"depot"</span>
   [4] =&gt;
-  string(5) "depot"
+  string(5) <span class="hljs-string">"depot"</span>
   [5] =&gt;
-  string(6) "credit"
+  string(6) <span class="hljs-string">"credit"</span>
   [6] =&gt;
-  string(15) "depot-et-credit"
+  string(15) <span class="hljs-string">"depot-et-credit"</span>
   [7] =&gt;
-  string(15) "depot-et-credit"
+  string(15) <span class="hljs-string">"depot-et-credit"</span>
   [8] =&gt;
-  string(15) "depot-et-credit"
-}</code></pre>
+  string(15) <span class="hljs-string">"depot-et-credit"</span>
+}</code></pre></code></pre></body>
                     <nav class="row">
                         <div class="col align-self-end">
                                                     </div>

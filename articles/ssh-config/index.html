@@ -219,31 +219,31 @@
 
                             </li>
             </ol>
-                    <h2 id="manage-many-keys-with-ssh-config">Manage Many Keys with SSH Config<a href="#manage-many-keys-with-ssh-config" class="anchor"></a></h2>
+                    <body><h2 id="manage-many-keys-with-ssh-config">Manage Many Keys with SSH Config<a href="#manage-many-keys-with-ssh-config" class="anchor"></a></h2>
 <h3 id="ed25519-ssh-keys">ED25519 SSH keys<a href="#ed25519-ssh-keys" class="anchor"></a></h3>
 <p>Following best practices, you should always favor ED25519 SSH keys, since they are more secure and have better performance over the other types.
 ED25519 SSH keys were introduced in OpenSSH 6.5, so any modern OS should include the option to create them.</p>
 <h3 id="manage-a-new-ssh-key-pair">Manage a new SSH key pair<a href="#manage-a-new-ssh-key-pair" class="anchor"></a></h3>
 <h4 id="generate-a-new-ed25519-ssh-key-pair">Generate a new ED25519 SSH key pair<a href="#generate-a-new-ed25519-ssh-key-pair" class="anchor"></a></h4>
 <p><a href="https://gitlab.com/help/ssh/README.md" target="_blank">source</a></p>
-<pre class="code-multiline language-bash"><code class="language-bash" id="6c07f2b4b898170dc1a94df5ee40d64e">$ ssh-keygen -t ed25519 -C "email@example.com"</code></pre>
+<pre class="code-multiline language-bash"><code class="language-bash" id="6c07f2b4b898170dc1a94df5ee40d64e"><pre><code class="hljs bash" id="6c07f2b4b898170dc1a94df5ee40d64e">$ ssh-keygen -t ed25519 -C <span class="hljs-string">"email@example.com"</span></code></pre></code></pre>
 <h4 id="adding-an-ssh-key-to-your-account">Adding an SSH key to your account<a href="#adding-an-ssh-key-to-your-account" class="anchor"></a></h4>
 <h5 id="wsl-gnu-linux-requires-the-xclip-package">WSL / GNU/Linux (requires the xclip package)<a href="#wsl-gnu-linux-requires-the-xclip-package" class="anchor"></a></h5>
-<pre class="code-multiline language-bash"><code class="language-bash" id="d41d8cd98f00b204e9800998ecf8427e"></code></pre>
+<pre class="code-multiline language-bash"><code class="language-bash" id="09dd665e533544915c042ead86b894eb"><pre><code class="hljs bash" id="09dd665e533544915c042ead86b894eb">$ xclip -sel clip &lt; ~/.ssh/id_ed25519.pub</code></pre></code></pre>
 <h5 id="git-bash-on-windows">Git Bash on Windows<a href="#git-bash-on-windows" class="anchor"></a></h5>
-<pre class="code-multiline language-bash"><code class="language-bash" id="470ec145d8a1168d519318bde57bcd62">$ cat ~/.ssh/id_ed25519.pub | clip</code></pre>
+<pre class="code-multiline language-bash"><code class="language-bash" id="470ec145d8a1168d519318bde57bcd62"><pre><code class="hljs bash" id="470ec145d8a1168d519318bde57bcd62">$ cat ~/.ssh/id_ed25519.pub | clip</code></pre></code></pre>
 <h5 id="paste-it-on-ssh-keys-in-vcs-manager">Paste it on SSH Keys in VCS Manager<a href="#paste-it-on-ssh-keys-in-vcs-manager" class="anchor"></a></h5>
 <h4 id="manage-config-file-for-multiple-keys">Manage config file for multiple keys<a href="#manage-config-file-for-multiple-keys" class="anchor"></a></h4>
 <p>Open a terminal and use the following commands
 (replacing other_id_rsa with your private SSH key):</p>
-<pre class="code-multiline language-bash"><code class="language-bash" id="4f588b156181350aedb63da3149d613a">$ eval $(ssh-agent -s)
-$ ssh-add ~/.ssh/other_id_rsa</code></pre>
+<pre class="code-multiline language-bash"><code class="language-bash" id="4f588b156181350aedb63da3149d613a"><pre><code class="hljs bash" id="4f588b156181350aedb63da3149d613a">$ <span class="hljs-built_in">eval</span> $(ssh-agent -s)
+$ ssh-add ~/.ssh/other_id_rsa</code></pre></code></pre>
 <p>To retain these settings, you'll need to save them to a configuration file.
 For OpenSSH clients this is configured in the <code class="code-inline" id="4cc0ecc8128c171b864a0cdda4b4cdea">~/.ssh/config</code> file. In this
 file you can set up configurations for multiple hosts, like GitLab.com, your
 own GitLab instance, GitHub, Bitbucket, etc.</p>
 <p>Below are two example host configurations using their own SSH key:</p>
-<pre class="code-multiline language-bash"><code class="language-bash" id="2b8f22e49f7863252fc6b1ec6124113e"># GitLab.com
+<pre class="code-multiline language-bash"><code class="language-bash" id="2b8f22e49f7863252fc6b1ec6124113e"><pre><code class="hljs bash" id="2b8f22e49f7863252fc6b1ec6124113e"><span class="hljs-comment"># GitLab.com</span>
 Host gitlab.com
   Preferredauthentications publickey
   IdentityFile ~/.ssh/gitlab_com_rsa
@@ -252,13 +252,13 @@ Host gitlab.company.com
   HostName gitlab.company.com
   User git
   Preferredauthentications publickey
-  IdentityFile ~/.ssh/id_ed25519</code></pre>
+  IdentityFile ~/.ssh/id_ed25519</code></pre></code></pre>
 <h2 id="see">@see<a href="#see" class="anchor"></a></h2>
 <ul>
 <li><a href="http://www.octetmalin.net/linux/tutoriels/ssh-fichier-etc-ssh_config-configuration-machine-client.php" target="_blank">ssh Fichier de configuration du client (/etc/ssh/ssh_config et ~/.ssh/config)</a></li>
 <li><a href="https://blog.wizardsoftheweb.pro/ssh-config-with-keeagent/" target="_blank">Manage Many Keys with SSH Config and KeePass</a></li>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-configure-custom-connection-options-for-your-ssh-client" target="_blank">How To Configure Custom Connection Options for your SSH Client</a></li>
-</ul>
+</ul></body>
                     <nav class="row">
                         <div class="col align-self-end">
                                                     </div>
