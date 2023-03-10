@@ -2,322 +2,306 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
             <loc>https://arnaud.tierant.me/fr</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/</loc>
-            <lastmod>2023-03-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:25+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/contact/</loc>
-            <lastmod>2023-03-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>https://arnaud.tierant.me/en/en</loc>
-            <lastmod>2023-03-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>https://arnaud.tierant.me/en/fr</loc>
-            <lastmod>2023-03-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:25+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en?path=/en&amp;permanent=1&amp;httpPort=80&amp;httpsPort=443</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/rss.xml</loc>
-            <lastmod>2023-03-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/notes/</loc>
-            <lastmod>2023-03-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/projects/</loc>
-            <lastmod>2023-03-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/</loc>
-            <lastmod>2023-03-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/search/</loc>
-            <lastmod>2023-03-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/tags</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/tools/</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/contact/</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>https://arnaud.tierant.me/fr/en</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>https://arnaud.tierant.me/fr/fr</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/notes/</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/projects/</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/work/4-Sogeti</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/work/3-Acretion</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/work/2-Synap</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/work/1-BILMS</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/organization/ACEL</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/organization/Universit%C3%A9DeMontpellier</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/organization/IUTAurillac</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/search/</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/en-replace-placeholders-in-strings</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/en-modify-exception-code</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/en-ssh-config</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/en-find-mysql-cnf-location</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/en-compare-two-strings-ignoring-accents</loc>
-            <lastmod>2019-11-05T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2019-11-05T22:48:25+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/2</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/tags</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/tools/</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr?path=/fr&amp;permanent=1&amp;httpPort=80&amp;httpsPort=443</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/work/4-Sogeti</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/work/3-Acretion</loc>
-            <lastmod>2023-03-10T22:36:44+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/work/2-Synap</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/work/1-BILMS</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/organization/ACEL</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/organization/Universit%C3%A9DeMontpellier</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/organization/IUTAurillac</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/work/4-Sogeti/experience/CATS</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/work/4-Sogeti/experience/CELR</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/work/4-Sogeti/experience/AH</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/work/4-Sogeti/experience/LaPoste</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/work/4-Sogeti/experience/PoleEmploi</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/work/4-Sogeti/experience/EDS</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/resume/work/4-Sogeti/experience/Immo</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/fr-replace-placeholders-in-strings</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/fr-modify-exception-code</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/fr-ssh-config</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/fr-find-mysql-cnf-location</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/fr-compare-two-strings-ignoring-accents</loc>
-            <lastmod>2019-11-05T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2019-11-05T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/2</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/en-replace-placeholders-in-strings</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/en-modify-exception-code</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/en-ssh-config</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/en-find-mysql-cnf-location</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/en-compare-two-strings-ignoring-accents</loc>
-            <lastmod>2019-11-05T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2019-11-05T22:48:25+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/en-site-launched</loc>
-            <lastmod>2019-10-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2019-10-10T22:48:25+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/work/4-Sogeti/experience/CATS</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/work/4-Sogeti/experience/CELR</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/work/4-Sogeti/experience/AH</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/work/4-Sogeti/experience/LaPoste</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/work/4-Sogeti/experience/PoleEmploi</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/work/4-Sogeti/experience/EDS</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/resume/work/4-Sogeti/experience/Immo</loc>
-            <lastmod>2023-03-10T22:36:45+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:48:27+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/fr-replace-placeholders-in-strings</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/fr-modify-exception-code</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/fr-ssh-config</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/fr-find-mysql-cnf-location</loc>
-            <lastmod>2023-03-10T22:34:01+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-03-10T22:45:00+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/fr-compare-two-strings-ignoring-accents</loc>
-            <lastmod>2019-11-05T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2019-11-05T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/fr-site-launched</loc>
-            <lastmod>2019-10-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2019-10-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/fr/articles/en-site-launched</loc>
-            <lastmod>2019-10-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2019-10-10T22:48:25+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>https://arnaud.tierant.me/en/articles/fr-site-launched</loc>
-            <lastmod>2019-10-10T22:36:43+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2019-10-10T22:48:26+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
     </urlset>
