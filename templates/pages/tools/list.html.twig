@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% set title = "Tools" %}
+{% block meta_title 'Tools' ~ ' | ' ~ parent() %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('resume') }}
+    {{ encore_entry_link_tags('articles') }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="page-title">{% trans %}Tools & Links{% endtrans %}</h1>
+    <!--<div class="cv w3-container w3-light-gray grid js-isotope"-->
+    <!--     data-isotope-options='{ "itemSelector": ".element-item", "layoutMode": "fitRows" }'>-->
+    <div class="cv container">
+        <!-- TOOLS -->
+        <section class="tools">
+            <div class="row row-cols-1 row-cols-md-1 g-4">
+                {% set tools = content_list('App\\Model\\Resume\\Tool') %}
+
+                {% for item in tools|sort((a, b) => a.startDate <=> b.startDate)|reverse %}
+                    <div class="col">
+                        {% include 'layout/card/tool-card.html.twig' with {'tool': item} %}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

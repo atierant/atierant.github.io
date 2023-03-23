@@ -2,4 +2,5 @@ name: "CSS"
 level: 60
 since: "2018-01-01"
 priority: 80
-versions: ["1", "2", "3"]
+versions: ["1", "2", "3", "scss"]
+icon: 'fa-brands fa-css3'

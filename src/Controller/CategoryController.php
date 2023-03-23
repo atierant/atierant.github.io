@@ -8,32 +8,38 @@ use App\Model\Article\Article;
 use App\Model\Category;
 use Knp\Component\Pager\PaginatorInterface;
 use Stenope\Bundle\ContentManagerInterface;
-use Stenope\Bundle\Service\ContentUtils;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/categories')]
 class CategoryController extends AbstractController
 {
-    public function __construct(private readonly ContentManagerInterface $manager)
-    {
-    }
+    public const LIMIT_PER_PAGE = 5;
 
-    #[Route('/{category}', name: 'app_category', requirements: ['category' => '.+'])]
-    public function show(Category $category, PaginatorInterface $paginator, Request $request): Response
+    #[Route('/{category}/{page}', name: 'app_category', requirements: [
+        'category' => '.+',
+        'page' => '\d+',
+    ], defaults: [
+        'page' => '1',
+    ], priority: -200)]
+    public function show(int $page, Category $category, PaginatorInterface $paginator, ContentManagerInterface $manager): Response
     {
-        $articles = $this->manager->getContents(Article::class, ['publishedAt' => false], ['category' => $category]);
+        $articles = $manager->getContents(Article::class, [
+            'publishedAt' => false,
+        ], [
+            'category' => $category->slug,
+        ]);
 
         $pagination = $paginator->paginate(
             $articles, /* query NOT result */
-            $request->query->getInt('page', 1), /*page number*/
-            5 /*limit per page*/
+            $page, /* page number */
+            self::LIMIT_PER_PAGE /* limit per page */
         );
 
-        return $this->render('pages/articles/list.html.twig',[
-            'pagination' => $pagination
+        return $this->render('pages/articles/list.html.twig', [
+            'pagination' => $pagination,
+            'category' => $category,
         ]);
     }
 }

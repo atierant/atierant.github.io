@@ -1,4 +1,6 @@
 name: "Agile Scrum"
-level: 50
+level: 60
 since: "2018-01-01"
 versions: []
+priority: 84
+icon: 'fa-solid fa-person-shelter'

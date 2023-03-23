@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="7bRlYkK" resname="note">
+        <source>note</source>
+        <target>NOTE</target>
+      </trans-unit>
+      <trans-unit id="lzgBh6h" resname="tip">
+        <source>tip</source>
+        <target>TIP</target>
+      </trans-unit>
+      <trans-unit id="tbB2gib" resname="not_available">
+        <source>not_available</source>
+        <target>Not available</target>
+      </trans-unit>
+      <trans-unit id="F0dwSb7" resname="mit_license">
+        <source>mit_license</source>
+        <target>MIT License</target>
+      </trans-unit>
+      <trans-unit id="DF34uM2" resname="http_error.name">
+        <source>http_error.name</source>
+        <target>Error {status_code, number}</target>
+      </trans-unit>
+      <trans-unit id="e3w.2Rf" resname="http_error.description">
+        <source>http_error.description</source>
+        <target>There was an unknown error (HTTP {status_code, number}) that prevented to complete your
+                    request.
+                </target>
+      </trans-unit>
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+        <source>http_error.suggestion</source>
+        <target><![CDATA[
+                    Try loading this page again in some minutes or <a href="{url}">go back to the homepage</a>.]]></target>
+      </trans-unit>
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description">
+        <source>http_error_403.description</source>
+        <target>You don't have permission to access to this resource.</target>
+      </trans-unit>
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+        <source>http_error_403.suggestion</source>
+        <target>Ask your manager or system administrator to grant you access to this resource.</target>
+      </trans-unit>
+      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+        <source>http_error_404.description</source>
+        <target>We couldn't find the page you requested.</target>
+      </trans-unit>
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+        <source>http_error_404.suggestion</source>
+        <target><![CDATA[
+                    Check out any misspelling in the URL or <a href="{url}">go back to the homepage</a>.]]></target>
+      </trans-unit>
+      <trans-unit id="ZYXSW95" resname="http_error_500.description">
+        <source>http_error_500.description</source>
+        <target>There was an internal server error.</target>
+      </trans-unit>
+      <trans-unit id="VVs_J1c" resname="http_error_500.suggestion">
+        <source>http_error_500.suggestion</source>
+        <target><![CDATA[
+                    Try loading this page again in some minutes or <a href="{url}">go back to the homepage</a>.]]></target>
+      </trans-unit>
+      <trans-unit id="Ffi98jp" resname="action.show">
+        <source>action.show</source>
+        <target>Show</target>
+      </trans-unit>
+      <trans-unit id="VO1bKFS" resname="action.show_post">
+        <source>action.show_post</source>
+        <target>Show post</target>
+      </trans-unit>
+      <trans-unit id="Rmxwd1D" resname="action.back_to_list">
+        <source>action.back_to_list</source>
+        <target>Back to the post list</target>
+      </trans-unit>
+      <trans-unit id="UrRn8xj" resname="label.title">
+        <source>label.title</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="wCazS.X" resname="action.close">
+        <source>action.close</source>
+        <target>Close</target>
+      </trans-unit>
+      <trans-unit id="bxYZLcN" resname="label.author">
+        <source>label.author</source>
+        <target>Author</target>
+      </trans-unit>
+      <trans-unit id="uh.E_Fq" resname="label.author_email">
+        <source>label.author_email</source>
+        <target>Author email</target>
+      </trans-unit>
+      <trans-unit id="LDhDPrF" resname="label.username">
+        <source>label.username</source>
+        <target>Username</target>
+      </trans-unit>
+      <trans-unit id="aYnbvsn" resname="label.fullname">
+        <source>label.fullname</source>
+        <target>Fullname</target>
+      </trans-unit>
+      <trans-unit id="D2N6_cP" resname="label.email">
+        <source>label.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="O59lP5d" resname="label.role">
+        <source>label.role</source>
+        <target>Role</target>
+      </trans-unit>
+      <trans-unit id="qqpGLJl" resname="label.content">
+        <source>label.content</source>
+        <target>Content</target>
+      </trans-unit>
+      <trans-unit id="tT7OhMP" resname="label.summary">
+        <source>label.summary</source>
+        <target>Summary</target>
+      </trans-unit>
+      <trans-unit id="xrlnqyo" resname="label.published_at">
+        <source>label.published_at</source>
+        <target>Published at</target>
+      </trans-unit>
+      <trans-unit id="ijQyGRo" resname="label.tags">
+        <source>label.tags</source>
+        <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="zldXQq6" resname="label.actions">
+        <source>label.actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="sqML_MO" resname="menu.toggle_nav">
+        <source>menu.toggle_nav</source>
+        <target>Toggle navigation</target>
+      </trans-unit>
+      <trans-unit id="SWM2jM." resname="menu.choose_language">
+        <source>menu.choose_language</source>
+        <target>Choose language</target>
+      </trans-unit>
+      <trans-unit id="3XHWUzG" resname="menu.post_list">
+        <source>menu.post_list</source>
+        <target>Post list</target>
+      </trans-unit>
+      <trans-unit id="UoOv6mx" resname="menu.homepage">
+        <source>menu.homepage</source>
+        <target>Homepage</target>
+      </trans-unit>
+      <trans-unit id="k6VxCsO" resname="menu.search">
+        <source>menu.search</source>
+        <target>Search</target>
+      </trans-unit>
+      <trans-unit id="is7pld7" resname="post.num_comments">
+        <source>post.num_comments</source>
+        <target>{count, plural, one {# comment} other {# comments}}</target>
+      </trans-unit>
+      <trans-unit id="WVCAEhD" resname="author.age">
+        <source>author.age</source>
+        <target>{age} years old</target>
+      </trans-unit>
+      <trans-unit id="rAoWddb" resname="post.search_for">
+        <source>post.search_for</source>
+        <target>Search for...</target>
+      </trans-unit>
+      <trans-unit id="DkZtOOL" resname="rss.title">
+        <source>rss.title</source>
+        <target>Symfony Demo blog</target>
+      </trans-unit>
+      <trans-unit id="ZFPsu41" resname="rss.description">
+        <source>rss.description</source>
+        <target>Most recent posts published on the Symfony Demo blog</target>
+      </trans-unit>
+      <trans-unit id="oOXdtd2" resname="paginator.previous">
+        <source>paginator.previous</source>
+        <target>Previous</target>
+      </trans-unit>
+      <trans-unit id="rjAecsf" resname="paginator.next">
+        <source>paginator.next</source>
+        <target>Next</target>
+      </trans-unit>
+      <trans-unit id="tX4BnBn" resname="paginator.current">
+        <source>paginator.current</source>
+        <target>(current)</target>
+      </trans-unit>
+      <trans-unit id="IbGqFRy" resname="Published on">
+        <source>Published on</source>
+        <target>Published on</target>
+      </trans-unit>
+      <trans-unit id="1w5AoHR" resname="Read the article">
+        <source>Read the article</source>
+        <target>Read the article</target>
+      </trans-unit>
+      <trans-unit id="ixF9t3A" resname="See more...">
+        <source>See more...</source>
+        <target>See more...</target>
+      </trans-unit>
+      <trans-unit id="i0DKxrn" resname="View project...">
+        <source>View project...</source>
+        <target>View project...</target>
+      </trans-unit>
+      <trans-unit id="sUrHikb" resname="Articles">
+        <source>Articles</source>
+        <target>Articles</target>
+      </trans-unit>
+      <trans-unit id="ebbF.4f" resname="Back to the list">
+        <source>Back to the list</source>
+        <target>Back to the list</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="vjcC4.G" resname="Card">
+        <source>Card</source>
+        <target>Card</target>
+      </trans-unit>
+      <trans-unit id="OTOxgCF" resname="Bio">
+        <source>Bio</source>
+        <target>Bio</target>
+      </trans-unit>
+      <trans-unit id="ZtD1I6N" resname="Skills">
+        <source>Skills</source>
+        <target>Skills</target>
+      </trans-unit>
+      <trans-unit id="1kDHQh2" resname="Resume">
+        <source>Resume</source>
+        <target>Resume</target>
+      </trans-unit>
+      <trans-unit id="K1w9JnI" resname="Contact">
+        <source>Contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="MxKEogp" resname="About this website">
+        <source>About this website</source>
+        <target>About this website</target>
+      </trans-unit>
+      <trans-unit id="ly.DhXY" resname="Full Resume">
+        <source>Full Resume</source>
+        <target>Full Resume</target>
+      </trans-unit>
+      <trans-unit id="BOKpcor" resname="Projects">
+        <source>Projects</source>
+        <target>Projects</target>
+      </trans-unit>
+      <trans-unit id="r.jHstF" resname="Tools &amp; links">
+        <source>Tools &amp; links</source>
+        <target><![CDATA[Tools & links]]></target>
+      </trans-unit>
+      <trans-unit id="PVP3P0u" resname="Find me">
+        <source>Find me</source>
+        <target>Find me</target>
+      </trans-unit>
+      <trans-unit id="Tvyg0Qx" resname="About">
+        <source>About</source>
+        <target>About</target>
+      </trans-unit>
+      <trans-unit id="QNL3i3W" resname="Hi there, I make things. Many many things. I get by as a">
+        <source>Hi there, I make things. Many many things. I get by as a</source>
+        <target>Hi there, I make things. Many many things. I get by as a</target>
+      </trans-unit>
+      <trans-unit id="tnch_4q" resname="bioengineer">
+        <source>bioengineer</source>
+        <target>bioengineer</target>
+      </trans-unit>
+      <trans-unit id="aABNQil" resname="back-end developer">
+        <source>back-end developer</source>
+        <target>back-end developer</target>
+      </trans-unit>
+      <trans-unit id="ix9qkbw" resname="digital publisher">
+        <source>digital publisher</source>
+        <target>digital publisher</target>
+      </trans-unit>
+      <trans-unit id="BYXCW4U" resname="music enthusiast">
+        <source>music enthusiast</source>
+        <target>music enthusiast</target>
+      </trans-unit>
+      <trans-unit id="Aw5jfK5" resname="living in">
+        <source>living in</source>
+        <target>living in</target>
+      </trans-unit>
+      <trans-unit id="9FlQKDt" resname="and working for">
+        <source>and working for</source>
+        <target>and working for</target>
+      </trans-unit>
+      <trans-unit id="v6Slk8i" resname="Drop me a line about anything...">
+        <source>Drop me a line about anything...</source>
+        <target>Drop me a line about anything...</target>
+      </trans-unit>
+      <trans-unit id="xhOKv6a" resname="Birthday">
+        <source>Birthday</source>
+        <target>Birthday</target>
+      </trans-unit>
+      <trans-unit id="taIprIv" resname="Website">
+        <source>Website</source>
+        <target>Website</target>
+      </trans-unit>
+      <trans-unit id="Y9zriAC" resname="Phone">
+        <source>Phone</source>
+        <target>Phone</target>
+      </trans-unit>
+      <trans-unit id=".DP3Mkb" resname="City">
+        <source>City</source>
+        <target>City</target>
+      </trans-unit>
+      <trans-unit id="Obc3DzC" resname="Age">
+        <source>Age</source>
+        <target>Age</target>
+      </trans-unit>
+      <trans-unit id="cZc4qFK" resname="Degree">
+        <source>Degree</source>
+        <target>Degree</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="rhC_1p8" resname="Following my studies (DUT Biological Engineering, Bachelor and Master in Computer Science,&#10;                        specialization in Bioinformatics), I decided to enter the world of work by creating my bioinformatics services&#10;                        company BILMS (Bioinformatics, Computer Science, Software, Maintenance, Services), in order to provide biology&#10;                        research laboratories with an external service, putting at my disposal my know-how and my expertise&#10;                        acquired throughout my studies.">
+        <source>Following my studies (DUT Biological Engineering, Bachelor and Master in Computer Science,
+                        specialization in Bioinformatics), I decided to enter the world of work by creating my bioinformatics services
+                        company BILMS (Bioinformatics, Computer Science, Software, Maintenance, Services), in order to provide biology
+                        research laboratories with an external service, putting at my disposal my know-how and my expertise
+                        acquired throughout my studies.</source>
+        <target>Following my studies (DUT Biological Engineering, Bachelor and Master in Computer Science,
+                    specialization in Bioinformatics), I decided to enter the world of work by creating my
+                    bioinformatics services
+                    company BILMS (Bioinformatics, Computer Science, Software, Maintenance, Services), in order to
+                    provide biology
+                    research laboratories with an external service, putting at my disposal my know-how and my expertise
+                    acquired throughout my studies.
+                </target>
+      </trans-unit>
+      <trans-unit id="6cagtaC" resname="Sometimes the perspectives of each changes, that's why I considered a less administrative job,&#10;                        more focused on my technical skills. With this in mind, I gladly put my skills at Synap System,&#10;                        an open source solutions consulting company, for nearly a year and a half. Then came a mission to&#10;                        Acretion to participate in the development of an intelligent social network dedicated to sharing values, via&#10;                        an innovative strategy.">
+        <source>Sometimes the perspectives of each changes, that's why I considered a less administrative job,
+                        more focused on my technical skills. With this in mind, I gladly put my skills at Synap System,
+                        an open source solutions consulting company, for nearly a year and a half. Then came a mission to
+                        Acretion to participate in the development of an intelligent social network dedicated to sharing values, via
+                        an innovative strategy.</source>
+        <target>Sometimes the perspectives of each changes, that's why I considered a less administrative job,
+                    more focused on my technical skills. With this in mind, I gladly put my skills at Synap System,
+                    an open source solutions consulting company, for nearly a year and a half. Then came a mission to
+                    Acretion to participate in the development of an intelligent social network dedicated to sharing
+                    values, via
+                    an innovative strategy.
+                </target>
+      </trans-unit>
+      <trans-unit id="JCyKR2w" resname="Currently, I am a &lt;span class=&quot;rainbow&quot;&gt;developer&lt;/span&gt; &lt;code&gt;/dɪˈvɛləpɚ/&lt;/code&gt;, based in&#10;                        Montpellier, France, working on Sogeti, a wholly-owned subsidiary of Cap Gemini S.A., leader in&#10;                        IT services and local engineering, specializing in application and infrastructure management.">
+        <source>Currently, I am a &lt;span class="rainbow"&gt;developer&lt;/span&gt; &lt;code&gt;/dɪˈvɛləpɚ/&lt;/code&gt;, based in
+                        Montpellier, France, working on Sogeti, a wholly-owned subsidiary of Cap Gemini S.A., leader in
+                        IT services and local engineering, specializing in application and infrastructure management.</source>
+        <target><![CDATA[Currently, I am a <span class="rainbow">developer</span> <code>/dɪˈvɛləpɚ/</code>, based in
+                        Montpellier, France, working on Sogeti, a wholly-owned subsidiary of Cap Gemini S.A., leader in
+                        IT services and local engineering, specializing in application and infrastructure management.]]></target>
+      </trans-unit>
+      <trans-unit id="Vja4E.c" resname="I'm addicted to music, travelling and at any given (and non-given) moment, meeting new people :)">
+        <source>I'm addicted to music, travelling and at any given (and non-given) moment, meeting new people :)</source>
+        <target>I'm addicted to music, travelling and at any given (and non-given) moment, meeting new people
+                    :)
+                </target>
+      </trans-unit>
+      <trans-unit id="t7lZkXr" resname="The &lt;a href=&quot;/projects&quot;&gt;projects&lt;/a&gt; page is a nice place to see some of my work,&#10;                        but you can also view my (somewhat outdated) &lt;a href=&quot;/resume&quot;&gt;resume&lt;/a&gt;.">
+        <source>The &lt;a href="/projects"&gt;projects&lt;/a&gt; page is a nice place to see some of my work,
+                        but you can also view my (somewhat outdated) &lt;a href="/resume"&gt;resume&lt;/a&gt;.</source>
+        <target><![CDATA[The <a href="/projects">projects</a> page is a nice place to see some of my work,
+                        but you can also view my (somewhat outdated) <a href="/resume">resume</a>.]]></target>
+      </trans-unit>
+      <trans-unit id="4IRmxQg" resname="You can &lt;a href=&quot;mailto:arnaud@tierant.fr?subject=Hello_from_arnaud.tierant.me&quot;&gt;email me&lt;/a&gt; or&#10;                find me &lt;a href=&quot;https://twitter.com/atierant&quot;&gt;on Twitter&lt;/a&gt; if you want to get in touch. As I said, I&#10;                love meeting new people so don't hesitate to send a message!">
+        <source>You can &lt;a href="mailto:arnaud@tierant.fr?subject=Hello_from_arnaud.tierant.me"&gt;email me&lt;/a&gt; or
+                find me &lt;a href="https://twitter.com/atierant"&gt;on Twitter&lt;/a&gt; if you want to get in touch. As I said, I
+                love meeting new people so don't hesitate to send a message!</source>
+        <target><![CDATA[You can <a href="mailto:arnaud@tierant.fr?subject=Hello_from_arnaud.tierant.me">email me</a> or
+                find me <a href="https://twitter.com/atierant">on Twitter</a> if you want to get in touch. As I said, I
+                love meeting new people so don't hesitate to send a message!]]></target>
+      </trans-unit>
+      <trans-unit id="FbYZdLJ" resname="Location">
+        <source>Location</source>
+        <target>Location</target>
+      </trans-unit>
+      <trans-unit id="1uZFt9K" resname="Call">
+        <source>Call</source>
+        <target>Call</target>
+      </trans-unit>
+      <trans-unit id="nNJr7k1" resname="Your Name">
+        <source>Your Name</source>
+        <target>Your Name</target>
+      </trans-unit>
+      <trans-unit id="IWej4Er" resname="Your Email">
+        <source>Your Email</source>
+        <target>Your Email</target>
+      </trans-unit>
+      <trans-unit id="L3dmip3" resname="Message">
+        <source>Message</source>
+        <target>Message</target>
+      </trans-unit>
+      <trans-unit id="T3P4Cr5" resname="Please do not use this form to send me full code samples or ask me to fix an app for free.&#10;                            If you'd like to get in touch and are very old-school, you can send a letter but email me first to get address ;)">
+        <source>Please do not use this form to send me full code samples or ask me to fix an app for free.
+                            If you'd like to get in touch and are very old-school, you can send a letter but email me first to get address ;)</source>
+        <target>Please do not use this form to send me full code samples or ask me to fix an app for free.
+                    If you'd like to get in touch and are very old-school, you can send a letter but email me first to
+                    get address ;)
+                </target>
+      </trans-unit>
+      <trans-unit id="D_BXH6z" resname="Send Message">
+        <source>Send Message</source>
+        <target>Send Message</target>
+      </trans-unit>
+      <trans-unit id=".vV2wwi" resname="Hi ! I'm Arnaud Tiérant !">
+        <source>Hi ! I'm Arnaud Tiérant !</source>
+        <target>Hi ! I'm Arnaud Tiérant !</target>
+      </trans-unit>
+      <trans-unit id="ydftNLp" resname="I'm">
+        <source>I'm</source>
+        <target>I'm</target>
+      </trans-unit>
+      <trans-unit id="jnapSsg" resname="Summary">
+        <source>Summary</source>
+        <target>Summary</target>
+      </trans-unit>
+      <trans-unit id="Qz_wRMN" resname="Technical Leader">
+        <source>Technical Leader</source>
+        <target>Technical Leader</target>
+      </trans-unit>
+      <trans-unit id="PTrcUN1" resname="Analyst Programmer">
+        <source>Analyst Programmer</source>
+        <target>Analyst Programmer</target>
+      </trans-unit>
+      <trans-unit id="USqzxrm" resname="Education">
+        <source>Education</source>
+        <target>Education</target>
+      </trans-unit>
+      <trans-unit id="EfsyHO7" resname="Master of Bioinformatics">
+        <source>Master of Bioinformatics</source>
+        <target>Master of Bioinformatics</target>
+      </trans-unit>
+      <trans-unit id="xgIY9yz" resname="Multidisciplinary knowledge in the domain of bioinformatics, information, knowledge extraction&#10;                            and modeling of living organisms.">
+        <source>Multidisciplinary knowledge in the domain of bioinformatics, information, knowledge extraction
+                            and modeling of living organisms.</source>
+        <target>Multidisciplinary knowledge in the domain of bioinformatics, information, knowledge extraction
+                    and modeling of living organisms.
+                </target>
+      </trans-unit>
+      <trans-unit id="K49AIgF" resname="Bachelor of Bioinformatics">
+        <source>Bachelor of Bioinformatics</source>
+        <target>Bachelor of Bioinformatics</target>
+      </trans-unit>
+      <trans-unit id="MeDBLee" resname="Specialities in computing domain, analysis tools and modeling dedicated to biology.">
+        <source>Specialities in computing domain, analysis tools and modeling dedicated to biology.</source>
+        <target>Specialities in computing domain, analysis tools and modeling dedicated to biology.</target>
+      </trans-unit>
+      <trans-unit id="5ipo371" resname="Professional Experience">
+        <source>Professional Experience</source>
+        <target>Professional Experience</target>
+      </trans-unit>
+      <trans-unit id="XMPXQgR" resname="Delivers solutions that enable digital transformation and offer cutting-edge expertise in Cloud,&#10;                            Cybersecurity, Digital Manufacturing, Quality Assurance &amp;amp; Testing, and emerging&#10;                            technologies.">
+        <source>Delivers solutions that enable digital transformation and offer cutting-edge expertise in Cloud,
+                            Cybersecurity, Digital Manufacturing, Quality Assurance &amp;amp; Testing, and emerging
+                            technologies.</source>
+        <target><![CDATA[Delivers solutions that enable digital transformation and offer cutting-edge expertise in Cloud,
+                            Cybersecurity, Digital Manufacturing, Quality Assurance &amp; Testing, and emerging
+                            technologies.]]></target>
+      </trans-unit>
+      <trans-unit id="hhpgJW4" resname="Information technology consulting company, specialized in open-source solutions, interoperability&#10;                            and web accessibility.">
+        <source>Information technology consulting company, specialized in open-source solutions, interoperability
+                            and web accessibility.</source>
+        <target>Information technology consulting company, specialized in open-source solutions,
+                    interoperability
+                    and web accessibility.
+                </target>
+      </trans-unit>
+      <trans-unit id="aYffcjX" resname="If you want to show your support for any of the &lt;a href=&quot;/projects&quot;&gt;open source projects&lt;/a&gt; I&#10;                        devote my time to, here's a PayPal Donate button that you may click :)">
+        <source>If you want to show your support for any of the &lt;a href="/projects"&gt;open source projects&lt;/a&gt; I
+                        devote my time to, here's a PayPal Donate button that you may click :)</source>
+        <target><![CDATA[If you want to show your support for any of the <a href="/projects">open source projects</a> I
+                        devote my time to, here's a PayPal Donate button that you may click :)]]></target>
+      </trans-unit>
+      <trans-unit id="TGmFJSL" resname="Work Experience">
+        <source>Work Experience</source>
+        <target>Work Experience</target>
+      </trans-unit>
+      <trans-unit id="4xCIqce" resname="Internship Experience">
+        <source>Internship Experience</source>
+        <target>Internship Experience</target>
+      </trans-unit>
+      <trans-unit id="slYbUOE" resname="Specializations">
+        <source>Specializations</source>
+        <target>Specializations</target>
+      </trans-unit>
+      <trans-unit id="FNy9xxQ" resname="Back to the resume">
+        <source>Back to the resume</source>
+        <target>Back to the resume</target>
+      </trans-unit>
+      <trans-unit id="0E_5lI0" resname="Back to Resume">
+        <source>Back to Resume</source>
+        <target>Back to Resume</target>
+      </trans-unit>
+      <trans-unit id="RZid5J_" resname="Details">
+        <source>Details</source>
+        <target>Details</target>
+      </trans-unit>
+      <trans-unit id="x3wszca" resname="Tools &amp; Links">
+        <source>Tools &amp; Links</source>
+        <target><![CDATA[Tools & Links]]></target>
+      </trans-unit>
+      <trans-unit id="LlO9zQd" resname="Tool">
+        <source>Tool</source>
+        <target>Tool</target>
+      </trans-unit>
+      <trans-unit id="TLTqJVg" resname="year">
+        <source>year</source>
+        <target>year</target>
+      </trans-unit>
+      <trans-unit id="HFCZOwC" resname="years">
+        <source>years</source>
+        <target>years</target>
+      </trans-unit>
+      <trans-unit id="pcfRcZ4" resname="month">
+        <source>month</source>
+        <target>month</target>
+      </trans-unit>
+      <trans-unit id="FoN0M0Q" resname="months">
+        <source>months</source>
+        <target>months</target>
+      </trans-unit>
+      <trans-unit id="lEwn5bl" resname="day">
+        <source>day</source>
+        <target>day</target>
+      </trans-unit>
+      <trans-unit id="q1EATp1" resname="days">
+        <source>days</source>
+        <target>days</target>
+      </trans-unit>
+      <trans-unit id="msCt1HX" resname="hour">
+        <source>hour</source>
+        <target>hour</target>
+      </trans-unit>
+      <trans-unit id="QEMUsfS" resname="hours">
+        <source>hours</source>
+        <target>hours</target>
+      </trans-unit>
+      <trans-unit id="KM3SDq8" resname="minute">
+        <source>minute</source>
+        <target>minute</target>
+      </trans-unit>
+      <trans-unit id="kOY9hfo" resname="minutes">
+        <source>minutes</source>
+        <target>minutes</target>
+      </trans-unit>
+      <trans-unit id="FjZ6rLZ" resname="second">
+        <source>second</source>
+        <target>second</target>
+      </trans-unit>
+      <trans-unit id="WfAG1jv" resname="seconds">
+        <source>seconds</source>
+        <target>seconds</target>
+      </trans-unit>
+      <trans-unit id="YgERG4O" resname="and">
+        <source>and</source>
+        <target>and</target>
+      </trans-unit>
+      <trans-unit id="mK8e1hg" resname="Since">
+        <source>Since</source>
+        <target>Since</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

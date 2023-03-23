@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block meta_title "Skills"|trans ~ ' | ' ~ parent() %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('skills') }}
+    {{ encore_entry_link_tags('articles') }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="page-title">{% trans %}Skills{% endtrans %}</h1>
+
+    <section class="skills section-bg2 wrapper mt-3">
+        <div class="row skills-content">
+            {% for skill in skills|sort((a, b) => a.priority <=> b.priority)|reverse %}
+                {% set loopIndex = loop.index0 %}
+                {% set nextLoopIndex = loopIndex+1 -%}
+                {%- if loopIndex == 0 -%}
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                {% elseif loopIndex % 3 == 0 -%}
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                {% endif %}
+
+                <div
+                    class="progress p-1 hover-effect"
+                    data-loop="{{ loopIndex }}"
+                    data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true"
+                    data-bs-title="
+                        {%- if skill.versions is not empty -%}
+                        <em>Versions : </em>{{ skill.versions|join(', ', ' '~'and'|trans~' ') }}
+                        <br />
+                        {% endif %}
+                        {%- if skill.since is not empty -%}
+                        <em>{{ 'Since'|trans }} : </em>{{ skill.since|format_datetime(pattern="y") }}
+                        {% endif %}
+                        "
+                >
+                    <a href="{{ path('app_skills_show', {'skill': skill.slug}) }}">
+                        <span class="skill">
+                            {%- if skill.icon is not empty -%}
+                                <i class="{{ skill.icon }} fa-lg"></i>
+                            {% endif %}
+                            {{ skill.name }} <i class="val">{{ skill.level }}%</i>
+                        </span>
+                        <div class="progress-bar-wrap">
+                            <div
+                                class="progress-bar" role="progressbar"
+                                aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ skill.level }}"
+                            ></div>
+                        </div>
+                    </a>
+                </div>
+
+                {%- if loop.last -%}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

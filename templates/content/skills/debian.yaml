@@ -1,5 +1,7 @@
 name: "Debian"
 level: 70
 since: "2004-01-01"
-priority: 80
+priority: 83
 versions: []
+icon: 'fa-brands fa-linux'
+categories: ['OS']

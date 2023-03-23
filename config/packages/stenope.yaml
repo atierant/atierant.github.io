@@ -2,6 +2,7 @@ stenope:
     shared_html_crawlers: true
 
     providers:
+        App\Model\Tag: '%kernel.project_dir%/templates/content/skills'
         App\Model\Article\Article: '%kernel.project_dir%/templates/content/articles'
         App\Model\Author: '%kernel.project_dir%/templates/content/authors'
         App\Model\Page: '%kernel.project_dir%/templates/content/pages'
@@ -12,6 +13,7 @@ stenope:
         App\Model\Resume\Skill: '%kernel.project_dir%/templates/content/skills'
         App\Model\Resume\Tool: '%kernel.project_dir%/templates/content/resume/tools'
         App\Model\Resume\Work: '%kernel.project_dir%/templates/content/resume/work'
+        App\Model\Resume\Experience: '%kernel.project_dir%/templates/content/resume/experience'
         App\Model\Project\Project: '%kernel.project_dir%/templates/content/projects'
         App\Model\Note\Note: '%kernel.project_dir%/templates/content/notes'
         App\Model\Category: '%kernel.project_dir%/templates/content/category'
@@ -20,6 +22,7 @@ stenope:
         App\Model\Page: { route: 'page', slug: 'slug' }
         #App\Model\Author: { route: 'author_show', slug: 'author' }
         App\Model\Resume\Work: { route: 'app_work_show', slug: 'work' }
+        App\Model\Resume\Organization: { route: 'app_organization_show', slug: 'organization' }
         App\Model\Article: { route: 'app_article_show', slug: 'article' }
         App\Model\Category: { route: 'app_category', slug: 'category' }
         App\Model\Tag: { route: 'app_tag_show', slug: 'tag' }

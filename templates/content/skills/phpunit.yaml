@@ -1,6 +1,7 @@
 name: "PHPUnit"
 level: 80
 since: "1999-10-01"
-versions: [ "5.x", "7.x", "8.x"]
-priority: 100
+versions: [ "8.x", "9.x", "10.x"]
+priority: 90
+icon: 'fa-solid fa-mosquito'
 description: "10 expériences chez Sogeti et dans 1 autre entreprise"

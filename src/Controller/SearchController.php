@@ -11,10 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/search')]
 class SearchController extends AbstractController
 {
-    public function __construct()
-    {
-    }
-
     #[Route('/', name: 'search')]
     public function list(): Response
     {

@@ -17,11 +17,11 @@
     "babel"
   ],
   "parser": "@babel/eslint-parser",
-  //  "parserOptions": {
-  //    "ecmaVersion": 2017,
-  //    "sourceType": "module",
-  //    "requireConfigFile" : "false
-  //  },
+    "parserOptions": {
+//      "ecmaVersion": 2017,
+//      "sourceType": "module",
+      "requireConfigFile" : false
+    },
 
   "rules": {
     "indent": [

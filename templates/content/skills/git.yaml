@@ -1,5 +1,6 @@
 name: "Git"
-level: 60
+level: 80
 since: "2008-01-01"
-priority: 80
+priority: 90
 versions: []
+icon: 'fa-brands fa-git-alt'

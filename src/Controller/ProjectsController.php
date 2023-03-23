@@ -14,14 +14,12 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/projects')]
 class ProjectsController extends AbstractController
 {
-    public function __construct(private readonly ContentManagerInterface $manager)
-    {
-    }
-
     #[Route('/', name: 'projects')]
-    public function list(): Response
+    public function list(ContentManagerInterface $manager): Response
     {
-        $projects = $this->manager->getContents(Project::class, ['publishedAt' => true]);
+        $projects = $manager->getContents(Project::class, [
+            'publishedAt' => true,
+        ]);
 
         return $this->render('pages/projects/list.html.twig', [
             'projects' => $projects,

@@ -10,7 +10,7 @@ use App\Bridge\Glide\Bundle\SkippingMimeTypesApi;
 use Stenope\Bundle\Behaviour\HtmlCrawlerManagerInterface;
 use Stenope\Bundle\Behaviour\ProcessorInterface;
 use Stenope\Bundle\Content;
-use Stenope\Bundle\Provider\Factory\LocalFilesystemProviderFactory;
+use Stenope\Bundle\Provider\Factory\FullTextProviderFactory;
 use Symfony\Component\Filesystem\Path;
 
 /**
@@ -37,7 +37,7 @@ class ResizeImagesContentProcessor implements ProcessorInterface
 
         $crawler = $this->crawlers->get($content, $data, $this->property);
 
-        if (\is_null($crawler)) {
+        if ($crawler === null) {
             // Content is not valid HTML.
             return;
         }
@@ -57,49 +57,51 @@ class ResizeImagesContentProcessor implements ProcessorInterface
 
     private function processImage(\DOMElement $element, Content $content): void
     {
-        if (!$element->hasAttribute('src')) {
+        if (! $element->hasAttribute('src')) {
             return;
         }
 
         $source = $element->getAttribute('src');
 
-        if (!$this->isLocalImage($source)) {
+        if (! $this->isLocalImage($source)) {
             return;
         }
 
         $source = $this->normalizePath($source, $content);
 
-        if (!$this->isSupportedImage($source)) {
+        if (! $this->isSupportedImage($source)) {
             $this->processUnsupportedImage($element, $source);
 
             return;
         }
 
         $dpr1 = $this->resizedUrlGenerator->withPreset($source, $this->preset);
-        $dpr2 = $this->resizedUrlGenerator->withPreset($source, $this->preset, ['dpr' => 2]);
+        $dpr2 = $this->resizedUrlGenerator->withPreset($source, $this->preset, [
+            'dpr' => 2,
+        ]);
 
         $element->setAttribute('src', $dpr1);
         $element->setAttribute('srcset', <<<HTML
-        $dpr1 1x,
-        $dpr2 2x,
+        {$dpr1} 1x,
+        {$dpr2} 2x,
         HTML);
     }
 
     private function processVideoPoster(\DOMElement $element, Content $content): void
     {
-        if (!$element->hasAttribute('poster')) {
+        if (! $element->hasAttribute('poster')) {
             return;
         }
 
         $source = $element->getAttribute('poster');
 
-        if (!$this->isLocalImage($source)) {
+        if (! $this->isLocalImage($source)) {
             return;
         }
 
         $source = $this->normalizePath($source, $content);
 
-        if (!$this->isSupportedImage($source)) {
+        if (! $this->isSupportedImage($source)) {
             $this->processUnsupportedImage($element, $source);
 
             return;
@@ -120,7 +122,7 @@ class ResizeImagesContentProcessor implements ProcessorInterface
 
     private function isLocalImage(string $url): bool
     {
-        return !\is_string(parse_url($url, PHP_URL_HOST));
+        return ! \is_string(parse_url($url, PHP_URL_HOST));
     }
 
     /**
@@ -129,12 +131,12 @@ class ResizeImagesContentProcessor implements ProcessorInterface
     private function normalizePath(string $imgPath, Content $content): string
     {
         // Ignore of not attempting to resolve an image path relative to current content
-        if (!$this->isRelativeImagePath($imgPath)) {
+        if (! $this->isRelativeImagePath($imgPath)) {
             return $imgPath;
         }
 
         // Ignore if not using the file provider
-        if (!$this->isFilesystemProvider($content)) {
+        if (! $this->isFilesystemProvider($content)) {
             return $imgPath;
         }
 
@@ -155,7 +157,7 @@ class ResizeImagesContentProcessor implements ProcessorInterface
 
     private function isFilesystemProvider(Content $content): bool
     {
-        return LocalFilesystemProviderFactory::TYPE === ($content->getMetadata()['provider'] ?? null);
+        return FullTextProviderFactory::TYPE === ($content->getMetadata()['provider'] ?? null);
     }
 
     /**
@@ -165,6 +167,6 @@ class ResizeImagesContentProcessor implements ProcessorInterface
      */
     private function isSupportedImage(string $src): bool
     {
-        return !$this->skippedTypes->isSkippedUrl($src);
+        return ! $this->skippedTypes->isSkippedUrl($src);
     }
 }

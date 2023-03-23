@@ -1,5 +1,6 @@
 name: "Docker"
-level: 70
+level: 80
 since: "2014-01-01"
-priority: 80
+priority: 90
 versions: []
+icon: 'fa-brands fa-docker'

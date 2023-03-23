@@ -22,7 +22,7 @@
                         the list</a>
                 </nav>
                 <ol>
-                    <li><a href="{{ path('home') }}">Home</a></li>
+                    <li><a href="{{ path('home') }}">{{ 'Home'|trans }}</a></li>
                     <li>{{ article.title }}</li>
                 </ol>
             </div>
@@ -63,7 +63,7 @@
 
                     <span
                         class="published">{{ article.publishedAt | date(site.date_format) }}</span> | <a
-                        href="{{ path('app_category', {category: article.category}) }}"
+                        href="{# {{ path('app_category', {category: article.category}) }} #}"
                         rel="category tag">{{ article.category }}</a>
                 </p>
 
@@ -94,7 +94,6 @@
                     </nav>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 {% endblock %}

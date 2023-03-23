@@ -1,15 +1,17 @@
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <canvas id="starback" class="hero-starback"></canvas>
     <div class="hero-container" data-aos="fade-in">
+        <!-- starback cover -->
+        {% for i in 0..20 %}
+            <div class="shooting_star"></div>
+        {% endfor %}
         <!-- canvas cover -->
-        <canvas id="scene" height="400" width="700"></canvas>
+        <canvas id="scene" height="350" width="350"></canvas>
         <!-- Heading -->
-        <svg id="polygon-head" width="170px" height="1px" x="0px" y="0px" viewBox="0 0 170 120"></svg>
+        <svg id="polygon-head" width="170px" height="1px" x="0" y="0" viewBox="0 0 170 120"></svg>
         <div class="hero">
-            <h1><i class="bi-alarm"></i> Hi ! I'm Arnaud Tiérant !</h1>
-            <p>I'm <span
-                    class="typed"
-                    data-typed-items="bioengineer, technical leader, back-end developer, digital publisher, music enthusiast"></span>
+            <h1><i class="bi-alarm"></i> {{"Hi ! I'm Arnaud Tiérant !" | trans}}</h1>
+            {% set list = 'bioengineer, technical leader, senior back-end developer, digital publisher, music enthusiast' %}
+            <p>{{ "I'm"|trans}} <span class="typed" data-typed-items="{{ list|trans }}"></span>
             </p>
         </div>
     </div>

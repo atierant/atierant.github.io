@@ -1,5 +1,6 @@
 name: "MySQL"
-level: 60
+level: 70
 since: "2008-01-01"
-priority: 80
-versions: []
+priority: 90
+versions: ["5.7", "8.X", "MariaDB"]
+icon: 'fa-solid fa-database'

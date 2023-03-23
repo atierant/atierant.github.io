@@ -1,8 +1,14 @@
 <div class="col-md-4 col-sm-6 content-note mb-5">
     <div class="note-big-shadow">
-        <div class="note note-text-only" data-background="color" data-color="{{ note.color.getColor() }}" data-radius="none">
+        <div
+            class="note note-text-only"
+            data-background="color"
+            data-color="{{ note.color.getColor() }}"
+            data-orientation="{{ random_orientation() }}"
+            data-radius="none"
+        >
             <div class="content">
-                <h6 class="date">{{ note.publishedAt | date(site.date_format) }}</h6>
+                <h6 class="date">{{ note.publishedAt | format_datetime(pattern=site.date_format_ym_pattern) }}</h6>
                 <h6 class="category">{{ note.category }}</h6>
                 <h4 class="title">{{ note.title }}</h4>
                 <p class="description">{{ note.content | raw }}</p>

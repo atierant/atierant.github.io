@@ -8,9 +8,32 @@ twig:
             description: "Here's a tiny little website about me, my realizations and my thoughts..."
             date_format_full: "Y-m-d H:i"
             date_format: "Y-m-d"
+            date_format_ym: "m/Y"
+            date_format_ym_pattern: "MMMM y"
             twitter:
                 name: "atierant"
                 creator: "atierant"
+
+            menu:
+                - { path: 'home',
+                    label: 'Home',
+                    icon: 'bi-house-door',
+                    children: [
+                    { path: 'home', params: { '_fragment': 'hero' }, label: 'Home', icon: 'bi-house-door' }
+                    { path: 'home', params: { '_fragment': 'about' }, label: 'About me', icon: 'bi-person-vcard-fill' }
+                    { path: 'home', params: { '_fragment': 'bio' }, label: 'Bio', icon: 'bi-person-bounding-box' }
+                    { path: 'home', params: { '_fragment': 'skills' }, label: 'Skills', icon: 'bi-capsule' }
+                    { path: 'home', params: { '_fragment': 'resume' }, label: 'Resume', icon: 'bi-file-earmark-person-fill' }
+                    { path: 'home', params: { '_fragment': 'Contact' }, label: 'Contact', icon: 'bi-envelope' }
+                    { path: 'home', params: { '_fragment': 'tech' }, label: 'About this website', icon: 'bi-gear-fill'}
+                    ]
+                }
+                - { path: 'app_article_list', label: 'Articles', children: [ 'app_article_show' ] }
+                - { path: 'resume', label: 'My Resume', children: [ 'app_article_show' ] }
+                - { path: 'home', label: 'My Projects', children: [ 'app_article_show' ] }
+                - { path: 'home', label: 'Find me', children: [ 'app_article_show' ] }
+            #                - { path: 'page', params: { slug: 'about' }, label: 'About' }
+            #                - { url: 'https://stenopephp.github.io/Stenope', label: 'Docs' }
 
             # --- General options --- #
 
@@ -24,7 +47,7 @@ twig:
                 Articles: "app_article_list"
                 My resume: "resume"
                 My Projects: "projects"
-#                Notes: "notes"
+                #                Notes: "notes"
                 Find me: "contact"
             nav_search: "search"
 
@@ -49,16 +72,13 @@ twig:
             author:
                 name: Arnaud Tiérant
                 email: "arnaud@tierant.fr"
+                birthday: "1982-07-10"
                 facebook: arnaud.tierant
                 github: atierant
                 twitter: atierant
                 linkedin: arnaudtierant
                 instagram: _tipunk
                 stackoverflow: "users/1879003/arnaud-tiérant"
-
-            # --- Misc --- #
-
-            permalink: /notes/:year/:month/:day/:title
 
             # Use tags index page and make tags on each post clickable
             link_tags: true

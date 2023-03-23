@@ -9,8 +9,10 @@ use League\Glide\ServerFactory;
 
 class DecoratingApiServerFactory extends ServerFactory
 {
-    public function __construct(private SkippedTypes $skippedTypes, array $config = [])
-    {
+    public function __construct(
+        private SkippedTypes $skippedTypes,
+        array $config = []
+    ) {
         parent::__construct($config);
     }
 

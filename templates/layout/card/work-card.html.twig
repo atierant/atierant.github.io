@@ -1,38 +1,56 @@
-{% set organization = content_get('App\\Model\\Resume\\Organization', item.organization) %}
+{% set organization = content_get('App\\Model\\Resume\\Organization', work.organization) %}
 <article class="card w-100 mb-3 text-bg-light">
     <div class="row g-0 h-100">
         <div class="col-md-4 border-end">
             <div class="d-flex flex-column h-100">
-{#                {% if organization.logo is defined and organization.logo is not empty and file_exists(organization.logo) %}#}
-{#                    {% set imgSrc = organization.logo %}#}
-{#                {% else %}#}
-{#                    {% set imgSrc = '/build/images/default_image.jpg' %}#}
-{#                {% endif %}#}
-{#                <img class="align-middle px-3" src="{{ imgSrc | glide_image_preset('article_thumbnail') }}"#}
-{#                     title="{{ article.title }}" alt="{{ article.title }}"/>#}
-{#                #}
+                {#                {% if organization.logo is defined and organization.logo is not empty and file_exists(organization.logo) %} #}
+                {#                    {% set imgSrc = organization.logo %} #}
+                {#                {% else %} #}
+                {#                    {% set imgSrc = '/build/images/default_image.jpg' %} #}
+                {#                {% endif %} #}
+                {#                <img class="align-middle px-3" src="{{ imgSrc | glide_image_preset('article_thumbnail') }}" #}
+                {#                     title="{{ article.title }}" alt="{{ article.title }}"/> #}
+                {#                #}
                 <img class="img-fluid my-auto mx-4" src="{{ organization.logo }}"
                      title="{{ organization.name }}" alt="{{ organization.shortDescription }}">
             </div>
         </div>
         <div class="col-md-8 content">
             <div class="card-body d-flex flex-column h-100">
-                <h2 class="article_header">{{ item.role }}・<a
+                <p class="card-text date alert alert-secondary" role="alert">
+                    {{ work.startDate | format_datetime(pattern=site.date_format_ym_pattern) }}
+                    → {{ work.endDate | format_datetime(pattern=site.date_format_ym_pattern) }}
+                    ({{ get_duration(work.startDate,work.endDate) }})
+                </p>
+                <h2 class="article_header">{{ work.role }}・<a
                         href="{{ organization.url }}">{{ organization.name }}</a>・{{ organization.place }}
                 </h2>
-                <p class="card-text date">{{ item.startDate | date(site.date_format) }}
-                    – {{ item.endDate | date(site.date_format) }}</p>
                 <p class="card-text description">{{ organization.shortDescription }}</p>
-                <p class="card-text role">{{ item.description }}</p>
+                <p class="card-text role">{{ work.description }}</p>
                 <p class="card-text skills">
-                    {% for skill in item.skills %}
-                        <span class="badge rounded-pill bg-secondary">{{ skill }}</span>
+                    {% set known_skills = content_list('App\\Model\\Resume\\Skill') %}
+                    {% for skill in work.skills %}
+                        {% set skill_slug = skill|local_slug %}
+                        <span class="badge rounded-pill bg-secondary badge-link">
+                            {% if skill_slug in known_skills|keys %}
+                                <a href="{{ path('app_skills_show', {'skill': skill_slug}) }}" class=" hover-effect">
+                                {%- if known_skills[skill_slug].icon is not empty -%}
+                                    <i class="{{ known_skills[skill_slug].icon }} fa-lg"></i>
+                                {% endif %}
+                                    {{ known_skills[skill_slug].name }}
+                                </a>
+                            {% else %}
+                                {{ skill }}
+                            {% endif %}
+
+                        </span>
                     {% endfor %}
                 </p>
                 <p class="card-text text-end mt-auto">
-                    <a class="btn btn-outline-dark" href="{{ path('app_work_show', {
-                        'work': item.slug
-                    }) }}">See more...</a>
+                    <a
+                        class="btn btn-outline-dark"
+                        href="{{ path('app_work_show', {'work': work.slug}) }}"
+                    >{% trans %}See more...{% endtrans %}</a>
                 </p>
             </div>
         </div>

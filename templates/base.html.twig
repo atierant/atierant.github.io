@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 
     {% block meta %}
-        <meta name="description" content="{% block meta_description site.description %}"/>
+        <meta name="description" content="{% block meta_description site.description | trans %}"/>
         <link rel="canonical" href="{{ app.request.uri }}"/>
 
         <meta name="author" content="{% block meta_site_author site.author.name %}"/>
@@ -18,7 +18,7 @@
 
         <!-- Flux RSS -->
         <link rel="alternate" type="application/rss+xml"
-              title="{{ site.title }} | {{ site.description }}"
+              title="{{ site.title }} | {{ site.description | trans }}"
               href="#"
         />
         {# href="{{ path('/feed.xml', {}, true) }}" #}
@@ -55,16 +55,16 @@
     {% endblock %}
 </head>
 <body
-{#    {{ stimulus_controller('swup_plugins')#}
-{#    | stimulus_controller('symfony/ux-swup/swup', {#}
-{#        cache: true,#}
-{#        animateHistoryBrowsing: true,#}
-{#        debug: app.debug,#}
-{#        linkSelector: [#}
-{#            'a[href^="' ~ app.request.schemeAndHttpHost ~ app.request.basePath ~ '"]',#}
-{#            'a[href^="/"]',#}
-{#        ]|map(s => s ~ ':not([data-no-swup]):not([target="_blank"])')|join(',')#}
-{#    }) }}#}
+    {#    {{ stimulus_controller('swup_plugins') #}
+    {#    | stimulus_controller('symfony/ux-swup/swup', { #}
+    {#        cache: true, #}
+    {#        animateHistoryBrowsing: true, #}
+    {#        debug: app.debug, #}
+    {#        linkSelector: [ #}
+    {#            'a[href^="' ~ app.request.schemeAndHttpHost ~ app.request.basePath ~ '"]', #}
+    {#            'a[href^="/"]', #}
+    {#        ]|map(s => s ~ ':not([data-no-swup]):not([target="_blank"])')|join(',') #}
+    {#    }) }} #}
 >
 <canvas id="background"></canvas>
 
@@ -73,9 +73,9 @@
 
 <div class="main-container" id="swup">
 
-    {% block nav %}
-        {% include 'layout/navbar.html.twig' %}
-    {% endblock %}
+    {#    {% block nav %} #}
+    {#        {% include 'layout/navbar.html.twig' %} #}
+    {#    {% endblock %} #}
 
     <!-- ======= Header ======= -->
     {% block sidebar %}
@@ -99,6 +99,7 @@
     {% endblock %}
 
 
+    {% block next_section %}{% endblock %}
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 </div>
@@ -112,5 +113,11 @@
     {{ encore_entry_script_tags('app') }}
     {{ encore_entry_script_tags('portfolio') }}
 {% endblock %}
+
+{# it's not mandatory to set the timezone in localizeddate(). This is done to
+           avoid errors when the 'intl' PHP extension is not available and the application
+           is forced to use the limited "intl polyfill", which only supports UTC and GMT #}
+<!-- Page rendered on {{ 'today 19:00'|format_datetime('long', 'long', '', 'UTC') }} -->
+{#<!-- Page rendered on {{ 'now'|format_datetime('long', 'long', '', 'UTC') }} -->#}
 </body>
 </html>

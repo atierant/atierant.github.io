@@ -17,10 +17,10 @@ final class SkippedTypes
 
     public function isSkippedUrl(string $url): bool
     {
-        return 0 !== \count(array_intersect(
+        return \count(array_intersect(
             $this->types->getMimeTypes(pathinfo($url, PATHINFO_EXTENSION)),
             $this->skippedTypes,
-        ));
+        )) !== 0;
     }
 
     public function isSkippedFile(string $path): bool

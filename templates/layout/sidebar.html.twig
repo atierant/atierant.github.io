@@ -19,44 +19,56 @@
 
             <h1 class="text-light"><a href="{{ path('home') }}">Arnaud Tiérant</a></h1>
             <div class="social-links mt-3 text-center">
-                <a href="https://twitter.com/{{ site.author.twitter }}" class="twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://github.com/{{ site.author.github }}" class="github"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.facebook.com/{{ site.author.facebook }}" class="facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/{{ site.author.instagram }}" class="instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://twitter.com/{{ site.author.twitter }}" class="twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://github.com/{{ site.author.github }}" class="github">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.facebook.com/{{ site.author.facebook }}" class="facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" class="linkedin">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="{{ path('app_rss') }}" class="linkedin">
+                    <i class="fa-solid fa-rss"></i>
+                </a>
             </div>
+
+            <div class="text-center mt-2">
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle text-decoration-none" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"
+                            id="locales">
+                        {#                        <i class="fa fa-globe" aria-hidden="true"></i> #}
+                        <small>{{ flag(app.request.locale)|raw }}</small>
+                        <small>{{ app.request.locale|locale_name(app.request.locale) }}</small>
+                        <span class="caret"></span>
+                        <span class="sr-only">{{ 'menu.choose_language'|trans }}</span>
+                    </button>
+                    <ul class="dropdown-menu locales" role="menu" aria-labelledby="locales">
+                        {% for locale in locales() %}
+                            <li
+                                {% if app.request.locale == locale.code %}
+                                    aria-checked="true" class="active"
+                                {% else %}
+                                    aria-checked="false"
+                                {% endif %} role="menuitem">
+                                <a
+                                    href="{{ path(app.request.get('_route', 'homepage_en'), app.request.get('_route_params', [])|merge({_locale: locale.code})) }}">
+                                    <small>{{ locale.flag|raw }}</small> {{ locale.name|capitalize }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
         </div>
 
-        <nav id="navbar" class="nav-menu navbar text-center">
-            <div class="text-center">
-                <ul>
-                    <li>
-                        <a href="{{ path('home', { '_fragment': 'hero' }) }}" class="nav-link scrollto active">
-                            <i class="bi bi-house-door"></i> <span>Home</span></a>
-                    </li>
-                    <li>
-                        <a href="{{ path('home', { '_fragment': 'about' }) }}" class="nav-link scrollto">
-                            <i class="bi bi-person-vcard-fill"></i> <span>About me</span></a></li>
-                    <li>
-                        <a href="{{ path('home', { '_fragment': 'bio' }) }}" class="nav-link scrollto">
-                            <i class="bi bi-person-bounding-box"></i> <span>Bio</span></a></li>
-                    <li>
-                        <a href="{{ path('home', { '_fragment': 'skills' }) }}" class="nav-link scrollto">
-                            <i class="bi bi-capsule"></i> <span>Skills</span></a></li>
-                    <li>
-                        <a href="{{ path('home', { '_fragment': 'resume' }) }}" class="nav-link scrollto">
-                            <i class="bi bi-file-earmark-person-fill"></i> <span>Resume</span></a>
-                    </li>
-                    <li>
-                        <a href="{{ path('home', { '_fragment': 'contact' }) }}" class="nav-link scrollto">
-                            <i class="bi bi-envelope"></i> <span>Contact</span></a>
-                    </li>
-                    <li>
-                        <a href="{{ path('home', { '_fragment': 'tech' }) }}" class="nav-link scrollto">
-                            <i class="bi bi-gear-fill"></i> <span>About this website</span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav><!-- .nav-menu -->
+        {{ knp_menu_render('main') }}
+
     </div>
 </header><!-- End Header -->
