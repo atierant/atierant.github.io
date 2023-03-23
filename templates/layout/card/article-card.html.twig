@@ -7,9 +7,10 @@
                 {% else %}
                     {% set imgSrc = '/build/images/default_image.jpg' %}
                 {% endif %}
-                <img class="shadow-sm"
+                <img class="shadow-sm w-100"
                      src="{{ imgSrc | glide_image_preset('article_thumbnail') }}"
-                     title="{{ article.title }}" alt="{{ article.title }}"/>
+                     title="{{ article.title }}" alt="{{ article.title }}"
+                />
             </div>
         </div>
 
