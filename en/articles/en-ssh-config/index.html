@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="Olw-Lz5_ZloeTZAzOsFQlJpEfJ5HhLRBgXhc8WWr8mA"/>
+    <title>Manage Many Keys with SSH Config | Arnaud Tiérant</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+
+            <meta name="description" content="One does not simply manage multiple SSH Keys..."/>
+        <link rel="canonical" href="https://arnaud.tierant.me/en/articles/en-ssh-config"/>
+
+        <meta name="author" content="Arnaud Tiérant"/>
+        <meta name="keywords" content="">
+
+        <!-- Flux RSS -->
+        <link rel="alternate" type="application/rss+xml"
+              title="Arnaud Tiérant | Here&#039;s a tiny little website about me, my realizations and my thoughts..."
+              href="#"
+        />
+        
+        <!-- Facebook OpenGraph tags -->
+        <meta property="og:title" content="Manage Many Keys with SSH Config | Arnaud Tiérant"/>
+        <meta property="og:locale" content="en"/>
+        <meta property="og:description" content="One does not simply manage multiple SSH Keys..."/>
+        <meta property="og:url" content="https://arnaud.tierant.me/en/articles/en-ssh-config"/>
+        <meta property="og:site_name" content="Arnaud Tiérant"/>
+        <meta property="og:type" content="website"/>
+                            <meta property="og:image" content="/resized/public/build/images/articles/ssh.jpg/0c4caa3b33b0cc94da2c3a6df31fbfb1.jpg">
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:title" content="Manage Many Keys with SSH Config | Arnaud Tiérant">
+        <meta property="twitter:description" content="One does not simply manage multiple SSH Keys...">
+        <meta property="twitter:site" content="@atierant">
+        <meta property="twitter:creator" content="@atierant">
+                            <meta property="twitter:image" content="https://arnaud.tierant.me/resized/public/build/images/articles/ssh.jpg/e986ea5062783eb508ce411c7948ae01.jpg">
+            
+                <link rel="stylesheet" href="/build/fonts.411aa56e.css" integrity="sha384-MuOupwwWtyepnVVhC0HZv0fmUG/NY2nINjIcnW7LXzVKm37Ej7lLuwh1N1mfahwB">
+        <link rel="stylesheet" href="/build/818.e070abdc.css" integrity="sha384-6XkJvIHgyNrWBx2A2lj8/Kb1wGfbiYLt6sykikCaxAUeqsSaRcxG1yDtsks8afk7"><link rel="stylesheet" href="/build/app.fac1a6c6.css" integrity="sha384-tusPljZUbh696HLddMe33nUIYWESbh2pRfJEezKFt3ey/IiS9WwJyLgNUezHpiKI">
+        <link rel="stylesheet" href="/build/flip-card.d8c9a2f4.css" integrity="sha384-p0hSNMdZlAP0mGoEaAZ1ylvhU1BDNh2Prkyf9DEl972fQoNrQ9LpCh8UYs72HRcQ">
+        <link rel="stylesheet" href="/build/portfolio.50df8c22.css" integrity="sha384-EHMXrw43f2FDtyvAZwCHpfwhzAcb6+lAR29RZ4E4apZZdfJFJB/i0mxmtkn/cf7X">
+    
+    <link rel="stylesheet" href="/build/article.f7783c33.css" integrity="sha384-PdT3ATA4hL84EfTtlvVkw5kVgjEacYFu39GJ/0gkziM7XjYXrKE6LF9Dg0cmAoii">
+</head>
+<body
+                                        >
+<canvas id="background"></canvas>
+
+<!-- ======= Mobile nav toggle button ======= -->
+<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+<div class="main-container" id="swup">
+
+            
+    <!-- ======= Header ======= -->
+            <header id="header">
+    <div class="d-flex flex-column">
+
+        <div class="profile">
+
+            <div class="flip-card">
+                <a href="/en/">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="flip-card-image"></div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="flip-card-image"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+            <h1 class="text-light"><a href="/en/">Arnaud Tiérant</a></h1>
+            <div class="social-links mt-3 text-center">
+                <a href="https://twitter.com/atierant" class="twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://github.com/atierant" class="github">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.facebook.com/arnaud.tierant" class="facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/arnaudtierant" class="linkedin">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="/en/rss.xml" class="linkedin">
+                    <i class="fa-solid fa-rss"></i>
+                </a>
+            </div>
+
+            <div class="text-center mt-2">
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle text-decoration-none" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"
+                            id="locales">
+                                                <small>🇺🇸</small>
+                        <small>English</small>
+                        <span class="caret"></span>
+                        <span class="sr-only">Choose language</span>
+                    </button>
+                    <ul class="dropdown-menu locales" role="menu" aria-labelledby="locales">
+                                                    <li
+                                                                    aria-checked="true" class="active"
+                                 role="menuitem">
+                                <a
+                                    href="/en/articles/en-ssh-config">
+                                    <small>🇺🇸</small> English
+                                </a>
+                            </li>
+                                                    <li
+                                                                    aria-checked="false"
+                                 role="menuitem">
+                                <a
+                                    href="/fr/articles/en-ssh-config">
+                                    <small>🇫🇷</small> Français
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+                            <nav  id="navbar" class="navbar navbar-dark bg-transparent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                                
+    
+        
+        
+        
+        
+        
+        <li icon="bi bi-house-door" class="nav-item first">
+                                                            
+    <li>
+        <a data-type="link" href="/en/" class=" nav-link">
+                            <i class="bi bi-house-door"></i>
+                        Home
+        </a>
+    </li>
+                    </li>
+    
+                
+    
+        
+        
+        
+        
+        
+        <li icon="bi bi-newspaper" class="nav-item">
+                                                            
+    <li>
+        <a data-type="link" href="/en/articles" class=" nav-link">
+                            <i class="bi bi-newspaper"></i>
+                        Articles
+        </a>
+    </li>
+                    </li>
+    
+                
+    
+        
+        
+        
+        
+        
+        <li icon="bi bi-person-badge-fill" class="nav-item">
+                                                            
+    <li>
+        <a data-type="link" href="/en/resume/" class=" nav-link">
+                            <i class="bi bi-person-badge-fill"></i>
+                        Full Resume
+        </a>
+    </li>
+                    </li>
+    
+                
+    
+        
+        
+        
+        
+        
+        <li icon="bi bi-cast" class="nav-item">
+                                                            
+    <li>
+        <a data-type="link" href="/en/projects/" class=" nav-link">
+                            <i class="bi bi-cast"></i>
+                        Projects
+        </a>
+    </li>
+                    </li>
+    
+                
+    
+        
+        
+        
+        
+        
+        <li icon="bi bi-tools" class="nav-item">
+                                                            
+    <li>
+        <a data-type="link" href="/en/tools/" class=" nav-link">
+                            <i class="bi bi-tools"></i>
+                        Tools &amp; links
+        </a>
+    </li>
+                    </li>
+    
+                
+    
+        
+        
+        
+        
+        
+        <li icon="bi bi-hdd-network-fill" class="nav-item last">
+                                                            
+    <li>
+        <a data-type="link" href="/en/contact/" class=" nav-link">
+                            <i class="bi bi-hdd-network-fill"></i>
+                        Find me
+        </a>
+    </li>
+                    </li>
+    
+
+            </ul>
+        </nav>
+    
+
+    </div>
+</header><!-- End Header -->
+    
+    <main id="main" class="pink-glow">
+                        <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <nav>
+                    <a
+                        class="btn btn-sm btn-outline-dark"
+                        href="/en/articles"
+                    >← Back to the list</a>
+                </nav>
+                <ol>
+                    <li><a href="/en/">Home</a></li>
+                    <li>Manage Many Keys with SSH Config</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+            <section class="inner-page">
+                <div class="container">
+                        <!-- ======= Portfolio Details Section ======= -->
+    <section id="article" class="article section-bg">
+
+        <article>
+            <div class="article_meta_wrapper">
+                <div class="container" style="position: relative; text-align: center;">
+                    <img
+                        src="/resized/public/build/images/articles/ssh.jpg/58aa5c46597266d5d84ae70459463b85.jpg"
+                        alt="Manage Many Keys with SSH Config"
+                        style="width: 100%; height: auto; max-height: 150px;opacity: 0.3"
+                    />
+                    <h1 class="justify-content-center"
+                        style="position: absolute; color: #000000; top: 50%; left: 50%; transform: translate(-50%, -50%);"
+                    >Manage Many Keys with SSH Config</h1>
+                </div>
+
+                <p class="post-meta">
+                    
+                    <span
+                        class="published">2019-11-25</span> | <a
+                       href="#"
+                        rel="category tag">development</a>
+                </p>
+
+            </div>
+        </article>
+
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-2 text-center">
+
+                </div>
+            </div>
+
+            <div class="row gy-4 mt-2">
+                <div class="article-content">
+                        <ol class="table-of-content" data-aos="fade-up">
+                    <li class="table-of-content__item">
+                <a href="#manage-many-keys-with-ssh-config">Manage Many Keys with SSH Config</a>
+
+                                    <ol class="table-of-content__sub-level">
+                                                    <li>
+                                <a href="#ed25519-ssh-keys">ED25519 SSH keys</a>
+                            </li>
+                                                    <li>
+                                <a href="#manage-a-new-ssh-key-pair">Manage a new SSH key pair</a>
+                            </li>
+                                            </ol>
+                            </li>
+                    <li class="table-of-content__item">
+                <a href="#at-see">@see</a>
+
+                            </li>
+            </ol>
+                    <h2 id="manage-many-keys-with-ssh-config">Manage Many Keys with SSH Config<a href="#manage-many-keys-with-ssh-config" class="anchor"></a></h2>
+<h3 id="ed25519-ssh-keys">ED25519 SSH keys<a href="#ed25519-ssh-keys" class="anchor"></a></h3>
+<p>Following best practices, you should always favor ED25519 SSH keys, since they are more secure and have better performance over the other types.
+ED25519 SSH keys were introduced in OpenSSH 6.5, so any modern OS should include the option to create them.</p>
+<h3 id="manage-a-new-ssh-key-pair">Manage a new SSH key pair<a href="#manage-a-new-ssh-key-pair" class="anchor"></a></h3>
+<h4 id="generate-a-new-ed25519-ssh-key-pair">Generate a new ED25519 SSH key pair<a href="#generate-a-new-ed25519-ssh-key-pair" class="anchor"></a></h4>
+<p><a href="https://gitlab.com/help/ssh/README.md" target="_blank">source</a></p>
+<pre class="code-multiline language-bash"><code class="language-bash" id="6c07f2b4b898170dc1a94df5ee40d64e"><pre><code class="hljs bash" id="6c07f2b4b898170dc1a94df5ee40d64e">$ ssh-keygen -t ed25519 -C <span class="hljs-string">"email@example.com"</span></code></pre></code></pre>
+<h4 id="adding-an-ssh-key-to-your-account">Adding an SSH key to your account<a href="#adding-an-ssh-key-to-your-account" class="anchor"></a></h4>
+<h5 id="wsl-gnu-linux-requires-the-xclip-package">WSL / GNU/Linux (requires the xclip package)<a href="#wsl-gnu-linux-requires-the-xclip-package" class="anchor"></a></h5>
+<pre class="code-multiline language-bash"><code class="language-bash" id="09dd665e533544915c042ead86b894eb"><pre><code class="hljs bash" id="09dd665e533544915c042ead86b894eb">$ xclip -sel clip &lt; ~/.ssh/id_ed25519.pub</code></pre></code></pre>
+<h5 id="git-bash-on-windows">Git Bash on Windows<a href="#git-bash-on-windows" class="anchor"></a></h5>
+<pre class="code-multiline language-bash"><code class="language-bash" id="470ec145d8a1168d519318bde57bcd62"><pre><code class="hljs bash" id="470ec145d8a1168d519318bde57bcd62">$ cat ~/.ssh/id_ed25519.pub | clip</code></pre></code></pre>
+<h5 id="paste-it-on-ssh-keys-in-vcs-manager">Paste it on SSH Keys in VCS Manager<a href="#paste-it-on-ssh-keys-in-vcs-manager" class="anchor"></a></h5>
+<h4 id="manage-config-file-for-multiple-keys">Manage config file for multiple keys<a href="#manage-config-file-for-multiple-keys" class="anchor"></a></h4>
+<p>Open a terminal and use the following commands
+(replacing other_id_rsa with your private SSH key):</p>
+<pre class="code-multiline language-bash"><code class="language-bash" id="4f588b156181350aedb63da3149d613a"><pre><code class="hljs bash" id="4f588b156181350aedb63da3149d613a">$ <span class="hljs-built_in">eval</span> $(ssh-agent -s)
+$ ssh-add ~/.ssh/other_id_rsa</code></pre></code></pre>
+<p>To retain these settings, you'll need to save them to a configuration file.
+For OpenSSH clients this is configured in the <code class="code-inline" id="4cc0ecc8128c171b864a0cdda4b4cdea">~/.ssh/config</code> file. In this
+file you can set up configurations for multiple hosts, like GitLab.com, your
+own GitLab instance, GitHub, Bitbucket, etc.</p>
+<p>Below are two example host configurations using their own SSH key:</p>
+<pre class="code-multiline language-bash"><code class="language-bash" id="2b8f22e49f7863252fc6b1ec6124113e"><pre><code class="hljs bash" id="2b8f22e49f7863252fc6b1ec6124113e"><span class="hljs-comment"># GitLab.com</span>
+Host gitlab.com
+  Preferredauthentications publickey
+  IdentityFile ~/.ssh/gitlab_com_rsa
+
+Host gitlab.company.com
+  HostName gitlab.company.com
+  User git
+  Preferredauthentications publickey
+  IdentityFile ~/.ssh/id_ed25519</code></pre></code></pre>
+<h2 id="at-see">@see<a href="#at-see" class="anchor"></a></h2>
+<ul>
+<li><a href="http://www.octetmalin.net/linux/tutoriels/ssh-fichier-etc-ssh_config-configuration-machine-client.php" target="_blank">ssh Fichier de configuration du client (/etc/ssh/ssh_config et ~/.ssh/config)</a></li>
+<li><a href="https://blog.wizardsoftheweb.pro/ssh-config-with-keeagent/" target="_blank">Manage Many Keys with SSH Config and KeePass</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-configure-custom-connection-options-for-your-ssh-client" target="_blank">How To Configure Custom Connection Options for your SSH Client</a></li>
+</ul>
+                    <nav class="row">
+                        <div class="col align-self-end">
+                                                    </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+                </div>
+            </section>
+            </main>
+
+    <!-- ======= Sidebar Footer ======= -->
+            <footer id="sidebar-footer">
+    <div class="container">
+        <div class="copyright">
+            &copy; <strong><span>Arnaud Tiérant • 2023</span></strong>
+        </div>
+    </div>
+</footer><!-- End  Footer -->
+    
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+</div>
+<!-- ======= Footer ======= -->
+    <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <ul class="list-inline text-center footer-links">
+                                            <li class="list-inline-item">
+                            <a href="mailto:arnaud@tierant.fr?subject=Hello from "
+                               title="Email me">
+                              <span class="fa-stack">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid fa-envelope fa-stack-1x fa-inverse"></i>
+                              </span>
+                            </a>
+                        </li>
+                    
+                                            <li class="list-inline-item">
+                            <a href="https://twitter.com/atierant" title="Twitter">
+                              <span class="fa-stack">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                              </span>
+                            </a>
+                        </li>
+                    
+                                            <li class="list-inline-item">
+                            <a href="https://github.com/atierant" title="GitHub">
+                              <span class="fa-stack">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                              </span>
+                            </a>
+                        </li>
+                    
+                                            <li class="list-inline-item">
+                            <a href="https://www.facebook.com/arnaud.tierant" title="Facebook">
+                              <span class="fa-stack">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                              </span>
+                            </a>
+                        </li>
+                    
+                                            <li class="list-inline-item">
+                            <a href="https://stackoverflow.com/users/1879003/arnaud-tiérant" title="StackOverflow">
+                              <span class="fa-stack">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                              </span>
+                            </a>
+                        </li>
+                    
+                                            <li class="list-inline-item">
+                            <a href="https://linkedin.com/arnaudtierant" title="LinkedIn">
+                            <span class="fa-stack">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                            </a>
+                        </li>
+                    
+                    <li class="list-inline-item">
+                        <a href="/en/notes/" title="Notes">
+                            <span class="fa-stack">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid fa-note-sticky fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="/build/runtime.b8ce5516.js" defer integrity="sha384-vvDPMBHiDSsBaQAtCdSVHYTYkFyTHJRmw9ljU18M7kGeENm6pp4LWxQfoNlLl+dJ"></script><script src="/build/719.9235c082.js" defer integrity="sha384-eByvV6Jpsz6KD3flrEy25a+NFfOlhTj6eAX9af0OeifFJvy3shWsgHU/hTdv/Z9x"></script><script src="/build/755.3c75d7ef.js" defer integrity="sha384-uT/80C2yz4RGH62D1fhng8SMRaMzwBqydwHVdkOk7ESqzOvgAsgtvqBg09g6XFfF"></script><script src="/build/828.07637389.js" defer integrity="sha384-GO25cJVn66fh1JJ1vISiXDGE3CIlpE2tvv8gYEhOlLRM+wgNRZXxKGShV3k3QaG2"></script><script src="/build/818.786793b0.js" defer integrity="sha384-/vMOYpusldxU1N+Ku1QkdKhSeD73on7o7N4LdgnXK+M/Evo6oaqnNIuGYjt7L5Vo"></script><script src="/build/app.c979fb52.js" defer integrity="sha384-x8P6RvAp4rr5X+teFhx2QYS3mRvlBv92x/AaaAO+Sy8cHIq483eqZdOknNBfQn7H"></script>
+    <script src="/build/711.940bd01c.js" defer integrity="sha384-D+NjyZMsNX9cxgNj/vcix9n8wX1mB5u/ePWrZBGvffW7kp5cC83uXSO4eBNXjnTe"></script><script src="/build/portfolio.3c8ed3b8.js" defer integrity="sha384-oOhSca4zUri16M0CLpS/xeEwScCafEfvy4nMieLCOrDnvbGS7wQbGPN0nlX7EHzB"></script>
+
+<!-- Page rendered on March 23, 2023 at 7:00:00 PM UTC -->
+</body>
+</html>

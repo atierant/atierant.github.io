@@ -3,7 +3,7 @@
     "404": {
       "js": [
         "/build/runtime.b8ce5516.js",
-        "/build/755.22f674de.js",
+        "/build/755.3c75d7ef.js",
         "/build/404.2f5ec37b.js"
       ],
       "css": [
@@ -13,33 +13,33 @@
     "app": {
       "js": [
         "/build/runtime.b8ce5516.js",
-        "/build/755.22f674de.js",
-        "/build/479.e892f9eb.js",
-        "/build/497.d004e3c9.js",
-        "/build/84.3ad87087.js",
-        "/build/app.646426c1.js"
+        "/build/719.9235c082.js",
+        "/build/755.3c75d7ef.js",
+        "/build/828.07637389.js",
+        "/build/818.786793b0.js",
+        "/build/app.c979fb52.js"
       ],
       "css": [
-        "/build/84.e070abdc.css",
-        "/build/app.867026e8.css"
+        "/build/818.e070abdc.css",
+        "/build/app.fac1a6c6.css"
       ]
     },
     "homepage": {
       "js": [
         "/build/runtime.b8ce5516.js",
-        "/build/755.22f674de.js",
-        "/build/479.e892f9eb.js",
-        "/build/543.0ad18988.js",
-        "/build/homepage.399ab803.js"
+        "/build/719.9235c082.js",
+        "/build/755.3c75d7ef.js",
+        "/build/2.aa136e85.js",
+        "/build/homepage.b21320d6.js"
       ]
     },
     "portfolio": {
       "js": [
         "/build/runtime.b8ce5516.js",
-        "/build/479.e892f9eb.js",
-        "/build/497.d004e3c9.js",
-        "/build/379.94a9c117.js",
-        "/build/portfolio.a215914b.js"
+        "/build/719.9235c082.js",
+        "/build/828.07637389.js",
+        "/build/711.940bd01c.js",
+        "/build/portfolio.3c8ed3b8.js"
       ],
       "css": [
         "/build/portfolio.50df8c22.css"
@@ -54,12 +54,33 @@
         "/build/search.31d6cfe0.css"
       ]
     },
+    "contact": {
+      "js": [
+        "/build/runtime.b8ce5516.js",
+        "/build/719.9235c082.js",
+        "/build/contact.54423671.js"
+      ],
+      "css": [
+        "/build/contact.31eab48b.css"
+      ]
+    },
+    "sticky-note": {
+      "js": [
+        "/build/runtime.b8ce5516.js",
+        "/build/719.9235c082.js",
+        "/build/755.3c75d7ef.js",
+        "/build/sticky-note.35e7adee.js"
+      ],
+      "css": [
+        "/build/sticky-note.f26f082f.css"
+      ]
+    },
     "flip-card": {
       "js": [
         "/build/runtime.b8ce5516.js"
       ],
       "css": [
-        "/build/flip-card.f34abe2a.css"
+        "/build/flip-card.d8c9a2f4.css"
       ]
     },
     "fonts": {
@@ -83,7 +104,7 @@
         "/build/runtime.b8ce5516.js"
       ],
       "css": [
-        "/build/article.c9202b74.css"
+        "/build/article.f7783c33.css"
       ]
     },
     "articles": {
@@ -91,7 +112,7 @@
         "/build/runtime.b8ce5516.js"
       ],
       "css": [
-        "/build/articles.6ce45f4d.css"
+        "/build/articles.13affff1.css"
       ]
     },
     "projects": {
@@ -99,51 +120,46 @@
         "/build/runtime.b8ce5516.js"
       ],
       "css": [
-        "/build/projects.73f0bdf0.css"
+        "/build/projects.39d61396.css"
       ]
     },
-    "contact": {
+    "skills": {
       "js": [
         "/build/runtime.b8ce5516.js"
       ],
       "css": [
-        "/build/contact.bb8064ec.css"
-      ]
-    },
-    "sticky-note": {
-      "js": [
-        "/build/runtime.b8ce5516.js"
-      ],
-      "css": [
-        "/build/sticky-note.f26f082f.css"
+        "/build/skills.4db72c9c.css"
       ]
     }
   },
   "integrity": {
     "/build/runtime.b8ce5516.js": "sha384-vvDPMBHiDSsBaQAtCdSVHYTYkFyTHJRmw9ljU18M7kGeENm6pp4LWxQfoNlLl+dJ",
-    "/build/755.22f674de.js": "sha384-+KMs7WoeMAJWwlwiHdAiafu8Zfz/qg9X7m7IBWG+OIdmoxjVRuk/RchKiSe8XjlY",
+    "/build/755.3c75d7ef.js": "sha384-uT/80C2yz4RGH62D1fhng8SMRaMzwBqydwHVdkOk7ESqzOvgAsgtvqBg09g6XFfF",
     "/build/404.2f5ec37b.js": "sha384-RJu83N4omVEA9WGJ8yUcUwAcZSSSmfJO9JAOCFmloO2M6yPQIXf2txsoTBXibC3U",
     "/build/404.533aae7e.css": "sha384-+HfrmpOEF2igmaNrlSPLMMQ6yGPhkMptuWmA/Zllg5AXuK83R9IKhlxSBIRINCdg",
-    "/build/479.e892f9eb.js": "sha384-/k6yqqainIbkK0AA4qrZ7QTdELIQ1JF7s+EZXlaIsvxXtrxr+PqaBVOCsaQaIVJ2",
-    "/build/497.d004e3c9.js": "sha384-ewWH9ZH6JRgw6N9S2vrynhU+oYyC1Kr4lJyR0DpKZ44rG+XUaOWeXg4pa+L8+Oy8",
-    "/build/84.3ad87087.js": "sha384-hCsIKaRCBPDLiGiAVD0do7A5uUET7HE3Hh4CHxWcB6JLfafAbgw+GsuTOTSYRUka",
-    "/build/app.646426c1.js": "sha384-PVbebpy7g9a+66qByUjdZ3cxcCb2q2zincIDzlzo1kM5CQGVwNojWImXPlbR3DDN",
-    "/build/84.e070abdc.css": "sha384-6XkJvIHgyNrWBx2A2lj8/Kb1wGfbiYLt6sykikCaxAUeqsSaRcxG1yDtsks8afk7",
-    "/build/app.867026e8.css": "sha384-aZi1XwfZrpM8LD0ExqkEAMpm/MUFhVQ+IdKc5k0B59xdBrOdKuc/7uzG7pNLEQG2",
-    "/build/543.0ad18988.js": "sha384-wn7dL4lI4uiSK9b5XjCu/qL1Yx89c2SamQaVcgbRBpzB4HVVyJUYnjkMn+ri4l8p",
-    "/build/homepage.399ab803.js": "sha384-E0GDT3QjgnBUcT3Veb5RH+cIVQv8yoguJDRrOQWGneAGGfj7USvwBxt6tVW1d+aD",
-    "/build/379.94a9c117.js": "sha384-UmmXZs51E41Z/e4LKj79XFVJ/HTOsGhBW5C22kHt5MYlKbqiAuq1EtV9kFAuaiBm",
-    "/build/portfolio.a215914b.js": "sha384-YQse6l3sdJhuAYG1T07qMXEP0jAZHOKV9/izYF5FH2d44U0/csf+og8MCmT658Sy",
+    "/build/719.9235c082.js": "sha384-eByvV6Jpsz6KD3flrEy25a+NFfOlhTj6eAX9af0OeifFJvy3shWsgHU/hTdv/Z9x",
+    "/build/828.07637389.js": "sha384-GO25cJVn66fh1JJ1vISiXDGE3CIlpE2tvv8gYEhOlLRM+wgNRZXxKGShV3k3QaG2",
+    "/build/818.786793b0.js": "sha384-/vMOYpusldxU1N+Ku1QkdKhSeD73on7o7N4LdgnXK+M/Evo6oaqnNIuGYjt7L5Vo",
+    "/build/app.c979fb52.js": "sha384-x8P6RvAp4rr5X+teFhx2QYS3mRvlBv92x/AaaAO+Sy8cHIq483eqZdOknNBfQn7H",
+    "/build/818.e070abdc.css": "sha384-6XkJvIHgyNrWBx2A2lj8/Kb1wGfbiYLt6sykikCaxAUeqsSaRcxG1yDtsks8afk7",
+    "/build/app.fac1a6c6.css": "sha384-tusPljZUbh696HLddMe33nUIYWESbh2pRfJEezKFt3ey/IiS9WwJyLgNUezHpiKI",
+    "/build/2.aa136e85.js": "sha384-9bzDctnlLmvU9ibDGIupo7fdwejSjWeIECgF+GXqoEIH+tZTf4slGoWznT6uch1t",
+    "/build/homepage.b21320d6.js": "sha384-liVNGjvMR+UvFBL8HuRgTq3lLVnq/YqcvnTSt7tj2zoKZSFtEOOXt8TCA5BQ9Ij2",
+    "/build/711.940bd01c.js": "sha384-D+NjyZMsNX9cxgNj/vcix9n8wX1mB5u/ePWrZBGvffW7kp5cC83uXSO4eBNXjnTe",
+    "/build/portfolio.3c8ed3b8.js": "sha384-oOhSca4zUri16M0CLpS/xeEwScCafEfvy4nMieLCOrDnvbGS7wQbGPN0nlX7EHzB",
     "/build/portfolio.50df8c22.css": "sha384-EHMXrw43f2FDtyvAZwCHpfwhzAcb6+lAR29RZ4E4apZZdfJFJB/i0mxmtkn/cf7X",
     "/build/search.48177380.js": "sha384-uae1HrVIvL/WgtZWYQXZHMJY+kfeVeunSDfZjh28Xp9j9s5mggaS93E8YxCmEMix",
     "/build/search.31d6cfe0.css": "sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb",
-    "/build/flip-card.f34abe2a.css": "sha384-dx7/B32gHfk/YsXzEIaRB3YDdDB6wHI9ZwqDsi53147F/UTnGauFXxD5v/gRdmbl",
+    "/build/contact.54423671.js": "sha384-o3mqZNIv7xg63sAb8tbryflxH2/nOr6hT9FrdMZlTk8/AKQSwIedai7IQXsCwLsJ",
+    "/build/contact.31eab48b.css": "sha384-b4wD8GZSIU12nzqOn1cK8fnFRBleUJmYwDb/ZxpTUQHPzc6RkUyi8hdV7bDfXMKJ",
+    "/build/sticky-note.35e7adee.js": "sha384-madndV3SQcsZS6bTna0ddG9LVkk5m2xAfINyxF7nZoYJQcFsPPGhQ0WLMLXxUJOh",
+    "/build/sticky-note.f26f082f.css": "sha384-Clqh99tUSOyfry/4JfcoFLLn9UGfHwPtv+vAu+RJHxcsPLQMNMKPBAK+3T5AjCDA",
+    "/build/flip-card.d8c9a2f4.css": "sha384-p0hSNMdZlAP0mGoEaAZ1ylvhU1BDNh2Prkyf9DEl972fQoNrQ9LpCh8UYs72HRcQ",
     "/build/fonts.411aa56e.css": "sha384-MuOupwwWtyepnVVhC0HZv0fmUG/NY2nINjIcnW7LXzVKm37Ej7lLuwh1N1mfahwB",
     "/build/resume.902bf11f.css": "sha384-5j1zvaAgiCN6jiG1Y3JLQV4k3O0/IzCMOy6NSbPYYgX/+ZKPsfd0MIw7lyE7YudM",
-    "/build/article.c9202b74.css": "sha384-wrDSsCcJdjPY4AyfkGbTsobhjop8mn0mFZZhp+L+q+MugwgEHl3WE7lHm1iSrAFF",
-    "/build/articles.6ce45f4d.css": "sha384-0p6KUq5VZTAHyxyscJmds59MlTdVYLGETSwAKUc7D4Lko/I8DloGD6tBsyNRKf+Q",
-    "/build/projects.73f0bdf0.css": "sha384-LHP79IjlGN+YvYPSCWaDbVs/9Dsmv9066v8axTrmS2DCOPsFTAklQaimXVrSQiKT",
-    "/build/contact.bb8064ec.css": "sha384-pue0bsK46sDzBakvAe35B0yvI+3zI/gpzbdmaCgKWRdcTqUfSEn2nU/nIneOulsX",
-    "/build/sticky-note.f26f082f.css": "sha384-Clqh99tUSOyfry/4JfcoFLLn9UGfHwPtv+vAu+RJHxcsPLQMNMKPBAK+3T5AjCDA"
+    "/build/article.f7783c33.css": "sha384-PdT3ATA4hL84EfTtlvVkw5kVgjEacYFu39GJ/0gkziM7XjYXrKE6LF9Dg0cmAoii",
+    "/build/articles.13affff1.css": "sha384-BPjX9wC7jHF7z9GxODKFJa52IGl5Qw2jvOulcPKExkEVA5imtwqXRNKQz7YLWv4C",
+    "/build/projects.39d61396.css": "sha384-kZ6eyE7UdVVzvGKUdirLyskRmKm58L/hSX+t82UQOof3+HwBk4q9DQDBE27Meqdt",
+    "/build/skills.4db72c9c.css": "sha384-UyeCiQX0qzkNaiH5MFBguYF2r31ZKe/h39HUkMk7dej42cFpXdUk1l6n8FolxBfj"
   }
 }
