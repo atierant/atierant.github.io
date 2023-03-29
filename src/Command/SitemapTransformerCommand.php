@@ -16,6 +16,13 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 )]
 class SitemapTransformerCommand extends Command
 {
+    public function __construct(
+        readonly private string $projectDir,
+        string $name = null,
+    ) {
+        parent::__construct($name);
+    }
+
     protected function configure(): void
     {
         $this
@@ -29,7 +36,8 @@ class SitemapTransformerCommand extends Command
 
         // Load the XML source
         $xml = new DOMDocument();
-        $xml->load($file);
+        $filepath = $this->projectDir . DIRECTORY_SEPARATOR . $file;
+        $xml->load($filepath);
 
         $root = $xml->documentElement; // This can differ (I am not sure, it can be only documentElement or documentElement->firstChild or only firstChild)
 
@@ -53,7 +61,7 @@ class SitemapTransformerCommand extends Command
             $url->replaceChild($loc, $loc);
         }
 
-        $xml->save($file);
+        $xml->save($filepath);
 
         return Command::SUCCESS;
     }
