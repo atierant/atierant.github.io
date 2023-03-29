@@ -102,7 +102,7 @@ jobs:
           ROUTER_DEFAULT_URI: https://arnaud.tierant.me
 
       - name: 'Converts sitemap to avoid redirections 🔧 🔧 🔧'
-        run: php bin/console app:transform-sitemap public/sitemap.xml
+        run: php bin/console app:transform-sitemap build/sitemap.xml
         env:
           APP_ENV: prod
 

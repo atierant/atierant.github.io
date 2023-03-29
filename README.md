@@ -1,7 +1,9 @@
 arnaud.tierant.me
 ==================
 
-> *Copyright 2019 [Arnaud Tiérant](https://arnaud.tiérant.me). Licensed under the MIT license.*
+[![Deploy to GH Pages](https://github.com/atierant/atierant.github.io/actions/workflows/deploy.yaml/badge.svg)](https://github.com/atierant/atierant.github.io/actions/workflows/deploy.yaml)
+
+> *Copyright 2023 [Arnaud Tiérant](https://arnaud.tiérant.me). Licensed under the MIT license.*
 
 # Stenope Skeleton
 
