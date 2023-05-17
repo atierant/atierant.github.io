@@ -38,7 +38,7 @@
         "core-js": "^3.30.0",
         "country-flag-emoji-polyfill": "^0.1.4",
         "css-loader": "^6.7.3",
-        "eslint": "^8.38",
+        "eslint": "^8.40",
         "eslint-plugin-babel": "^5.3.1",
         "eslint-plugin-html": "^7.1.0",
         "eslint-plugin-json": "^3.0.0",
