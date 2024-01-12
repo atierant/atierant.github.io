@@ -13,36 +13,36 @@
     "app": {
       "js": [
         "/build/runtime.b8ce5516.js",
-        "/build/719.3f7080df.js",
+        "/build/639.26647d42.js",
         "/build/755.3c75d7ef.js",
-        "/build/828.ce137fd7.js",
-        "/build/818.7f6c5e5c.js",
-        "/build/app.c979fb52.js"
+        "/build/142.444e8f41.js",
+        "/build/695.3aff0c50.js",
+        "/build/app.bf9519c3.js"
       ],
       "css": [
-        "/build/818.e070abdc.css",
-        "/build/app.11b0e444.css"
+        "/build/695.baf17893.css",
+        "/build/app.7e3214f5.css"
       ]
     },
     "homepage": {
       "js": [
         "/build/runtime.b8ce5516.js",
-        "/build/719.3f7080df.js",
+        "/build/639.26647d42.js",
         "/build/755.3c75d7ef.js",
-        "/build/2.ee3931ca.js",
-        "/build/homepage.b21320d6.js"
+        "/build/886.e0ee5488.js",
+        "/build/homepage.af7fed70.js"
       ]
     },
     "portfolio": {
       "js": [
         "/build/runtime.b8ce5516.js",
-        "/build/719.3f7080df.js",
-        "/build/828.ce137fd7.js",
-        "/build/563.277e566b.js",
-        "/build/portfolio.84163b5e.js"
+        "/build/639.26647d42.js",
+        "/build/142.444e8f41.js",
+        "/build/704.07644485.js",
+        "/build/portfolio.deacdd76.js"
       ],
       "css": [
-        "/build/portfolio.b89b7ceb.css"
+        "/build/portfolio.98f208b6.css"
       ]
     },
     "search": {
@@ -57,8 +57,8 @@
     "contact": {
       "js": [
         "/build/runtime.b8ce5516.js",
-        "/build/719.3f7080df.js",
-        "/build/contact.f9c752ce.js"
+        "/build/639.26647d42.js",
+        "/build/contact.85fb3985.js"
       ],
       "css": [
         "/build/contact.31eab48b.css"
@@ -67,9 +67,9 @@
     "sticky-note": {
       "js": [
         "/build/runtime.b8ce5516.js",
-        "/build/719.3f7080df.js",
+        "/build/639.26647d42.js",
         "/build/755.3c75d7ef.js",
-        "/build/sticky-note.73c6cb8d.js"
+        "/build/sticky-note.484d3c72.js"
       ],
       "css": [
         "/build/sticky-note.f26f082f.css"
@@ -80,7 +80,7 @@
         "/build/runtime.b8ce5516.js"
       ],
       "css": [
-        "/build/flip-card.d8c9a2f4.css"
+        "/build/flip-card.c2b163fb.css"
       ]
     },
     "fonts": {
@@ -137,24 +137,24 @@
     "/build/755.3c75d7ef.js": "sha384-uT/80C2yz4RGH62D1fhng8SMRaMzwBqydwHVdkOk7ESqzOvgAsgtvqBg09g6XFfF",
     "/build/404.2f5ec37b.js": "sha384-RJu83N4omVEA9WGJ8yUcUwAcZSSSmfJO9JAOCFmloO2M6yPQIXf2txsoTBXibC3U",
     "/build/404.533aae7e.css": "sha384-+HfrmpOEF2igmaNrlSPLMMQ6yGPhkMptuWmA/Zllg5AXuK83R9IKhlxSBIRINCdg",
-    "/build/719.3f7080df.js": "sha384-+c6V4ViETxgLe0BWhpe4UmE92RQOhbwTpfLe9NQ9K2HPSjPIYctP2kqU3I6jdOst",
-    "/build/828.ce137fd7.js": "sha384-aUs5HDRzDaA94OwyBg01w9BELerQO/2ZEdMzmFxuDjFU5sSN2xGmYIrbWNODF4Lo",
-    "/build/818.7f6c5e5c.js": "sha384-BSlJ4j3DB4mcfmol2VhPjCc+Mfk4YuBsecJEklrVLW5DTLiyQ71iqBdDHQtchBUt",
-    "/build/app.c979fb52.js": "sha384-x8P6RvAp4rr5X+teFhx2QYS3mRvlBv92x/AaaAO+Sy8cHIq483eqZdOknNBfQn7H",
-    "/build/818.e070abdc.css": "sha384-6XkJvIHgyNrWBx2A2lj8/Kb1wGfbiYLt6sykikCaxAUeqsSaRcxG1yDtsks8afk7",
-    "/build/app.11b0e444.css": "sha384-EL3Nl99kDoflZPAFQxqpyZ55T7NlSPZrzZIlhPkaz5dLQ/U5IWBQ2Zn0T9X/4Kzd",
-    "/build/2.ee3931ca.js": "sha384-4OzAbUM9MvqQw8fZUSZ3kGMDOgUyFfGvfwG4HOQRYjsylyRxa7esePRciR9DFIWW",
-    "/build/homepage.b21320d6.js": "sha384-liVNGjvMR+UvFBL8HuRgTq3lLVnq/YqcvnTSt7tj2zoKZSFtEOOXt8TCA5BQ9Ij2",
-    "/build/563.277e566b.js": "sha384-YVlI8fhgh4GTLZ6Vr+GYtgXt/LS76HYivHYUN5Y+ivbBJ6Drguek8UTmKiqo1i7v",
-    "/build/portfolio.84163b5e.js": "sha384-vYdF9IPzzXEKt9wOmmRjrK6Kh4+TGn0bQWXEkTh5gzZHoOBY8Z0cQAT5wbCzd7hZ",
-    "/build/portfolio.b89b7ceb.css": "sha384-p7Ac+Q8DqbUpx3ovbUvmUVDXzIFurlBylWq2p/NQ+aKbuXmf3Fq6caI7VpRwp2vY",
+    "/build/639.26647d42.js": "sha384-T5phmRf6E64qu9T6cs4AXVGUI2ODhMfrljuBFMUURaIolcIj0DJA2+2kVE/AO+ck",
+    "/build/142.444e8f41.js": "sha384-mNNb10LIgQWCu2B7BsM1NXnDjNaHvz9tkwEWonnViY0LcPAHJuKQtOf6b0v5RPqa",
+    "/build/695.3aff0c50.js": "sha384-r5YcJYrrWlMNLHPsyrRpsQWYRgiv8BxlDQLTg7x9Ho0qPmd0Kz3gbGoB/BNN0lQS",
+    "/build/app.bf9519c3.js": "sha384-bL6QZ4t7+2wp44ifyDZ8f6iCkqEQ+Lh5+dEx55VpsJPmojeVsBk/cjbPNWFQHItd",
+    "/build/695.baf17893.css": "sha384-pyLxdEesEOFpB9dECRgkmE0Nu+RBzz7HdjcGdpp1AqOlkVm26nqwLHc4AJVK7Wx2",
+    "/build/app.7e3214f5.css": "sha384-1Ezk6CEA3tIBJZUwcGKpnGaDMIc+QnrByQMC6NG3+GkTVZ4s8ajnPlRkHuyMXoGP",
+    "/build/886.e0ee5488.js": "sha384-6Pt/7H8lHCxQF9N79XPk0RQ+SZKEE4zWK/U8wUH9trOFOHm2Gj8cV/OIsTA81Q5f",
+    "/build/homepage.af7fed70.js": "sha384-fjYjhkfeO0bA3dWtzuCtvrUqepBwyvxrbc/wA8h5EwxI+oxvMP8DkIzbdwbo9Fei",
+    "/build/704.07644485.js": "sha384-h/SvnTYD/mh+HItCcvslo6pXhOU+s00dvV+ksEQ7AyTvH4FUC2OHcXEvmqcCxtY2",
+    "/build/portfolio.deacdd76.js": "sha384-C7oWBwDx1ctHuzKkytlysmSC9w8/OQXb1xY+QH7+kYzHxKf6y8vjap3Cug70JR2O",
+    "/build/portfolio.98f208b6.css": "sha384-9rdJiw7kntHeu43N9LjkdL144AFnD3jGwowNfa5DXLBoFul4z+YUvggwoxg/qUgQ",
     "/build/search.48177380.js": "sha384-uae1HrVIvL/WgtZWYQXZHMJY+kfeVeunSDfZjh28Xp9j9s5mggaS93E8YxCmEMix",
     "/build/search.31d6cfe0.css": "sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb",
-    "/build/contact.f9c752ce.js": "sha384-yOpP6qXkpsEs3oZGrtSJvH1v+8t6guSldgnQ8jYhmOd417dnsfC40jsp1SAkoxx7",
+    "/build/contact.85fb3985.js": "sha384-DpGb3wFLIpQKxl28S2neKp4x1DfMJiqxR+J5U6ZTNlE9I2gcJikvt2ytgzLfK6KN",
     "/build/contact.31eab48b.css": "sha384-b4wD8GZSIU12nzqOn1cK8fnFRBleUJmYwDb/ZxpTUQHPzc6RkUyi8hdV7bDfXMKJ",
-    "/build/sticky-note.73c6cb8d.js": "sha384-nCIGLWZvWpW+RFgo73MTL+sjETckKOqz+njoii/+vMpuCLWKYCznlHFxpd3IbScs",
+    "/build/sticky-note.484d3c72.js": "sha384-wMnZi1D8Euiy3xOeKiMCtW+6lZRAAXu39X0iBaImSkmRZ7oCnwDVWiW4znccGhbZ",
     "/build/sticky-note.f26f082f.css": "sha384-Clqh99tUSOyfry/4JfcoFLLn9UGfHwPtv+vAu+RJHxcsPLQMNMKPBAK+3T5AjCDA",
-    "/build/flip-card.d8c9a2f4.css": "sha384-p0hSNMdZlAP0mGoEaAZ1ylvhU1BDNh2Prkyf9DEl972fQoNrQ9LpCh8UYs72HRcQ",
+    "/build/flip-card.c2b163fb.css": "sha384-8Cekg/ASOxAV4dQFImf8eNJj7wOGJIIJ5hgwSOuEKqsgFURMv5c1aKW6/rmp5E19",
     "/build/fonts.411aa56e.css": "sha384-MuOupwwWtyepnVVhC0HZv0fmUG/NY2nINjIcnW7LXzVKm37Ej7lLuwh1N1mfahwB",
     "/build/resume.902bf11f.css": "sha384-5j1zvaAgiCN6jiG1Y3JLQV4k3O0/IzCMOy6NSbPYYgX/+ZKPsfd0MIw7lyE7YudM",
     "/build/article.f7783c33.css": "sha384-PdT3ATA4hL84EfTtlvVkw5kVgjEacYFu39GJ/0gkziM7XjYXrKE6LF9Dg0cmAoii",
