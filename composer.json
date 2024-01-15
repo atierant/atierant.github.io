@@ -10,9 +10,6 @@
         "symfony/polyfill-ctype": "*",
         "symfony/polyfill-iconv": "*",
         "symfony/polyfill-php72": "*",
-        "symfony/polyfill-php71": "*",
-        "symfony/polyfill-php70": "*",
-        "symfony/polyfill-php56": "*",
         "symfony/polyfill-php73": "*",
         "symfony/polyfill-php74": "*",
         "symfony/polyfill-php80": "*",
@@ -39,7 +36,7 @@
         "symfony/console": "^6.2",
         "symfony/dotenv": "^6.2",
         "symfony/expression-language": "^6.2",
-        "symfony/flex": "^2.0",
+        "symfony/flex": "^2",
         "symfony/form": "^6.2",
         "symfony/framework-bundle": "^6.2",
         "symfony/html-sanitizer": "^6.2",
@@ -133,7 +130,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "6.2.*",
+            "require": "6.*",
             "docker": true
         }
     }
