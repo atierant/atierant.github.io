@@ -60,7 +60,6 @@
         "symfony/validator": "6.2.*",
         "symfony/webpack-encore-bundle": "^1.13",
         "symfony/yaml": "^6.2",
-        "symplify/symfony-static-dumper": "*",
         "twig/extra-bundle": "^3.5",
         "twig/intl-extra": "^3.5",
         "twig/markdown-extra": "^3.5",
