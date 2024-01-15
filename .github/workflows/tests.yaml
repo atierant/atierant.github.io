@@ -20,7 +20,7 @@ jobs:
         php-versions: [ 8.1' ]
 
     steps:
-      - name: 'Checkout'
+      - name: 'Checkout 🛎️'
         uses: actions/checkout@v4
 
       - name: 'Setup node 🔧'
@@ -83,14 +83,14 @@ jobs:
           #   vendor/bin/simple-phpunit install
           # echo "::endgroup::"
 
-      - name: 'Warmup'
+      - name: 'Warmup 🔥'
         run: |
           php bin/console cache:clear --ansi --no-warmup
           php bin/console cache:warmup --ansi
         env:
           APP_ENV: test
 
-      - name: 'Composer validate'
+      - name: 'Composer validate ⚙'
         if: always() && steps.composer_deps.outcome == 'success'
         run: composer validate --no-check-publish
 
@@ -111,11 +111,11 @@ jobs:
         if: always() && steps.deps.outcome == 'success'
         run: make lint.container@integration
 
-      - name: 'PHP CS Fixer'
+      - name: 'PHP CS Fixer ⚙'
         if: always() && steps.deps.outcome == 'success'
         run: make lint.php-cs-fixer@integration
 
-      - name: 'PhpStan'
+      - name: 'PhpStan ⚙'
         if: always() && steps.deps.outcome == 'success'
         run: make lint.phpstan@integration
         continue-on-error: true
@@ -123,7 +123,7 @@ jobs:
       # - name: Run tests
       #   run: vendor/bin/simple-phpunit --testdox
 
-      - name: 'Check build static'
+      - name: 'Check build static ⚙'
         run: |
           npx encore production --color
           php bin/console stenope:build --no-interaction -vvv --ansi

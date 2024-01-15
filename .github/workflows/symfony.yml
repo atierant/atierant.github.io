@@ -11,7 +11,7 @@ jobs:
         operating-system: [ubuntu-latest]
         php-versions: [8.1']
     steps:
-      - name: 'Checkout'
+      - name: 'Checkout 🛎️️'
         uses: actions/checkout@v4
 
       - name: 'Setup node 🔧'
@@ -46,12 +46,15 @@ jobs:
 #          restore-keys: |
 #            ${{ runner.os }}-composer-
 
-      - name: Install Composer dependencies
+      - name: 'Remove old phpunit'
+        run: rm -rf ./phpunit-* || true
+
+      - name: 'Install Composer dependencies 🔧'
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: 'Install npm dependencies 🔧'
         run: npm install --color=always --no-progress --no-audit
-      - name: 'Warmup'
+      - name: 'Warmup 🔥'
         run: |
           echo "::group::warmup production env"
             npx encore production --color
@@ -61,7 +64,7 @@ jobs:
           APP_ENV: prod
           WEBPACK_PUBLIC_PATH: /${{ github.event.repository.name }}/build
 
-      - name: 'Install PHPUnit'
+      - name: 'Install PHPUnit 🔧'
         run: simple-phpunit install
 
       - name: 'Run tests'
