@@ -54,13 +54,13 @@ jobs:
             ${{ runner.os }}-composer-
 
       # https://github.com/marketplace/actions/cache
-      - name: 'Cache resized images'
+      - name: 'Cache resized images ⎘'
         uses: actions/cache@v3
         with:
           path: public/resized
           key: resized-images-${{ secrets.CACHE_VERSION }}
 
-#      - name: 'Cache NPM dependencies'
+#      - name: 'Cache NPM dependencies ⎘'
 #        uses: actions/cache@v3
 #        with:
 #          path: ~/.npm
