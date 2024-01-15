@@ -47,6 +47,9 @@ jobs:
 #            ${{ runner.os }}-composer-
 
       - name: 'Remove old phpunit'
+        run: ls -laht
+
+      - name: 'Remove old phpunit'
         run: rm -rf ./phpunit-* || true
 
       - name: 'Install Composer dependencies 🔧'
