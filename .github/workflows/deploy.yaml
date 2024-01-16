@@ -42,11 +42,13 @@ jobs:
       - name: '✔ Validate composer.json and composer.lock'
         run: composer validate --strict
 
-      - name: "📦 Get Composer Cache Directory"
+      - name: "📦 Set Composer Cache Directory"
         id: composer-cache
         run: |
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
-      - uses: actions/cache@v3
+
+      - name: '📦 Cache Composer dependencies'
+        uses: actions/cache@v3
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -54,13 +56,13 @@ jobs:
             ${{ runner.os }}-composer-
 
       # https://github.com/marketplace/actions/cache
-      - name: '🌘 Cache resized images'
+      - name: '📦 Cache resized images'
         uses: actions/cache@v3
         with:
           path: public/resized
           key: resized-images-${{ secrets.CACHE_VERSION }}
 
-#      - name: '🌘 Cache NPM dependencies'
+#      - name: '📦 Cache NPM dependencies'
 #        uses: actions/cache@v3
 #        with:
 #          path: ~/.npm

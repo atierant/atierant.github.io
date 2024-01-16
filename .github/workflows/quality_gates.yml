@@ -18,7 +18,7 @@ jobs:
       - name: '🛎️ Checkout'
         uses: actions/checkout@v4
 
-#      - name: '🌘 Cache Composer dependencies'
+#      - name: '📦 Cache Composer dependencies'
 #        uses: actions/cache@v3
 #        with:
 #          path: /tmp/composer-cache

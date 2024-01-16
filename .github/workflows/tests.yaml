@@ -38,25 +38,25 @@ jobs:
           coverage: "none"
           ini-values: "memory_limit=-1"
 
-      - name: '🌘 Determine composer cache directory'
+      - name: '📦 Set Composer Cache Directory'
         id: composer-cache
         #run: echo "::set-output name=directory::$(composer config cache-dir)" >> $GITHUB_OUTPUT
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
-      - name: '🌘 Cache composer dependencies'
+      - name: '📦 Cache Composer dependencies'
         uses: actions/cache@v3
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
 
-      - name: '🌘 Cache resized images'
+      - name: '📦 Cache resized images'
         uses: actions/cache@v3
         with:
           path: public/resized
           key: resized-images-tests-${{ secrets.CACHE_VERSION }}
 
-      - name: '🌘 Cache blurhash images'
+      - name: '📦 Cache blurhash images'
         uses: actions/cache@v3
         with:
           path: var/cache/pools/app
