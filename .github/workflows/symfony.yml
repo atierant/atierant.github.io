@@ -22,7 +22,7 @@ jobs:
           node-version: '16'
           cache: 'npm'
 
-#      - name: '⎘ Cache NPM dependencies'
+#      - name: '🌘 Cache NPM dependencies'
 #        uses: actions/cache@v3
 #        with:
 #          path: ~/.npm
@@ -37,7 +37,7 @@ jobs:
           tools: phpunit-bridge
           coverage: "xdebug"
 
-      - name: "📦 Set Composer Cache Directory ⎘"
+      - name: "📦 Set Composer Cache Directory 🌘"
         id: composer-cache
         run: |
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
@@ -48,10 +48,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
-      - name: '♖ Install Composer dependencies'
+      - name: '🍕 Install Composer dependencies'
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
-      - name: '♖ Install npm dependencies'
+      - name: '🍕 Install npm dependencies'
         run: npm install --color=always --no-progress --no-audit
 
       - name: '🔥 Warmup'
@@ -64,7 +64,7 @@ jobs:
           APP_ENV: prod
           WEBPACK_PUBLIC_PATH: /${{ github.event.repository.name }}/build
 
-      - name: '♖ Install PHPUnit'
+      - name: '🍕 Install PHPUnit'
         run: simple-phpunit install
 
       - name: '⚔ Run tests'

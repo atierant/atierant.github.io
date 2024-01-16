@@ -54,22 +54,22 @@ jobs:
             ${{ runner.os }}-composer-
 
       # https://github.com/marketplace/actions/cache
-      - name: '⎘ Cache resized images'
+      - name: '🌘 Cache resized images'
         uses: actions/cache@v3
         with:
           path: public/resized
           key: resized-images-${{ secrets.CACHE_VERSION }}
 
-#      - name: '⎘ Cache NPM dependencies'
+#      - name: '🌘 Cache NPM dependencies'
 #        uses: actions/cache@v3
 #        with:
 #          path: ~/.npm
 #          key: node-${{ hashFiles('package-lock.json') }}
 
-      - name: '♖ Install composer dependencies'
+      - name: '🍕 Install composer dependencies'
         run: composer install --prefer-dist --no-progress --ansi
 
-      - name: '♖ Install npm dependencies'
+      - name: '🍕 Install npm dependencies'
         run: npm install --color=always --no-progress --no-audit
 
       # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"

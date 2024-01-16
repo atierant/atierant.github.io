@@ -38,45 +38,45 @@ jobs:
           coverage: "none"
           ini-values: "memory_limit=-1"
 
-      - name: '⎘ Determine composer cache directory'
+      - name: '🌘 Determine composer cache directory'
         id: composer-cache
         #run: echo "::set-output name=directory::$(composer config cache-dir)" >> $GITHUB_OUTPUT
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
-      - name: '⎘ Cache composer dependencies'
+      - name: '🌘 Cache composer dependencies'
         uses: actions/cache@v3
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
 
-      - name: '⎘ Cache resized images'
+      - name: '🌘 Cache resized images'
         uses: actions/cache@v3
         with:
           path: public/resized
           key: resized-images-tests-${{ secrets.CACHE_VERSION }}
 
-      - name: '⎘ Cache blurhash images'
+      - name: '🌘 Cache blurhash images'
         uses: actions/cache@v3
         with:
           path: var/cache/pools/app
           key: resized-blurhash-tests-${{ secrets.CACHE_VERSION }}
 
-      - name: '♖ Install composer dependencies'
+      - name: '🍕 Install composer dependencies'
         id: composer_deps
         run: |
           echo "::group::composer install"
             composer install --no-progress --ansi
           echo "::endgroup::"
 
-      - name: '♖ Install npm dependencies'
+      - name: '🍕 Install npm dependencies'
         id: npm_deps
         run: |
           echo "::group::npm install"
             npm install --color=always --no-progress --no-audit
           echo "::endgroup::"
 
-      - name: '♖ Install other dependencies'
+      - name: '🍕 Install other dependencies'
         id: deps
         run: |
           # echo "::group::install phpunit"
