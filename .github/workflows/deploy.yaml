@@ -1,4 +1,4 @@
-name: Deploy to GH Pages
+name: '🚀 Deploy to GH Pages'
 
 on:
   workflow_dispatch: ~
@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    name: 🚧  Build & deploy 🚀
+    name: '🚧 Build & deploy 🚀'
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -20,16 +20,16 @@ jobs:
     steps:
       # Setup Github actions
       # https://github.com/actions/checkout (official)
-      - name: 'Checkout 🛎️'
+      - name: '🛎️ Checkout'
         uses: actions/checkout@v4
 
-      - name: 'Setup node 🔧'
+      - name: '🔧 Setup node'
         uses: actions/setup-node@v4
         with:
           node-version: '16'
           cache: 'npm'
 
-      - name: 'Setup PHP 🔧'
+      - name: '🔧 Setup PHP'
         uses: shivammathur/setup-php@v2
         with:
           coverage: "none"
@@ -39,7 +39,7 @@ jobs:
         env:
           update: true
 
-      - name: 'Validate composer.json and composer.lock'
+      - name: '✔ Validate composer.json and composer.lock'
         run: composer validate --strict
 
       - name: "📦 Get Composer Cache Directory"
@@ -54,26 +54,22 @@ jobs:
             ${{ runner.os }}-composer-
 
       # https://github.com/marketplace/actions/cache
-      - name: 'Cache resized images ⎘'
+      - name: '⎘ Cache resized images'
         uses: actions/cache@v3
         with:
           path: public/resized
           key: resized-images-${{ secrets.CACHE_VERSION }}
 
-#      - name: 'Cache NPM dependencies ⎘'
-#        uses: actions/cache@v3
-#        with:
-#          path: ~/.npm
-#          key: node-${{ hashFiles('package-lock.json') }}      - name: 'Cache NPM dependencies'
+#      - name: '⎘ Cache NPM dependencies'
 #        uses: actions/cache@v3
 #        with:
 #          path: ~/.npm
 #          key: node-${{ hashFiles('package-lock.json') }}
 
-      - name: 'Install composer dependencies 🔧'
+      - name: '♖ Install composer dependencies'
         run: composer install --prefer-dist --no-progress --ansi
 
-      - name: 'Install npm dependencies 🔧'
+      - name: '♖ Install npm dependencies'
         run: npm install --color=always --no-progress --no-audit
 
       # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
@@ -81,7 +77,7 @@ jobs:
       # - name: Run test suite
       #   run: composer run-script test
 
-      - name: 'Warmup 🔥'
+      - name: '🔥 Warmup'
         run: |
           echo "::group::warmup production env"
             npx encore production --color
@@ -93,7 +89,7 @@ jobs:
           APP_ENV: prod
           WEBPACK_PUBLIC_PATH: /${{ github.event.repository.name }}/build
 
-      - name: 'Build static site 🔧 🔧 🔧'
+      - name: '🚧 Build static site'
         run: php bin/console stenope:build --no-interaction -vvv --ansi
         env:
           APP_ENV: prod
@@ -101,13 +97,13 @@ jobs:
           #ROUTER_DEFAULT_URI: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
           ROUTER_DEFAULT_URI: https://arnaud.tierant.me
 
-      - name: 'Converts sitemap to avoid redirections 🔧 🔧 🔧'
+      - name: '🔧 Converts sitemap to avoid redirections'
         run: php bin/console app:transform-sitemap build/sitemap.xml
         env:
           APP_ENV: prod
 
       # https://github.com/marketplace/actions/deploy-to-github-pages
-      - name: 'Deploy 🚀'
+      - name: '🚀 Deploy'
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
           COMMIT_MESSAGE: "[AUTO] Static site update for ${{ github.sha }}"
