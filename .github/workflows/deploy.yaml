@@ -48,7 +48,7 @@ jobs:
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: '📦 Cache Composer dependencies'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -57,13 +57,13 @@ jobs:
 
       # https://github.com/marketplace/actions/cache
       - name: '📦 Cache resized images'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: public/resized
           key: resized-images-${{ secrets.CACHE_VERSION }}
 
 #      - name: '📦 Cache NPM dependencies'
-#        uses: actions/cache@v3
+#        uses: actions/cache@v4
 #        with:
 #          path: ~/.npm
 #          key: node-${{ hashFiles('package-lock.json') }}
