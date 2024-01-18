@@ -44,20 +44,20 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: '📦 Cache Composer dependencies'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
 
       - name: '📦 Cache resized images'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: public/resized
           key: resized-images-tests-${{ secrets.CACHE_VERSION }}
 
       - name: '📦 Cache blurhash images'
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: var/cache/pools/app
           key: resized-blurhash-tests-${{ secrets.CACHE_VERSION }}
