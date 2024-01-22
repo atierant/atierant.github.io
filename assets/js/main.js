@@ -95,7 +95,7 @@ const main = {
         let tokens;
         const re = /[?&]?([^=]+)=([^&]*)/g;
 
-        while (tokens = re.exec(qs)) {
+        while ((tokens = re.exec(qs))) {
             params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
         }
 

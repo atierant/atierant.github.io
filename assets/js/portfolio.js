@@ -17,9 +17,9 @@ import Typed from 'typed.js';
 
 AOS.init();
 
-const swiper = new Swiper('.swiper');
-
-const pure = new PureCounter();
+// TODO Décommenter si besoin
+// const swiper = new Swiper('.swiper');
+// const pure = new PureCounter();
 
 // let options = {
 //   strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
@@ -260,7 +260,7 @@ let Isotope = require('isotope-layout');
         new Waypoint({
             element: skilsContent,
             offset: '80%',
-            handler: function (direction) {
+            handler: function () {
                 let progress = select('.progress .progress-bar', true);
                 progress.forEach((el) => {
                     el.style.width = el.getAttribute('aria-valuenow') + '%';
@@ -302,7 +302,8 @@ let Isotope = require('isotope-layout');
     /**
    * Initiate portfolio lightbox
    */
-    const portfolioLightbox = GLightbox({
+    GLightbox({
+    // const portfolioLightbox = GLightbox({
         selector: '.portfolio-lightbox'
     });
 

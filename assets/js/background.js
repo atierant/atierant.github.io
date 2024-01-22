@@ -255,7 +255,7 @@ window.addEventListener('load', function () {
         let i = 0;
 
         for (let property in src) {
-            if (dest.hasOwnProperty(property))
+            if (Object.prototype.hasOwnProperty.call(dest, property))
                 if (softCopy(src[property], dest[property]) == 0)
                     dest[property] = src[property];
             i++;
