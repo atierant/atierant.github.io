@@ -74,9 +74,7 @@ class MenuNodeTest extends TestCase
         $this->assertEquals('fr', $n->getLocale());
     }
 
-    /**
-     * @depends testGetters
-     */
+    #[\PHPUnit\Framework\Attributes\Depends('testGetters')]
     public function testGetOptions()
     {
         $this->assertEquals([
