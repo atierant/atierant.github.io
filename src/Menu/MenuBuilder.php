@@ -2,25 +2,19 @@
 
 declare(strict_types=1);
 
-// src/Menu/MenuBuilder.php
-
 namespace App\Menu;
 
 use App\Model\Menu\MenuNode;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use Knp\Menu\MenuItem;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Translation\LocaleSwitcher;
 use Twig\Environment;
 
-final class MenuBuilder implements ContainerAwareInterface
+final class MenuBuilder
 {
-    use ContainerAwareTrait;
-
     private ItemInterface $menu;
 
     /**
