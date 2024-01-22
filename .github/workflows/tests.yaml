@@ -1,4 +1,4 @@
-name: Tests
+name: '☕ Tests'
 
 on:
   workflow_dispatch: ~
@@ -10,26 +10,26 @@ on:
 jobs:
 
   tests:
-    name: 'Tests'
+    name: '☕ Tests'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
         operating-system: [ ubuntu-latest ]
-        php-versions: [ 8.1' ]
+        php-versions: [ '8.2' ]
 
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v3
+      - name: '🛎️ Checkout'
+        uses: actions/checkout@v4
 
-      - name: 'Setup node 🔧'
-        uses: actions/setup-node@v3
+      - name: '🔧 Setup node'
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
           cache: 'npm'
 
-      - name: 'Setup PHP 🔧'
+      - name: '🔧 Setup PHP'
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
@@ -38,92 +38,92 @@ jobs:
           coverage: "none"
           ini-values: "memory_limit=-1"
 
-      - name: 'Determine composer cache directory'
+      - name: '📦 Set Composer Cache Directory'
         id: composer-cache
         #run: echo "::set-output name=directory::$(composer config cache-dir)" >> $GITHUB_OUTPUT
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
-      - name: 'Cache composer dependencies'
-        uses: actions/cache@v3
+      - name: '📦 Cache Composer dependencies'
+        uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
 
-      - name: 'Cache resized images'
-        uses: actions/cache@v3
+      - name: '📦 Cache resized images'
+        uses: actions/cache@v4
         with:
           path: public/resized
           key: resized-images-tests-${{ secrets.CACHE_VERSION }}
 
-      - name: 'Cache blurhash images'
-        uses: actions/cache@v3
+      - name: '📦 Cache blurhash images'
+        uses: actions/cache@v4
         with:
           path: var/cache/pools/app
           key: resized-blurhash-tests-${{ secrets.CACHE_VERSION }}
 
-      - name: 'Install composer dependencies 🔧'
+      - name: '🍕 Install composer dependencies'
         id: composer_deps
         run: |
           echo "::group::composer install"
             composer install --no-progress --ansi
           echo "::endgroup::"
 
-      - name: 'Install npm dependencies 🔧'
+      - name: '🍕 Install npm dependencies'
         id: npm_deps
         run: |
           echo "::group::npm install"
             npm install --color=always --no-progress --no-audit
           echo "::endgroup::"
 
-      - name: 'Install other dependencies 🔧'
+      - name: '🍕 Install other dependencies'
         id: deps
         run: |
           # echo "::group::install phpunit"
           #   vendor/bin/simple-phpunit install
           # echo "::endgroup::"
 
-      - name: 'Warmup'
+      - name: '🔥 Warmup'
         run: |
           php bin/console cache:clear --ansi --no-warmup
           php bin/console cache:warmup --ansi
         env:
           APP_ENV: test
 
-      - name: 'Composer validate'
+      - name: '✔ Composer validate'
         if: always() && steps.composer_deps.outcome == 'success'
         run: composer validate --no-check-publish
 
-      - name: 'Lint YAML'
+      - name: '🖌 Lint YAML'
         if: always() && steps.deps.outcome == 'success'
         run: make lint.yaml@integration
 
-      - name: 'Lint Twig'
+      - name: '🖌 Lint Twig'
         if: always() && steps.deps.outcome == 'success'
         run: make lint.twig@integration
 
-      - name: 'Lint JS'
+      - name: '🖌 Lint JS'
         if: always() && steps.deps.outcome == 'success'
         run: make lint.eslint@integration
         continue-on-error: true
 
-      - name: 'Lint Parameters and Services'
+      - name: '🖌 Lint Parameters and Services'
         if: always() && steps.deps.outcome == 'success'
         run: make lint.container@integration
 
-      - name: 'PHP CS Fixer'
+      - name: '⚙ PHP CS Fixer'
         if: always() && steps.deps.outcome == 'success'
         run: make lint.php-cs-fixer@integration
 
-      - name: 'PhpStan'
+      - name: '⚙ PhpStan'
         if: always() && steps.deps.outcome == 'success'
         run: make lint.phpstan@integration
         continue-on-error: true
 
-      # - name: Run tests
+      # - name: '⚔ Run tests'
       #   run: vendor/bin/simple-phpunit --testdox
 
-      - name: 'Check build static'
+      - name: '⚙ Check build static'
         run: |
           npx encore production --color
           php bin/console stenope:build --no-interaction -vvv --ansi

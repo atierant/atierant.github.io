@@ -8,8 +8,8 @@ let Vivus = require('vivus/dist/vivus');
         twinFillValue = 0;
 
     for (let i = 0; i < $textFade.length; i++) {
-      const el = $textFade.get(i);
-      textFadeWidth[i] = el.offsetWidth;
+        const el = $textFade.get(i);
+        textFadeWidth[i] = el.offsetWidth;
         textTwinFadeWidth[i] = 0;
     }
 
@@ -35,9 +35,9 @@ let Vivus = require('vivus/dist/vivus');
 
     window.setTimeout(function twinFillCb() {
         $svgPath.css('stroke', 'transparent');
-      let next = false;
+        let next = false;
 
-      if (twinFillValue < 1) {
+        if (twinFillValue < 1) {
             twinFillValue += 1 / 24;
             $svgPath.css('stroke', 'rgba(255, 255, 255, ' + 1 - twinFillValue + ')');
             $svgPath.css('fill', 'rgba(255, 255, 255, ' + twinFillValue + ')');
@@ -68,40 +68,40 @@ let Vivus = require('vivus/dist/vivus');
     // enhance with some new effets
     // 3D polygon mesh technics : https://en.wikipedia.org/wiki/Polygon_mesh
 
-  const cover = {
-    nbFacesDrawn: 0,
-    nbFacesDrawnStep: 0.3,
-    nbStrokeDrawn: 0,
-    nbStrokeDrawnStep: 0.4,
+    const cover = {
+        nbFacesDrawn: 0,
+        nbFacesDrawnStep: 0.3,
+        nbStrokeDrawn: 0,
+        nbStrokeDrawnStep: 0.4,
 
-    maxStrokeLight: 40,
-    maxTwStrokeLight: 0,
-    strokeLight: 0,
-    strokeEnlightenPoints: [],
-    strokeEnlightenPointsOld: [],
+        maxStrokeLight: 40,
+        maxTwStrokeLight: 0,
+        strokeLight: 0,
+        strokeEnlightenPoints: [],
+        strokeEnlightenPointsOld: [],
 
-    animationState: 1,
+        animationState: 1,
 
-    startTime: null,
-    obj: null,
-    canvas: null,
-    iHalfX: null,
-    iHalfY: null,
-    vAlpha: 0.4,
-    vShiftX: 0,
-    vShiftY: 0,
-    distance: -1000,
-    vMouseSens: 0.02,
-    nbFaces: 6,
-    distZ: null, // use for the dezoom effet
-    theme: null,
-    polygonComplexity: 10,
-    width: 0,
-    height: 0,
-    themeArray: []
-  };
+        startTime: null,
+        obj: null,
+        canvas: null,
+        iHalfX: null,
+        iHalfY: null,
+        vAlpha: 0.4,
+        vShiftX: 0,
+        vShiftY: 0,
+        distance: -1000,
+        vMouseSens: 0.02,
+        nbFaces: 6,
+        distZ: null, // use for the dezoom effet
+        theme: null,
+        polygonComplexity: 10,
+        width: 0,
+        height: 0,
+        themeArray: []
+    };
 
-  cover.themeArray.push({
+    cover.themeArray.push({
         vAlpha: 0.15,
         distance: -600,
         scaleObjX: 3,
@@ -114,8 +114,8 @@ let Vivus = require('vivus/dist/vivus');
     });
 
     // init the currentTheme to load (will be pushed to other builders)
-  const currentTheme = Math.floor((Math.random() * cover.themeArray.length));
-  cover.theme = cover.themeArray[currentTheme];
+    const currentTheme = Math.floor((Math.random() * cover.themeArray.length));
+    cover.theme = cover.themeArray[currentTheme];
 
     // get random color
     function getRandomColor() {
@@ -133,9 +133,9 @@ let Vivus = require('vivus/dist/vivus');
           window.setTimeout(callback, 1000 / 60);
       };
 
-      const getComputedSceneStyle = window.getComputedStyle(document.getElementById('scene'), null);
+        const getComputedSceneStyle = window.getComputedStyle(document.getElementById('scene'), null);
 
-      if (typeof getComputedSceneStyle.getPropertyValue == 'function') {
+        if (typeof getComputedSceneStyle.getPropertyValue == 'function') {
             cover.width = getComputedSceneStyle.getPropertyValue('width');
             cover.width = cover.width.substring(0, cover.width.length - 2);
             cover.height = getComputedSceneStyle.getPropertyValue('height');
@@ -185,10 +185,10 @@ let Vivus = require('vivus/dist/vivus');
 
     // onMouseMove event handler
     function handleMousemove(e) {
-      const x = e.layerX - cover.canvas.offsetLeft;
-      const y = e.layerY - cover.canvas.offsetTop;
+        const x = e.layerX - cover.canvas.offsetLeft;
+        const y = e.layerY - cover.canvas.offsetTop;
 
-      if ((x > 0) && (x < cover.width) && (y > 0) && (y < cover.height)) {
+        if ((x > 0) && (x < cover.width) && (y > 0) && (y < cover.height)) {
             cover.vShiftY = cover.vMouseSens * (x - cover.width / 2) / cover.width / 2;
             cover.vShiftX = cover.vMouseSens * (y - cover.height / 2) / cover.height / 2;
         }
@@ -215,22 +215,22 @@ let Vivus = require('vivus/dist/vivus');
 
     // draw main scene function
     function drawScene(startedSince) {
-      let i, j, f, z;
+        let i, j, f, z;
 
-      // clear canvas
+        // clear canvas
         cover.ctx.clearRect(0, 0, cover.ctx.canvas.width, cover.ctx.canvas.height);
         cover.ctx.lineWidth = cover.theme.lineWidth;
 
         /*if (cover.animationState != 2) {
-          cover.ctx.globalAlpha = cover.theme.vAlpha;
-      }*/
+      cover.ctx.globalAlpha = cover.theme.vAlpha;
+  }*/
 
         // vertical and horizontal rotate
-      const vP1x = getRotationPar([0, 0, -1000], [1, 0, 0], cover.vShiftX);
-      const vP2x = getRotationPar([0, 0, 0], [1, 0, 0], cover.vShiftX);
-      const vP1y = getRotationPar([0, 0, -1000], [0, 1, 0], cover.vShiftY);
-      const vP2y = getRotationPar([0, 0, 0], [0, 1, 0], cover.vShiftY);
-      rotateObj(vP1x, vP2x, cover.obj);
+        const vP1x = getRotationPar([0, 0, -1000], [1, 0, 0], cover.vShiftX);
+        const vP2x = getRotationPar([0, 0, 0], [1, 0, 0], cover.vShiftX);
+        const vP1y = getRotationPar([0, 0, -1000], [0, 1, 0], cover.vShiftY);
+        const vP2y = getRotationPar([0, 0, 0], [0, 1, 0], cover.vShiftY);
+        rotateObj(vP1x, vP2x, cover.obj);
         rotateObj(vP1y, vP2y, cover.obj);
 
         // recalculate distances
@@ -239,11 +239,11 @@ let Vivus = require('vivus/dist/vivus');
         }
 
         // prepare array with face triangles (with calculation of max distance for every face)
-      let iCnt = 0;
-      const aFaceTriangles = [];
-      for (i = 0; i < cover.obj.faces_number; i++) {
-          let max = cover.obj.distances[cover.obj.faces[i][0]];
-          for (f = 1; f < cover.obj.faces[i].length; f++) {
+        let iCnt = 0;
+        const aFaceTriangles = [];
+        for (i = 0; i < cover.obj.faces_number; i++) {
+            let max = cover.obj.distances[cover.obj.faces[i][0]];
+            for (f = 1; f < cover.obj.faces[i].length; f++) {
                 if (cover.obj.distances[cover.obj.faces[i][f]] > max)
                     max = cover.obj.distances[cover.obj.faces[i][f]];
             }
@@ -256,11 +256,11 @@ let Vivus = require('vivus/dist/vivus');
         aFaceTriangles.sort(sortByDistance);
 
         // prepare array with projected points
-      const aPrjPoints = [];
+        const aPrjPoints = [];
 
-      /*if (Math.round(cover.distZ) != 0) {
-        cover.distZ = cover.distZ / 1.1;
-    }*/
+        /*if (Math.round(cover.distZ) != 0) {
+      cover.distZ = cover.distZ / 1.1;
+  }*/
 
         for (i = 0; i < cover.obj.points.length; i++) {
             aPrjPoints[i] = project(cover.theme.distance, cover.obj.points[i], cover.iHalfX, cover.iHalfY);
@@ -328,16 +328,16 @@ let Vivus = require('vivus/dist/vivus');
         // draw an object (surfaces)
         for (i = 0; i < iCnt; i++) {
 
-          const colorRGB = hexToRgb(aFaceTriangles[i].faceColor);
-          cover.ctx.fillStyle = 'rgba(' + colorRGB.r + ', ' + colorRGB.g + ', ' + colorRGB.b + ', ' + cover.vAlpha + ')';
+            const colorRGB = hexToRgb(aFaceTriangles[i].faceColor);
+            cover.ctx.fillStyle = 'rgba(' + colorRGB.r + ', ' + colorRGB.g + ', ' + colorRGB.b + ', ' + cover.vAlpha + ')';
 
             // begin path
             cover.ctx.beginPath();
 
             // face vertex index
-          const iFaceVertex = aFaceTriangles[i].faceVertex;
+            const iFaceVertex = aFaceTriangles[i].faceVertex;
 
-          // move to initial position
+            // move to initial position
             cover.ctx.moveTo(aPrjPoints[iFaceVertex[0]][0], aPrjPoints[iFaceVertex[0]][1]);
 
             // and draw three lines (to build a triangle)
@@ -397,8 +397,8 @@ let Vivus = require('vivus/dist/vivus');
                 } else if (cover.strokeLight < cover.maxTwStrokeLight
           && Math.round(Math.random() * (i / 3) * Math.PI) < 2
                 ) {
-                  let strokeValid = true;
-                  for (j = 0; j < cover.strokeEnlightenPointsOld.length; j++) {
+                    let strokeValid = true;
+                    for (j = 0; j < cover.strokeEnlightenPointsOld.length; j++) {
                         if (cover.strokeEnlightenPointsOld[j] == iFaceVertex[0]) {
                             strokeValid = false;
                             break;
@@ -419,8 +419,8 @@ let Vivus = require('vivus/dist/vivus');
 
     // prepare object
     function prepareObject(o) {
-      let i;
-      o.colors = [];
+        let i;
+        o.colors = [];
 
         // prepare normals
         o.normals = [];
@@ -459,12 +459,12 @@ let Vivus = require('vivus/dist/vivus');
 
     // Sphere object
     function Sphere(n) {
-      let i, j;
-      const delta_angle = 2 * Math.PI / n;
+        let i, j;
+        const delta_angle = 2 * Math.PI / n;
 
-      // prepare vertices (points) of sphere
-      const vertices = [];
-      for (j = 0; j < n / 2 - 1; j++) {
+        // prepare vertices (points) of sphere
+        const vertices = [];
+        for (j = 0; j < n / 2 - 1; j++) {
             for (i = 0; i < n; i++) {
                 vertices[j * n + i] = [];
                 vertices[j * n + i][0] = 100 * Math.sin((j + 1) * delta_angle) * Math.cos(i * delta_angle);
@@ -486,8 +486,8 @@ let Vivus = require('vivus/dist/vivus');
         this.points = vertices;
 
         // prepare faces
-      const faces = [];
-      for (j = 0; j < n / 2 - 2; j++) {
+        const faces = [];
+        for (j = 0; j < n / 2 - 2; j++) {
             for (i = 0; i < n - 1; i++) {
                 faces[j * 2 * n + i] = [];
                 faces[j * 2 * n + i + n] = [];
@@ -538,26 +538,26 @@ let Vivus = require('vivus/dist/vivus');
     }
 
     function getRotationPar(center, vector, t) {
-      const result = [];
+        const result = [];
 
-      const u_u = vector[0] * vector[0];
-      const v_v = vector[1] * vector[1];
-      const w_w = vector[2] * vector[2];
+        const u_u = vector[0] * vector[0];
+        const v_v = vector[1] * vector[1];
+        const w_w = vector[2] * vector[2];
 
-      const v_v_p_w_w = (v_v + w_w);
-      const u_u_p_w_w = (u_u + w_w);
-      const u_u_p_v_v = (u_u + v_v);
+        const v_v_p_w_w = (v_v + w_w);
+        const u_u_p_w_w = (u_u + w_w);
+        const u_u_p_v_v = (u_u + v_v);
 
-      const b_v_p_c_w = center[1] * vector[1] + center[2] * vector[2];
-      const a_u_p_c_w = center[0] * vector[0] + center[2] * vector[2];
-      const a_u_p_b_v = center[0] * vector[0] + center[1] * vector[1];
-      const b_w_m_c_v = center[1] * vector[2] - center[2] * vector[1];
-      const c_u_m_a_w = center[2] * vector[0] - center[0] * vector[2];
-      const a_v_m_b_u = center[0] * vector[1] - center[1] * vector[0];
+        const b_v_p_c_w = center[1] * vector[1] + center[2] * vector[2];
+        const a_u_p_c_w = center[0] * vector[0] + center[2] * vector[2];
+        const a_u_p_b_v = center[0] * vector[0] + center[1] * vector[1];
+        const b_w_m_c_v = center[1] * vector[2] - center[2] * vector[1];
+        const c_u_m_a_w = center[2] * vector[0] - center[0] * vector[2];
+        const a_v_m_b_u = center[0] * vector[1] - center[1] * vector[0];
 
-      const den = v_v + u_u + w_w;
+        const den = v_v + u_u + w_w;
 
-      result[0] = den;
+        result[0] = den;
 
         result[1] = v_v_p_w_w;
         result[2] = u_u_p_w_w;
@@ -590,15 +590,15 @@ let Vivus = require('vivus/dist/vivus');
     }
 
     function rotate(p, point) {
-      const p_20_p_2 = p[20] * point[2];
-      const p_19_p_1 = p[19] * point[1];
-      const p_18_p_0 = p[18] * point[0];
-      const u_x_p_v_y_p_w_z = p_18_p_0 + p_19_p_1 + p_20_p_2;
+        const p_20_p_2 = p[20] * point[2];
+        const p_19_p_1 = p[19] * point[1];
+        const p_18_p_0 = p[18] * point[0];
+        const u_x_p_v_y_p_w_z = p_18_p_0 + p_19_p_1 + p_20_p_2;
 
-      const temp0 = point[0];
-      const temp1 = point[1];
+        const temp0 = point[0];
+        const temp1 = point[1];
 
-      point[0] = (p[4] + p[18] * (-p[7] + u_x_p_v_y_p_w_z) + ((temp0 - p[15]) * p[1] + p[18] * (p[7] - p_19_p_1 - p_20_p_2)) * p[10] + p[11] * (p[12] - p[20] * temp1 + p[19] * point[2])) / p[0];
+        point[0] = (p[4] + p[18] * (-p[7] + u_x_p_v_y_p_w_z) + ((temp0 - p[15]) * p[1] + p[18] * (p[7] - p_19_p_1 - p_20_p_2)) * p[10] + p[11] * (p[12] - p[20] * temp1 + p[19] * point[2])) / p[0];
         point[1] = (p[5] + p[19] * (-p[8] + u_x_p_v_y_p_w_z) + ((temp1 - p[16]) * p[2] + p[19] * (p[8] - p_18_p_0 - p_20_p_2)) * p[10] + p[11] * (p[13] + p[20] * temp0 - p[18] * point[2])) / p[0];
         point[2] = (p[6] + p[20] * (-p[9] + u_x_p_v_y_p_w_z) + ((point[2] - p[17]) * p[3] + p[20] * (p[9] - p_18_p_0 - p_19_p_1)) * p[10] + p[11] * (p[14] - p[19] * temp0 + p[18] * temp1)) / p[0];
     }
@@ -645,9 +645,9 @@ let Vivus = require('vivus/dist/vivus');
     }
 
     function project(distance, point, x, y) {
-      const result = [];
+        const result = [];
 
-      result[0] = point[0] * distance / point[2] + x;
+        result[0] = point[0] * distance / point[2] + x;
         result[1] = y - point[1] * distance / point[2];
         result[2] = distance;
 
@@ -660,8 +660,8 @@ let Vivus = require('vivus/dist/vivus');
     }
 
     function hexToRgb(hex) {
-      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-      return result ? {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
             r: parseInt(result[1], 16),
             g: parseInt(result[2], 16),
             b: parseInt(result[3], 16)
@@ -673,8 +673,8 @@ let Vivus = require('vivus/dist/vivus');
         window.attachEvent('onload', sceneInit);
     } else {
         if (window.onload) {
-          const curronload = window.onload;
-          window.onload = function () {
+            const curronload = window.onload;
+            window.onload = function () {
                 curronload();
                 sceneInit();
             };
