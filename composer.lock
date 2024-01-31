@@ -6512,16 +6512,16 @@
         },
         {
             "name": "symfony/ux-swup",
-            "version": "v2.13.2",
+            "version": "v2.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-swup.git",
-                "reference": "b6865ac89be2cdcc74384421a2947f5f0350571b"
+                "reference": "bbdfa3a95cae826018d59c159021befcbe781b1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-swup/zipball/b6865ac89be2cdcc74384421a2947f5f0350571b",
-                "reference": "b6865ac89be2cdcc74384421a2947f5f0350571b",
+                "url": "https://api.github.com/repos/symfony/ux-swup/zipball/bbdfa3a95cae826018d59c159021befcbe781b1f",
+                "reference": "bbdfa3a95cae826018d59c159021befcbe781b1f",
                 "shasum": ""
             },
             "conflict": {
@@ -6559,7 +6559,7 @@
                 "symfony-ux"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-swup/tree/v2.13.2"
+                "source": "https://github.com/symfony/ux-swup/tree/v2.14.0"
             },
             "funding": [
                 {
@@ -6575,7 +6575,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-11T01:20:31+00:00"
+            "time": "2023-12-12T16:45:17+00:00"
         },
         {
             "name": "symfony/validator",
@@ -10338,5 +10338,5 @@
     "platform-overrides": {
         "php": "8.1.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
