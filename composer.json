@@ -28,7 +28,7 @@
         "knplabs/knp-menu-bundle": "^3.2",
         "knplabs/knp-paginator-bundle": "^6.1",
         "league/glide-symfony": "dev-master",
-        "nesbot/carbon": "^2.66",
+        "nesbot/carbon": "^3.0",
         "phpdocumentor/reflection-docblock": "^5.2",
         "scrivo/highlight.php": "^9.18",
         "stenope/stenope": "^0.8",
