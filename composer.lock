@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
-            "version": "3.1.0",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon-doctrine-types.git",
-                "reference": "a31d3358a2a5d6ae947df1691d1f321418a5f3d5"
+                "reference": "18ba5ddfec8976260ead6e866180bd5d2f71aa1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon-doctrine-types/zipball/a31d3358a2a5d6ae947df1691d1f321418a5f3d5",
-                "reference": "a31d3358a2a5d6ae947df1691d1f321418a5f3d5",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon-doctrine-types/zipball/18ba5ddfec8976260ead6e866180bd5d2f71aa1d",
+                "reference": "18ba5ddfec8976260ead6e866180bd5d2f71aa1d",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
             ],
             "support": {
                 "issues": "https://github.com/CarbonPHP/carbon-doctrine-types/issues",
-                "source": "https://github.com/CarbonPHP/carbon-doctrine-types/tree/3.1.0"
+                "source": "https://github.com/CarbonPHP/carbon-doctrine-types/tree/3.2.0"
             },
             "funding": [
                 {
@@ -73,7 +73,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-10T15:33:53+00:00"
+            "time": "2024-02-09T16:56:22+00:00"
         },
         {
             "name": "composer/package-versions-deprecated",
@@ -1636,16 +1636,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.0.0",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "7ae1c6fd10d2a93a0a0f5ab8fc8be37cb0830dec"
+                "reference": "cf30cfceac9693bdb339ffb51f091e6039bdf10d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7ae1c6fd10d2a93a0a0f5ab8fc8be37cb0830dec",
-                "reference": "7ae1c6fd10d2a93a0a0f5ab8fc8be37cb0830dec",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cf30cfceac9693bdb339ffb51f091e6039bdf10d",
+                "reference": "cf30cfceac9693bdb339ffb51f091e6039bdf10d",
                 "shasum": ""
             },
             "require": {
@@ -1678,8 +1678,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-3.x": "3.x-dev",
-                    "dev-master": "2.x-dev"
+                    "dev-master": "3.x-dev",
+                    "dev-2.x": "2.x-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1738,7 +1738,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-31T20:20:32+00:00"
+            "time": "2024-02-06T09:28:31+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
