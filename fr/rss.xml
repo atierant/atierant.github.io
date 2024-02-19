@@ -3,8 +3,8 @@
     <channel>
         <title>Arnaud Tiérant</title>
         <description>Tech Lead @Sogeti, living and working in Montpellier, France.</description>
-        <pubDate>Fri, 16 Feb 2024 16:24:22 +0000</pubDate>
-        <lastBuildDate>Wed, 02 Sep 2020 16:24:20 +0000</lastBuildDate>
+        <pubDate>Mon, 19 Feb 2024 12:01:59 +0000</pubDate>
+        <lastBuildDate>Wed, 02 Sep 2020 12:01:58 +0000</lastBuildDate>
         <link>https://arnaud.tierant.me/fr/</link>
         <language>fr</language>
                     <item>
@@ -12,7 +12,7 @@
                 <description>Remplacer des placeholders dans des chaines.</description>
                 <link>https://arnaud.tierant.me/fr/articles/fr-replace-placeholders-in-strings</link>
                 <guid>https://arnaud.tierant.me/fr/articles/fr-replace-placeholders-in-strings</guid>
-                <pubDate>Wed, 02 Sep 2020 16:24:20 +0000</pubDate>
+                <pubDate>Wed, 02 Sep 2020 12:01:58 +0000</pubDate>
                 <category>development</category>
                                                                                     <author></author>
                                                 </item>
@@ -21,7 +21,7 @@
                 <description>Pas si simple de modifier une exception à la volée...</description>
                 <link>https://arnaud.tierant.me/fr/articles/fr-modify-exception-code</link>
                 <guid>https://arnaud.tierant.me/fr/articles/fr-modify-exception-code</guid>
-                <pubDate>Thu, 28 Nov 2019 16:24:20 +0000</pubDate>
+                <pubDate>Thu, 28 Nov 2019 12:01:58 +0000</pubDate>
                 <category>development</category>
                             </item>
                     <item>
@@ -29,7 +29,7 @@
                 <description>Gérer de nombreuses clés avec SSH Config</description>
                 <link>https://arnaud.tierant.me/fr/articles/fr-ssh-config</link>
                 <guid>https://arnaud.tierant.me/fr/articles/fr-ssh-config</guid>
-                <pubDate>Mon, 25 Nov 2019 16:24:20 +0000</pubDate>
+                <pubDate>Mon, 25 Nov 2019 12:01:58 +0000</pubDate>
                 <category>development</category>
                             </item>
                     <item>
@@ -37,7 +37,7 @@
                 <description>Pas si simple de trouver le fichier de configuration de MySQL...</description>
                 <link>https://arnaud.tierant.me/fr/articles/fr-find-mysql-cnf-location</link>
                 <guid>https://arnaud.tierant.me/fr/articles/fr-find-mysql-cnf-location</guid>
-                <pubDate>Wed, 20 Nov 2019 16:24:20 +0000</pubDate>
+                <pubDate>Wed, 20 Nov 2019 12:01:58 +0000</pubDate>
                 <category>development</category>
                             </item>
                     <item>
@@ -45,7 +45,7 @@
                 <description>Pas si simple de comparer deux chaînes accentuées...</description>
                 <link>https://arnaud.tierant.me/fr/articles/fr-compare-two-strings-ignoring-accents</link>
                 <guid>https://arnaud.tierant.me/fr/articles/fr-compare-two-strings-ignoring-accents</guid>
-                <pubDate>Tue, 05 Nov 2019 16:24:20 +0000</pubDate>
+                <pubDate>Tue, 05 Nov 2019 12:01:58 +0000</pubDate>
                 <category>development</category>
                                                                                     <author></author>
                                                 </item>
@@ -54,7 +54,7 @@
                 <description>Arnaud Tiérant, TechLead@Sogeti</description>
                 <link>https://arnaud.tierant.me/fr/articles/fr-site-launched</link>
                 <guid>https://arnaud.tierant.me/fr/articles/fr-site-launched</guid>
-                <pubDate>Thu, 10 Oct 2019 16:24:20 +0000</pubDate>
+                <pubDate>Thu, 10 Oct 2019 12:01:58 +0000</pubDate>
                 <category>misc</category>
                                                                                     <author></author>
                                                 </item>
